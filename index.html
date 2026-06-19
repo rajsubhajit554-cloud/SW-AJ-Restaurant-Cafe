@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ Restaurant & Cafe</title>
     <link rel="icon" type="image/png" href="assets/AJ Restaurant & Cafe logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Preloader Screen -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-title">Welcome to <br><span class="highlight">AJ Restaurant & Cafe</span></h1>
+            <div class="preloader-loader">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo-container">
-            <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Restaurant & Cafe Logo" class="logo-img">
+            <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
             <span class="logo-text">AJ Restaurant & Cafe</span>
         </div>
         <ul class="nav-links">
@@ -30,51 +39,65 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg banner-box">
-            <img src="assets/Gemini_Generated_Image_rpk2p4rpk2p4rpk2.jpg" alt="Cafe Background 1">
+            <img src="assets/Gemini_Generated_Image_rpk2p4rpk2p4rpk2.jpg" alt="Cafe Background 1" class="active">
             <img src="assets/5hk.jpg" alt="Cafe Background 2">
             <div class="overlay"></div>
         </div>
-        <div class="hero-content">
-            <h1 class="main-title">Welcome to AJ Restaurant & Cafe</h1>
-            <p>Experience the perfect blend of taste, ambiance, and warmth. <br> Your favorite spot for premium coffee and delicious food.</p>
-            <a href="#vibe" class="cta-button">Explore Now <i class="fas fa-arrow-right"></i></a>
-        </div>
+
     </section>
 
     <!-- Interactive/Fun Section (The Vibe) -->
     <section id="vibe" class="vibe-section">
-        <h2 class="section-title">Experience The Magic ✨</h2>
+        <h2 class="section-title">Experience The Magic</h2>
         <div class="vibe-container">
-            <div class="coffee-cup-container">
+            <div class="hot-bowl-container">
                 <div class="steam"></div>
                 <div class="steam"></div>
                 <div class="steam"></div>
-                <div class="cup">
-                    <div class="coffee"></div>
+                <div class="soup-pour"></div>
+                <div class="bowl-plate"></div>
+                <div class="bowl">
+                    <div class="food-fill"></div>
+                    <div class="chopstick-one"></div>
+                    <div class="chopstick-two"></div>
                 </div>
             </div>
             <div class="vibe-text">
-                <h3>More Than Just A Cafe</h3>
-                <p>Hover over the cup to pour some magic! At AJ Restaurant & Cafe, we believe in creating moments. From our handcrafted espresso to our mouth-watering pastries, everything is made with love.</p>
+                <h3>More Than Just A Restaurant</h3>
+                <p>Click on the bowl to pour some magic! At AJ Restaurant & Cafe, we believe in creating moments. From our handcrafted dishes to our mouth-watering recipes, everything is made with love.</p>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section (Photo Gallery) -->
     <section id="reviews" class="reviews-section">
-        <h2 class="section-title">Customer Review Photos 📸</h2>
-        <div class="photo-gallery">
-            <div class="gallery-item glassmorphism">
-                <img src="assets/Screenshot 2026-05-07 115951.jpg" alt="Happy Customer 1">
+        <h2 class="section-title">Customer Review Photos</h2>
+        <div class="reviews-slider-container">
+            <div class="reviews-slider">
+                <div class="review-slide active">
+                    <img src="assets/Screenshot 2026-05-07 115951.jpg" alt="Customer Review 1">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/Screenshot 2026-05-07 120051.jpg" alt="Customer Review 2">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/Screenshot 2026-05-07 120104.jpg" alt="Customer Review 3">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/Gemini_Generated_Image_rpk2p4rpk2p4rpk2.jpg" alt="Customer Review 4">
+                </div>
             </div>
-            <div class="gallery-item glassmorphism">
-                <img src="assets/Screenshot 2026-05-07 120051.jpg" alt="Happy Customer 2">
-            </div>
-            <div class="gallery-item glassmorphism">
-                <img src="assets/Screenshot 2026-05-07 120104.jpg" alt="Happy Customer 3">
-            </div>
-            <div class="gallery-item glassmorphism">
-                <img src="assets/Gemini_Generated_Image_rpk2p4rpk2p4rpk2.jpg" alt="Happy Customer 4">
+            
+            <!-- Slider Controls -->
+            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
             </div>
         </div>
         <div style="text-align: center; margin-top: 3rem;">
@@ -84,10 +107,10 @@
 
     <!-- Contact & Footer -->
     <section id="contact" class="contact-section">
-        <h2 class="section-title">Contact & Socials 🌐</h2>
+        <h2 class="section-title">Contact & Socials</h2>
         <div class="contact-container glassmorphism">
             <div class="contact-info">
-                <h2>Visit Us 📍</h2>
+                <h2>Visit Us</h2>
                 <div class="info-item">
                     <a href="https://maps.app.goo.gl/J9uGgiv1W8dAHkCU7" target="_blank" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 15px;">
                         <i class="fas fa-map-marker-alt"></i>
@@ -104,7 +127,7 @@
                 </div>
             </div>
             <div class="social-links">
-                <h2>Follow Us 📱</h2>
+                <h2>Follow Us</h2>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
