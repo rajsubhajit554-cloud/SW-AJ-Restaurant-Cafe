@@ -193,3 +193,116 @@ if (bowlContainer) {
         }
     });
 }
+
+// ============================================================
+// SLIDE-OUT MESSAGE PANEL LOGIC
+// ============================================================
+const openMsgPanelBtn = document.getElementById('open-msg-panel-btn');
+const closeMsgPanelBtn = document.getElementById('close-msg-panel-btn');
+const msgPanel = document.getElementById('msg-panel');
+const msgPanelOverlay = document.getElementById('msg-panel-overlay');
+const msgPanelForm = document.getElementById('msg-panel-form');
+const submitMsgBtn = document.getElementById('submit-msg-btn');
+const msgStatusContainer = document.getElementById('msg-status-container');
+
+// Google Sheet Web App URL provided by user
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwFRBfgECv4kyCOJCrjDmpbWn4oIkiCJOpGndOI_d3SCzTtWGuG14uJZ2xGtUIDEsL8/exec";
+
+function openMessagePanel() {
+    if (msgPanel && msgPanelOverlay) {
+        msgPanel.classList.add('active');
+        msgPanelOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Disable page scrolling
+    }
+}
+
+function closeMessagePanel() {
+    if (msgPanel && msgPanelOverlay) {
+        msgPanel.classList.remove('active');
+        msgPanelOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore page scrolling
+        // Reset status message
+        if (msgStatusContainer) {
+            msgStatusContainer.style.display = 'none';
+            msgStatusContainer.className = 'msg-status-container';
+        }
+    }
+}
+
+if (openMsgPanelBtn) {
+    openMsgPanelBtn.addEventListener('click', openMessagePanel);
+}
+
+if (closeMsgPanelBtn) {
+    closeMsgPanelBtn.addEventListener('click', closeMessagePanel);
+}
+
+if (msgPanelOverlay) {
+    msgPanelOverlay.addEventListener('click', closeMessagePanel);
+}
+
+// Handle Form Submission
+if (msgPanelForm) {
+    msgPanelForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('msg-name');
+        const emailInput = document.getElementById('msg-email');
+        const contentInput = document.getElementById('msg-content');
+
+        if (!nameInput || !emailInput || !contentInput) return;
+
+        const payload = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            message: contentInput.value.trim()
+        };
+
+        // Disable button and show loading state
+        submitMsgBtn.disabled = true;
+        const originalBtnContent = submitMsgBtn.innerHTML;
+        submitMsgBtn.innerHTML = '<div class="btn-loader"></div> Sending...';
+
+        // Hide previous status
+        if (msgStatusContainer) {
+            msgStatusContainer.style.display = 'none';
+        }
+
+        // Send post request to Google Sheets script
+        fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8' // Apps Script handles text/plain without triggering CORS preflight options blocks in some environments
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            // Apps script returns 200 or redirect
+            submitMsgBtn.innerHTML = originalBtnContent;
+            submitMsgBtn.disabled = false;
+            
+            if (msgStatusContainer) {
+                msgStatusContainer.textContent = "Your message was sent successfully! Thank you.";
+                msgStatusContainer.className = "msg-status-container success";
+            }
+            
+            // Clear inputs
+            msgPanelForm.reset();
+            
+            // Auto close after 3 seconds
+            setTimeout(closeMessagePanel, 3000);
+        })
+        .catch((error) => {
+            // Error response
+            submitMsgBtn.innerHTML = originalBtnContent;
+            submitMsgBtn.disabled = false;
+            
+            if (msgStatusContainer) {
+                msgStatusContainer.textContent = "Something went wrong. Please try again.";
+                msgStatusContainer.className = "msg-status-container error";
+            }
+            console.error("Error submitting contact form:", error);
+        });
+    });
+}

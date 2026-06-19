@@ -31,8 +31,13 @@
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        <div class="navbar-actions">
+            <button class="msg-btn-nav" id="open-msg-panel-btn" title="Send a Message">
+                <i class="fas fa-paper-plane"></i> Message
+            </button>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -143,6 +148,36 @@
     <footer>
         <p>&copy; 2026 AJ Restaurant & Cafe. Made with ❤️</p>
     </footer>
+
+    <!-- Message Panel Overlay -->
+    <div class="msg-panel-overlay" id="msg-panel-overlay"></div>
+
+    <!-- Slide-out Message Panel -->
+    <div class="msg-panel" id="msg-panel">
+        <button class="close-msg-panel-btn" id="close-msg-panel-btn">&times;</button>
+        <div class="msg-panel-header">
+            <h2>Send a Message</h2>
+            <p>We'd love to hear from you! Write to us and we'll save it to our sheet.</p>
+        </div>
+        <form id="msg-panel-form">
+            <div class="form-group">
+                <label for="msg-name">Your Name</label>
+                <input type="text" id="msg-name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="msg-email">Email or Phone</label>
+                <input type="text" id="msg-email" required placeholder="Enter email or phone number">
+            </div>
+            <div class="form-group">
+                <label for="msg-content">Message</label>
+                <textarea id="msg-content" rows="5" required placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="submit-msg-btn" id="submit-msg-btn">
+                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+        <div class="msg-status-container" id="msg-status-container"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
