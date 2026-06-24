@@ -204,15 +204,23 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// Food Bowl Click-to-Pour Soup Animation
-const bowlContainer = document.querySelector('.hot-bowl-container');
-if (bowlContainer) {
-    bowlContainer.addEventListener('click', () => {
-        if (!bowlContainer.classList.contains('pouring')) {
-            bowlContainer.classList.add('pouring');
+// FIFA 2026 Football Click-to-Shoot Goal Animation
+const football = document.getElementById('interactive-football');
+const pitchContainer = document.querySelector('.soccer-pitch-container');
+if (football && pitchContainer) {
+    football.addEventListener('click', () => {
+        if (!pitchContainer.classList.contains('shooting')) {
+            pitchContainer.classList.add('shooting');
+            
+            // Goal scored state shortly after (when ball hits the net)
             setTimeout(() => {
-                bowlContainer.classList.remove('pouring');
-            }, 3000); // Reset pouring animation and empty the bowl after 3 seconds
+                pitchContainer.classList.add('goal-scored');
+            }, 300); // 300ms matches the ball hitting the net in keyframes
+            
+            // Reset animations after 1.5 seconds (duration of shootBall)
+            setTimeout(() => {
+                pitchContainer.classList.remove('shooting', 'goal-scored');
+            }, 1500);
         }
     });
 }
