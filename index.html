@@ -153,13 +153,24 @@
     <!-- Slide-out Quick Panel -->
     <div class="quick-panel" id="quick-panel">
         <button class="close-quick-panel-btn" id="close-quick-panel-btn">&times;</button>
-        <div class="quick-panel-header">
-            <h2>Quick Actions</h2>
-            <p>Select an option below to proceed.</p>
+        
+        <!-- Panel Banner -->
+        <div class="quick-panel-banner">
+            <div class="quick-panel-banner-overlay"></div>
+            <img src="assets/ChatGPT Image Jun 24, 2026, 09_50_12 AM.png" alt="AJ Cafe Banner" class="quick-panel-banner-img">
+            <div class="quick-panel-banner-content">
+                <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Cafe Logo" class="quick-panel-banner-logo">
+                <h3>AJ Restaurant & Cafe</h3>
+                <p>Premium Culinary Experience</p>
+            </div>
         </div>
+
         <div class="quick-panel-content">
             <button class="quick-panel-btn" id="open-msg-panel-from-quick-btn">
                 <i class="fas fa-paper-plane"></i> Send a Message
+            </button>
+            <button class="quick-panel-btn" id="open-redeem-panel-from-quick-btn">
+                <i class="fas fa-ticket-alt"></i> Redeem Code
             </button>
         </div>
     </div>
@@ -192,6 +203,124 @@
             </button>
         </form>
         <div class="msg-status-container" id="msg-status-container"></div>
+    </div>
+
+    <!-- Redeem Panel Overlay -->
+    <div class="redeem-panel-overlay" id="redeem-panel-overlay"></div>
+
+    <!-- Slide-out Redeem Panel -->
+    <div class="redeem-panel" id="redeem-panel">
+        <button class="close-redeem-panel-btn" id="close-redeem-panel-btn">&times;</button>
+        
+        <div class="redeem-panel-wrapper">
+            <!-- Left Column: Red Sidebar -->
+            <div class="redeem-left-col">
+                <div class="redeem-brand-header">
+                    <h2>Quick Registration</h2>
+                </div>
+                
+                <div class="redeem-features">
+                    <div class="redeem-feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Secure Access</h4>
+                            <p>Your data is encrypted and protected.</p>
+                        </div>
+                    </div>
+                    <div class="redeem-feature-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>Instant Notifications</h4>
+                            <p>Get updates directly via WhatsApp.</p>
+                        </div>
+                    </div>
+                    <div class="redeem-feature-item">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <div>
+                            <h4>Priority Support</h4>
+                            <p>24/7 dedicated assistance for members.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="redeem-left-footer">
+                    <p>&copy; 2026 AJ CAFE PANEL</p>
+                </div>
+            </div>
+            
+            <!-- Right Column: Registration Form & Ticket/History -->
+            <div class="redeem-right-col">
+                <form id="redeem-panel-form">
+                    <div class="form-group icon-input-group">
+                        <label for="redeem-name">NAME</label>
+                        <div class="input-with-icon">
+                            <i class="far fa-user"></i>
+                            <input type="text" id="redeem-name" required placeholder="John Doe">
+                        </div>
+                    </div>
+                    <div class="form-group icon-input-group">
+                        <label for="redeem-whatsapp">WHATSAPP NUMBER</label>
+                        <div class="input-with-icon">
+                            <i class="fab fa-whatsapp"></i>
+                            <input type="text" id="redeem-whatsapp" required placeholder="+91 (555) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-group icon-input-group">
+                        <label for="redeem-code">INVITATION CODE</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-key"></i>
+                            <input type="text" id="redeem-code" required placeholder="HZN-XXXX">
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-redeem-btn" id="submit-redeem-btn">
+                        SUBMIT REQUEST
+                    </button>
+                    
+                    <div class="redeem-subtext-link">
+                        Already have an account? <a href="#" id="toggle-history-view-btn">Log in here / View tokens</a>
+                    </div>
+                </form>
+                
+                <!-- Status Container -->
+                <div class="redeem-status-container" id="redeem-status-container"></div>
+                
+                <!-- Ticket Container (Success State) -->
+                <div class="ticket-container" id="ticket-container" style="display: none;">
+                    <div class="ticket">
+                        <div class="ticket-header">
+                            <h3>AJ Restaurant & Cafe</h3>
+                            <p>VERIFIED TOKEN</p>
+                        </div>
+                        <div class="ticket-divider">
+                            <span class="left-notch"></span>
+                            <span class="right-notch"></span>
+                        </div>
+                        <div class="ticket-body">
+                            <p class="ticket-label">Your Unique Token</p>
+                            <h2 class="ticket-token" id="ticket-token-display">AJT-F8K2P9</h2>
+                            <p class="ticket-subtext">Show this token at the counter to claim your discount/offer.</p>
+                            <button type="button" class="copy-token-btn" id="copy-token-btn">
+                                <i class="far fa-copy"></i> Copy Token
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="redeem-again-btn" id="redeem-again-btn">
+                        Redeem Another Code
+                    </button>
+                </div>
+                
+                <!-- History Container -->
+                <div class="redeem-history-container" id="redeem-history-container" style="display: none;">
+                    <h3>Your Claimed Tokens <span class="history-badge" id="history-badge">0</span></h3>
+                    <div class="history-list" id="history-list">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                    <button type="button" class="back-to-form-btn" id="back-to-form-btn">
+                        Back to Form
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
