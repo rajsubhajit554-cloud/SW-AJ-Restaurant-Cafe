@@ -197,7 +197,42 @@ if (bowlContainer) {
 // ============================================================
 // SLIDE-OUT MESSAGE PANEL LOGIC
 // ============================================================
-const openMsgPanelBtn = document.getElementById('open-msg-panel-btn');
+// Quick Actions Panel Logic
+const openQuickPanelBtn = document.getElementById('open-quick-panel-btn');
+const closeQuickPanelBtn = document.getElementById('close-quick-panel-btn');
+const quickPanel = document.getElementById('quick-panel');
+const quickPanelOverlay = document.getElementById('quick-panel-overlay');
+const openMsgPanelFromQuickBtn = document.getElementById('open-msg-panel-from-quick-btn');
+
+function openQuickPanel() {
+    if (quickPanel && quickPanelOverlay) {
+        quickPanel.classList.add('active');
+        quickPanelOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Disable page scrolling
+    }
+}
+
+function closeQuickPanel() {
+    if (quickPanel && quickPanelOverlay) {
+        quickPanel.classList.remove('active');
+        quickPanelOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore page scrolling
+    }
+}
+
+if (openQuickPanelBtn) {
+    openQuickPanelBtn.addEventListener('click', openQuickPanel);
+}
+
+if (closeQuickPanelBtn) {
+    closeQuickPanelBtn.addEventListener('click', closeQuickPanel);
+}
+
+if (quickPanelOverlay) {
+    quickPanelOverlay.addEventListener('click', closeQuickPanel);
+}
+
+// Message Panel Logic
 const closeMsgPanelBtn = document.getElementById('close-msg-panel-btn');
 const msgPanel = document.getElementById('msg-panel');
 const msgPanelOverlay = document.getElementById('msg-panel-overlay');
@@ -229,8 +264,11 @@ function closeMessagePanel() {
     }
 }
 
-if (openMsgPanelBtn) {
-    openMsgPanelBtn.addEventListener('click', openMessagePanel);
+if (openMsgPanelFromQuickBtn) {
+    openMsgPanelFromQuickBtn.addEventListener('click', () => {
+        closeQuickPanel();
+        setTimeout(openMessagePanel, 350); // smooth panel change transition
+    });
 }
 
 if (closeMsgPanelBtn) {

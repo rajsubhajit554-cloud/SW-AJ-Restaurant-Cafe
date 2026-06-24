@@ -32,8 +32,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="navbar-actions">
-            <button class="msg-btn-nav" id="open-msg-panel-btn" title="Send a Message">
-                <i class="fas fa-paper-plane"></i> Message
+            <button class="dripza-btn-nav" id="open-quick-panel-btn" title="Quick Actions">
+                <img src="assets/dripza_icon.webp" alt="Dripza Icon" class="dripza-nav-icon">
             </button>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -44,9 +44,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg banner-box">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="assets/Blue Grunge Welcome To My Horror Channel Video.mp4" type="video/mp4">
-            </video>
+            <img src="assets/ChatGPT Image Jun 24, 2026, 09_50_12 AM.png" alt="AJ Restaurant & Cafe Banner">
             <div class="overlay"></div>
         </div>
 
@@ -148,6 +146,23 @@
     <footer>
         <p>&copy; 2026 AJ Restaurant & Cafe. Made with ❤️</p>
     </footer>
+
+    <!-- Quick Panel Overlay -->
+    <div class="quick-panel-overlay" id="quick-panel-overlay"></div>
+
+    <!-- Slide-out Quick Panel -->
+    <div class="quick-panel" id="quick-panel">
+        <button class="close-quick-panel-btn" id="close-quick-panel-btn">&times;</button>
+        <div class="quick-panel-header">
+            <h2>Quick Actions</h2>
+            <p>Select an option below to proceed.</p>
+        </div>
+        <div class="quick-panel-content">
+            <button class="quick-panel-btn" id="open-msg-panel-from-quick-btn">
+                <i class="fas fa-paper-plane"></i> Send a Message
+            </button>
+        </div>
+    </div>
 
     <!-- Message Panel Overlay -->
     <div class="msg-panel-overlay" id="msg-panel-overlay"></div>
