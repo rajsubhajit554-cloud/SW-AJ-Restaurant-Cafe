@@ -187,13 +187,20 @@ if (reviewItems.length > 0) {
     startReviewTimer();
 }
 
-// Preloader Screen Logic (Fades out after 1 second and restores scrolling)
+// Preloader Screen Logic (Fades out after 1 second and reveals Promo Poster if present)
 function initPreloader() {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add('preloader-fade-out');
-            document.body.classList.remove('no-scroll'); // Re-enable vertical scrolling
+            
+            // Show Promo Modal after preloader fades out
+            const promoModal = document.getElementById('promo-modal');
+            if (promoModal) {
+                setTimeout(openPromoModal, 300);
+            } else {
+                document.body.classList.remove('no-scroll'); // Re-enable vertical scrolling if no promo modal
+            }
         }, 1000); // 1 second duration
     }
 }
@@ -204,23 +211,18 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// FIFA 2026 Football Click-to-Shoot Goal Animation
-const football = document.getElementById('interactive-football');
-const pitchContainer = document.querySelector('.soccer-pitch-container');
-if (football && pitchContainer) {
-    football.addEventListener('click', () => {
-        if (!pitchContainer.classList.contains('shooting')) {
-            pitchContainer.classList.add('shooting');
+// Durga Puja Altar Click-to-Activate Animation
+const dhunuchiBurner = document.getElementById('dhunuchi-burner');
+const altarContainer = document.getElementById('durga-altar');
+if (dhunuchiBurner && altarContainer) {
+    dhunuchiBurner.addEventListener('click', () => {
+        if (!altarContainer.classList.contains('activated')) {
+            altarContainer.classList.add('activated');
             
-            // Goal scored state shortly after (when ball hits the net)
+            // Reset animations after 2.5 seconds
             setTimeout(() => {
-                pitchContainer.classList.add('goal-scored');
-            }, 300); // 300ms matches the ball hitting the net in keyframes
-            
-            // Reset animations after 1.5 seconds (duration of shootBall)
-            setTimeout(() => {
-                pitchContainer.classList.remove('shooting', 'goal-scored');
-            }, 1500);
+                altarContainer.classList.remove('activated');
+            }, 2500);
         }
     });
 }
@@ -377,295 +379,70 @@ if (msgPanelForm) {
 }
 
 // ============================================================
-// REDEEM CODE PANEL LOGIC
+// PROMOTIONAL POSTER MODAL LOGIC
 // ============================================================
-const openRedeemPanelBtn = document.getElementById('open-redeem-panel-from-quick-btn');
-const closeRedeemPanelBtn = document.getElementById('close-redeem-panel-btn');
-const redeemPanel = document.getElementById('redeem-panel');
-const redeemPanelOverlay = document.getElementById('redeem-panel-overlay');
-const redeemForm = document.getElementById('redeem-panel-form');
-const submitRedeemBtn = document.getElementById('submit-redeem-btn');
-const redeemStatusContainer = document.getElementById('redeem-status-container');
+const promoModal = document.getElementById('promo-modal');
+const closePromoModalBtn = document.getElementById('close-promo-modal-btn');
+const promoModalOverlay = document.querySelector('.promo-modal-overlay');
+const promoModalContent = document.querySelector('.promo-modal-content');
+const openPromoModalDirectBtn = document.getElementById('open-promo-modal-direct-btn');
 
-// Elements for success state (ticket)
-const ticketContainer = document.getElementById('ticket-container');
-const ticketTokenDisplay = document.getElementById('ticket-token-display');
-const copyTokenBtn = document.getElementById('copy-token-btn');
-const redeemAgainBtn = document.getElementById('redeem-again-btn');
+function closePromoModal() {
+    if (promoModal && promoModalContent) {
+        const button = document.getElementById('open-promo-modal-direct-btn');
+        if (button) {
+            const buttonRect = button.getBoundingClientRect();
+            const contentRect = promoModalContent.getBoundingClientRect();
 
-// Elements for history state
-const redeemHistoryContainer = document.getElementById('redeem-history-container');
-const historyList = document.getElementById('history-list');
-const historyBadge = document.getElementById('history-badge');
-const toggleHistoryViewBtn = document.getElementById('toggle-history-view-btn');
-const backToFormBtn = document.getElementById('back-to-form-btn');
+            // Calculate exact center coordinates difference
+            const dx = (buttonRect.left + buttonRect.width / 2) - (contentRect.left + contentRect.width / 2);
+            const dy = (buttonRect.top + buttonRect.height / 2) - (contentRect.top + contentRect.height / 2);
 
-// List of valid codes (case-insensitive)
-const VALID_CODES = ["HZN-100", "HZN-VIP", "AJWELCOME", "AJCOFFEE", "SPECIAL20", "AJVIP", "DRIPZA2026"];
-
-function openRedeemPanel() {
-    if (redeemPanel && redeemPanelOverlay) {
-        redeemPanel.classList.add('active');
-        redeemPanelOverlay.classList.add('active');
-        document.body.classList.add('no-scroll'); // Disable page scrolling
-        renderRedeemHistory(); // Render up-to-date history
-    }
-}
-
-function closeRedeemPanel() {
-    if (redeemPanel && redeemPanelOverlay) {
-        redeemPanel.classList.remove('active');
-        redeemPanelOverlay.classList.remove('active');
-        document.body.classList.remove('no-scroll'); // Restore page scrolling
-        
-        // Reset states to form view
-        resetRedeemViews();
-    }
-}
-
-function resetRedeemViews() {
-    if (redeemForm) redeemForm.style.display = 'flex';
-    if (ticketContainer) ticketContainer.style.display = 'none';
-    if (redeemHistoryContainer) redeemHistoryContainer.style.display = 'none';
-    if (redeemStatusContainer) {
-        redeemStatusContainer.style.display = 'none';
-        redeemStatusContainer.className = 'redeem-status-container';
-    }
-}
-
-const openRedeemPanelDirectBtn = document.getElementById('open-redeem-panel-direct-btn');
-
-if (openRedeemPanelDirectBtn) {
-    openRedeemPanelDirectBtn.addEventListener('click', () => {
-        openRedeemPanel();
-    });
-}
-
-if (openRedeemPanelBtn) {
-    openRedeemPanelBtn.addEventListener('click', () => {
-        closeQuickPanel();
-        setTimeout(openRedeemPanel, 350); // smooth panel change transition
-    });
-}
-
-if (closeRedeemPanelBtn) {
-    closeRedeemPanelBtn.addEventListener('click', closeRedeemPanel);
-}
-
-if (redeemPanelOverlay) {
-    redeemPanelOverlay.addEventListener('click', closeRedeemPanel);
-}
-
-// Generate unique token AJT-XXXXXX
-function generateUniqueToken() {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let token = 'AJT-';
-    for (let i = 0; i < 6; i++) {
-        token += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return token;
-}
-
-// LocalStorage helpers for History
-function getRedeemedTokens() {
-    return JSON.parse(localStorage.getItem('aj_redeemed_tokens') || '[]');
-}
-
-function saveRedeemedToken(code, token) {
-    const tokens = getRedeemedTokens();
-    const newToken = {
-        code: code.toUpperCase(),
-        token: token,
-        date: new Date().toLocaleString()
-    };
-    tokens.unshift(newToken); // Add to beginning of array
-    localStorage.setItem('aj_redeemed_tokens', JSON.stringify(tokens));
-}
-
-function renderRedeemHistory() {
-    if (!historyList || !historyBadge) return;
-    
-    const tokens = getRedeemedTokens();
-    historyBadge.textContent = tokens.length;
-    
-    if (tokens.length === 0) {
-        historyList.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">No tokens claimed yet. Enter a code to get started!</div>';
-        return;
-    }
-    
-    let html = '';
-    tokens.forEach((item) => {
-        html += `
-            <div class="history-card">
-                <div class="history-details">
-                    <span class="history-code-tag">${escapeHtml(item.code)}</span>
-                    <span class="history-token">${escapeHtml(item.token)}</span>
-                    <span class="history-date">${escapeHtml(item.date)}</span>
-                </div>
-                <button type="button" class="history-copy-btn" data-token="${escapeHtml(item.token)}" title="Copy Token">
-                    <i class="far fa-copy"></i>
-                </button>
-            </div>
-        `;
-    });
-    historyList.innerHTML = html;
-    
-    // Add copy event listeners to history items
-    const copyBtns = historyList.querySelectorAll('.history-copy-btn');
-    copyBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tokenToCopy = btn.getAttribute('data-token');
-            const originalIcon = btn.innerHTML;
-            navigator.clipboard.writeText(tokenToCopy).then(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i>';
-                btn.style.borderColor = 'var(--accent-gold)';
-                setTimeout(() => {
-                    btn.innerHTML = originalIcon;
-                    btn.style.borderColor = '';
-                }, 2000);
-            });
-        });
-    });
-}
-
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-}
-
-// Handle Form Submission for Verification
-if (redeemForm) {
-    redeemForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const nameInput = document.getElementById('redeem-name');
-        const whatsappInput = document.getElementById('redeem-whatsapp');
-        const codeInput = document.getElementById('redeem-code');
-        
-        if (!nameInput || !whatsappInput || !codeInput) return;
-        
-        const code = codeInput.value.trim().toUpperCase();
-        
-        // Hide previous status message
-        if (redeemStatusContainer) {
-            redeemStatusContainer.style.display = 'none';
+            // Apply to CSS variables
+            promoModalContent.style.setProperty('--fly-x', `${dx}px`);
+            promoModalContent.style.setProperty('--fly-y', `${dy}px`);
         }
-        
-        // 1. Client side validation check
-        if (!VALID_CODES.includes(code)) {
-            if (redeemStatusContainer) {
-                redeemStatusContainer.textContent = "Invalid Invitation Code! Please check your code and try again.";
-                redeemStatusContainer.className = "redeem-status-container error";
-            }
-            return;
+
+        // Add closing state to trigger scale and translation
+        promoModal.classList.add('closing');
+        document.body.classList.remove('no-scroll'); // Restore scrolling
+
+        setTimeout(() => {
+            promoModal.classList.remove('active', 'closing');
+            promoModalContent.style.removeProperty('--fly-x');
+            promoModalContent.style.removeProperty('--fly-y');
+        }, 650); // 650ms match with CSS keyframe animation duration
+    } else if (promoModal) {
+        promoModal.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+}
+
+function openPromoModal() {
+    if (promoModal) {
+        promoModal.classList.remove('closing');
+        if (promoModalContent) {
+            promoModalContent.style.removeProperty('--fly-x');
+            promoModalContent.style.removeProperty('--fly-y');
         }
-        
-        // 2. Code is valid, generate unique token
-        const generatedToken = generateUniqueToken();
-        
-        // Disable button & show loading state
-        submitRedeemBtn.disabled = true;
-        const originalBtnText = submitRedeemBtn.textContent;
-        submitRedeemBtn.innerHTML = '<div class="btn-loader" style="display:inline-block; margin-right:8px; vertical-align:middle; border: 2px solid rgba(255,255,255,0.2); border-top-color: #fff; width: 14px; height: 14px; border-radius: 50%; animation: spin 0.8s linear infinite;"></div> SUBMITTING...';
-        
-        // Map to existing Google Sheet schema (name, email, message) so no Apps Script change is needed
-        const payload = {
-            name: nameInput.value.trim(),
-            email: whatsappInput.value.trim(), // sent in the email/phone field
-            message: `REDEEM CODE - Code: ${code} | Token: ${generatedToken}`
-        };
-        
-        // Send request to Google Sheet script
-        fetch(GOOGLE_SHEET_URL, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'text/plain;charset=utf-8'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(() => {
-            // Re-enable button
-            submitRedeemBtn.innerHTML = originalBtnText;
-            submitRedeemBtn.disabled = false;
-            
-            // Save to localStorage history
-            saveRedeemedToken(code, generatedToken);
-            
-            // Show Success Ticket
-            redeemForm.style.display = 'none';
-            if (ticketContainer && ticketTokenDisplay) {
-                ticketTokenDisplay.textContent = generatedToken;
-                ticketContainer.style.display = 'flex';
-            }
-            
-            // Reset form
-            redeemForm.reset();
-        })
-        .catch(error => {
-            console.error("Error submitting redeem request:", error);
-            
-            // Even if network fails or CORS blocks, we save it locally so the customer gets their token!
-            submitRedeemBtn.innerHTML = originalBtnText;
-            submitRedeemBtn.disabled = false;
-            
-            saveRedeemedToken(code, generatedToken);
-            
-            // Show success ticket anyway so user experience is not broken, but log warning
-            redeemForm.style.display = 'none';
-            if (ticketContainer && ticketTokenDisplay) {
-                ticketTokenDisplay.textContent = generatedToken;
-                ticketContainer.style.display = 'flex';
-            }
-            
-            if (redeemStatusContainer) {
-                redeemStatusContainer.textContent = "Token generated locally. (Offline Backup Saved)";
-                redeemStatusContainer.className = "redeem-status-container success";
-            }
-            
-            redeemForm.reset();
-        });
-    });
+        promoModal.classList.add('active');
+        document.body.classList.add('no-scroll'); // Lock scrolling
+    }
 }
 
-// Copy Token from success ticket
-if (copyTokenBtn && ticketTokenDisplay) {
-    copyTokenBtn.addEventListener('click', () => {
-        const tokenText = ticketTokenDisplay.textContent;
-        const originalHtml = copyTokenBtn.innerHTML;
-        navigator.clipboard.writeText(tokenText).then(() => {
-            copyTokenBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            setTimeout(() => {
-                copyTokenBtn.innerHTML = originalHtml;
-            }, 2000);
-        });
-    });
+if (openPromoModalDirectBtn) {
+    openPromoModalDirectBtn.addEventListener('click', openPromoModal);
 }
 
-// Redeem another code
-if (redeemAgainBtn) {
-    redeemAgainBtn.addEventListener('click', () => {
-        resetRedeemViews();
-    });
+if (closePromoModalBtn) {
+    closePromoModalBtn.addEventListener('click', closePromoModal);
 }
 
-// Toggle History View
-if (toggleHistoryViewBtn) {
-    toggleHistoryViewBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (redeemForm) redeemForm.style.display = 'none';
-        if (ticketContainer) ticketContainer.style.display = 'none';
-        if (redeemHistoryContainer) {
-            renderRedeemHistory();
-            redeemHistoryContainer.style.display = 'flex';
-        }
-    });
+if (promoModalOverlay) {
+    promoModalOverlay.addEventListener('click', closePromoModal);
 }
 
-// Back to registration form from history view
-if (backToFormBtn) {
-    backToFormBtn.addEventListener('click', () => {
-        resetRedeemViews();
-    });
-}
+// ============================================================
+// END OF FILE
+// ============================================================
 

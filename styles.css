@@ -117,22 +117,24 @@ h1, h2, h3, h4 {
     /* no overflow: hidden so football can roll across the whole screen */
 }
 
-.animated-football-header {
+.animated-trishul-header {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     left: -24px; /* Starts overlapping the logo boundary */
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 24px;
     display: inline-block;
     z-index: 10;
-    animation: footballRollAcross 14s linear infinite;
-    will-change: left, transform, opacity;
+    animation: trishulFlyAcross 14s linear infinite;
+    will-change: left, opacity;
     pointer-events: none;
 }
 
-.animated-football-header svg {
+.animated-trishul-header svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 5px rgba(0, 255, 204, 0.7));
+    filter: drop-shadow(0 0 6px rgba(255, 224, 102, 0.8));
 }
 
 .logo-text {
@@ -241,7 +243,6 @@ h1, h2, h3, h4 {
     padding: 0;
     overflow: visible;
     position: relative;
-    margin-right: -6px;
     box-shadow: none !important;
     transition: transform 0.3s ease;
 }
@@ -482,16 +483,19 @@ section {
 /* ============================================================
    INTERACTIVE SOCCER PITCH & FIFA 2026 WORLD CUP ANIMATION
    ============================================================ */
-.soccer-pitch-container {
+/* ============================================================
+   INTERACTIVE DURGA PUJA ALTAR VIBE ANIMATION
+   ============================================================ */
+.durga-altar-container {
     position: relative;
-    width: 160px;
-    height: 160px;
-    background: repeating-linear-gradient(90deg, #196f27 0px, #196f27 12px, #14591f 12px, #14591f 24px);
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle at center, #3d0c04 0%, #0f0302 100%);
     border-radius: var(--radius-md);
-    border: 2px solid rgba(0, 255, 204, 0.25);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 
-                inset 0 0 25px rgba(0, 0, 0, 0.4),
-                0 0 10px rgba(0, 255, 204, 0.1);
+    border: 2px solid rgba(255, 224, 102, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 
+                inset 0 0 25px rgba(255, 34, 0, 0.2),
+                0 0 10px rgba(255, 224, 102, 0.1);
     overflow: hidden;
     cursor: pointer;
     perspective: 500px;
@@ -500,267 +504,200 @@ section {
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.soccer-pitch-container:hover {
-    border-color: rgba(0, 255, 204, 0.5);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 
-                inset 0 0 20px rgba(0, 0, 0, 0.3),
-                0 0 18px rgba(0, 255, 204, 0.3);
+.durga-altar-container:hover {
+    border-color: rgba(255, 224, 102, 0.65);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 
+                inset 0 0 20px rgba(255, 34, 0, 0.3),
+                0 0 18px rgba(255, 224, 102, 0.25);
 }
 
-/* Pitch White Line Markings */
-.soccer-pitch-container::before {
-    content: '';
+/* Temple Arch border details */
+.altar-arch {
     position: absolute;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-    height: 45px;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    border-bottom: none;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(255, 224, 102, 0.2);
+    border-radius: var(--radius-md);
     pointer-events: none;
     z-index: 1;
 }
 
-.soccer-pitch-container::after {
-    content: '';
+/* Sacred Trishul */
+.sacred-trishul {
     position: absolute;
-    bottom: 45px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px;
-    height: 15px;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    border-bottom: none;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    pointer-events: none;
-    z-index: 1;
+    width: 60px;
+    height: 72px;
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+    animation: trishulFloat 3s infinite ease-in-out;
 }
 
-/* Penalty Spot / Extra Markings */
-.soccer-pitch-container .penalty-spot {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    width: 4px;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Goalpost */
-.goalpost {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 35px;
-    background: transparent;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    z-index: 2;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Goal Net */
-.soccer-net {
-    position: absolute;
-    top: 0;
-    left: 0;
+.sacred-trishul svg {
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-    background-size: 4px 4px;
-    transition: transform 0.15s ease-out;
-    transform-origin: top center;
 }
 
-/* Shaking Net Animation on Goal */
-.soccer-pitch-container.goal-scored .soccer-net {
-    animation: shakeNet 0.4s ease-in-out 2;
+/* Glowing animation for Trishul on activation */
+.durga-altar-container.activated .sacred-trishul {
+    filter: drop-shadow(0 0 8px #ff2200) drop-shadow(0 0 15px #ffe066);
+    animation: trishulVibrate 0.12s infinite linear;
 }
 
-@keyframes shakeNet {
-    0%, 100% { transform: scale(1) skewX(0deg); }
-    25% { transform: scaleY(1.08) scaleX(1.02) skewX(2deg); background-color: rgba(255, 255, 255, 0.15); }
-    75% { transform: scaleY(0.94) scaleX(0.98) skewX(-2deg); }
+@keyframes trishulFloat {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-3px); }
 }
 
-/* Interactive Football */
-.football {
+@keyframes trishulVibrate {
+    0%, 100% { transform: translateX(-50%) translate(0, 0) scale(1.04); }
+    25% { transform: translateX(-50%) translate(-0.6px, 0.6px) scale(1.04); }
+    50% { transform: translateX(-50%) translate(0.6px, -0.6px) scale(1.04); }
+    75% { transform: translateX(-50%) translate(-0.6px, -0.6px) scale(1.04); }
+}
+
+/* Traditional Dhunuchi Burner */
+.dhunuchi-burner {
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     left: 50%;
-    width: 26px;
-    height: 26px;
+    width: 48px;
+    height: 48px;
     transform: translateX(-50%);
-    cursor: pointer;
     z-index: 5;
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.45));
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.6));
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.football:hover {
-    transform: translateX(-50%) scale(1.15) rotate(15deg);
-    filter: drop-shadow(0 5px 8px rgba(0, 255, 204, 0.7));
+.dhunuchi-burner:hover {
+    transform: translateX(-50%) scale(1.1);
 }
 
-.football svg {
+.dhunuchi-burner svg {
     width: 100%;
     height: 100%;
-    transition: transform 0.2s ease;
 }
 
-/* Kicking Animation */
-.soccer-pitch-container.shooting .football {
-    animation: shootBall 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-    pointer-events: none;
-}
-
-@keyframes shootBall {
-    0% {
-        bottom: 15px;
-        transform: translateX(-50%) scale(1) rotate(0deg);
-        filter: drop-shadow(0 3px 3px rgba(0,0,0,0.45));
-        opacity: 1;
-    }
-    20% {
-        bottom: 75px;
-        transform: translateX(-50%) scale(0.65) rotate(180deg);
-        filter: drop-shadow(0 12px 8px rgba(0,0,0,0.3));
-    }
-    35% {
-        /* Hits net */
-        bottom: 120px;
-        transform: translateX(-50%) scale(0.48) rotate(360deg);
-        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
-        opacity: 0.85;
-    }
-    45% {
-        /* Drop down */
-        bottom: 105px;
-        transform: translateX(-50%) scale(0.46) rotate(420deg);
-        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
-        opacity: 0;
-    }
-    85% {
-        /* Respawn phase start */
-        bottom: 15px;
-        transform: translateX(-50%) scale(0.1) rotate(0deg);
-        filter: drop-shadow(0 0px 0px rgba(0,0,0,0));
-        opacity: 0;
-    }
-    100% {
-        /* Respawn fade in */
-        bottom: 15px;
-        transform: translateX(-50%) scale(1) rotate(0deg);
-        filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.45));
-        opacity: 1;
-    }
-}
-
-/* FIFA Trophy pitch container visual */
-.fifa-pitch-trophy {
+/* Dhunuchi fire/smoke effect */
+.dhunuchi-fire {
     position: absolute;
-    top: 50%;
+    top: 2px;
     left: 50%;
-    width: 55px;
-    height: 55px;
-    transform: translate(-50%, -40%) scale(0);
-    opacity: 0;
-    z-index: 4;
-    pointer-events: none;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at center, #ffdd67 20%, #ff5500 70%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    animation: fireFlicker 1.5s infinite alternate ease-in-out;
 }
 
-.fifa-pitch-trophy svg {
-    width: 100%;
-    height: 100%;
+@keyframes fireFlicker {
+    0% { transform: translateX(-50%) scale(0.95); opacity: 0.55; }
+    100% { transform: translateX(-50%) scale(1.15) translateY(-2px); opacity: 0.85; filter: blur(0.5px); }
 }
 
-.soccer-pitch-container.goal-scored .fifa-pitch-trophy {
+/* Dhunuchi fired up state */
+.durga-altar-container.activated .dhunuchi-fire {
+    background: radial-gradient(circle at center, #ffffff 10%, #ffdd67 40%, #ff2200 80%, transparent 100%);
+    width: 22px;
+    height: 22px;
+    top: -4px;
     opacity: 1;
-    transform: translate(-50%, -40%) scale(1);
-    animation: trophyGoldenVibe 1.2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px rgba(255, 34, 0, 0.9));
+    animation: fireFlashing 0.15s infinite alternate steps(2);
 }
 
-@keyframes trophyGoldenVibe {
-    0% {
-        filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.5)) drop-shadow(0 0 15px rgba(0, 255, 204, 0.2));
-        transform: translate(-50%, -40%) scale(1);
-    }
-    100% {
-        filter: drop-shadow(0 0 12px rgba(255, 224, 102, 0.9)) drop-shadow(0 0 25px rgba(0, 255, 204, 0.5));
-        transform: translate(-50%, -43%) scale(1.05);
-    }
+@keyframes fireFlashing {
+    0% { transform: translateX(-50%) scale(0.9); }
+    100% { transform: translateX(-50%) scale(1.1) rotate(5deg); }
 }
 
-/* Magical Goal Celebration text */
-.goal-celebration {
+/* Divine Reveal Face */
+.divine-reveal-face {
     position: absolute;
-    top: 35%;
+    top: 25px;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
+    width: 78px;
+    height: 78px;
+    transform: translate(-50%, 0) scale(0.7);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.3));
+}
+
+.divine-reveal-face svg {
+    width: 100%;
+    height: 100%;
+}
+
+.durga-altar-container.activated .divine-reveal-face {
+    opacity: 0.35;
+    transform: translate(-50%, 0) scale(1.05);
+}
+
+/* Divine Celebration message text */
+.divine-celebration {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 900;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 6px rgba(0, 255, 204, 0.9), 
-                 0 0 15px rgba(0, 255, 204, 0.7), 
-                 0 0 30px rgba(0, 255, 204, 0.5);
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px rgba(255, 34, 0, 0.95), 
+                 0 0 15px rgba(255, 224, 102, 0.85);
     opacity: 0;
     pointer-events: none;
     z-index: 6;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.soccer-pitch-container.goal-scored .goal-celebration {
+.durga-altar-container.activated .divine-celebration {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-    animation: pulseGoal 0.3s ease-in-out infinite alternate;
+    animation: pulseDivine 0.4s ease-in-out infinite alternate;
 }
 
-@keyframes pulseGoal {
+@keyframes pulseDivine {
     0% { transform: translate(-50%, -50%) scale(1); }
-    100% { transform: translate(-50%, -50%) scale(1.12); }
+    100% { transform: translate(-50%, -50%) scale(1.1); }
 }
 
-/* Confetti particles */
-.spark-particle {
+/* Petals raining */
+.divine-petal {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
+    font-size: 10px;
     opacity: 0;
-    z-index: 5;
+    z-index: 4;
     pointer-events: none;
 }
 
-/* Colors and coordinates of particles */
-.spark-particle.p1 { background: #ffe066; left: 50%; top: 20px; }
-.spark-particle.p2 { background: #00ff66; left: 45%; top: 22px; }
-.spark-particle.p3 { background: #00ffff; left: 55%; top: 22px; }
-.spark-particle.p4 { background: #ff6b6b; left: 48%; top: 18px; }
-.spark-particle.p5 { background: #ffffff; left: 52%; top: 18px; }
+/* Coordinates */
+.divine-petal.p1 { left: 45%; top: 30px; }
+.divine-petal.p2 { left: 35%; top: 35px; }
+.divine-petal.p3 { left: 55%; top: 35px; }
+.divine-petal.p4 { left: 40%; top: 25px; }
+.divine-petal.p5 { left: 50%; top: 25px; }
 
-.soccer-pitch-container.goal-scored .spark-particle {
-    animation: explodeConfetti 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+.durga-altar-container.activated .divine-petal {
+    animation: rainPetals 1.4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
-@keyframes explodeConfetti {
+@keyframes rainPetals {
     0% {
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) rotate(0deg) scale(0.5);
         opacity: 1;
     }
     100% {
@@ -768,11 +705,11 @@ section {
     }
 }
 
-.soccer-pitch-container.goal-scored .spark-particle.p1 { transform: translate(-40px, -30px) scale(1.4); }
-.soccer-pitch-container.goal-scored .spark-particle.p2 { transform: translate(-60px, -15px) scale(1.1); }
-.soccer-pitch-container.goal-scored .spark-particle.p3 { transform: translate(50px, -20px) scale(1.3); }
-.soccer-pitch-container.goal-scored .spark-particle.p4 { transform: translate(-20px, -45px) scale(1.2); }
-.soccer-pitch-container.goal-scored .spark-particle.p5 { transform: translate(30px, -40px) scale(1.5); }
+.durga-altar-container.activated .divine-petal.p1 { transform: translate(-45px, 80px) rotate(360deg) scale(1.3); }
+.durga-altar-container.activated .divine-petal.p2 { transform: translate(-65px, 60px) rotate(180deg) scale(1.1); }
+.durga-altar-container.activated .divine-petal.p3 { transform: translate(55px, 75px) rotate(-360deg) scale(1.4); }
+.durga-altar-container.activated .divine-petal.p4 { transform: translate(-25px, 90px) rotate(-180deg) scale(1.2); }
+.durga-altar-container.activated .divine-petal.p5 { transform: translate(35px, 85px) rotate(540deg) scale(1.5); }
 
 /* ============================================================
    REVIEWS GALLERY SLIDER
@@ -1079,100 +1016,84 @@ footer p::after {
 /* ============================================================
    ANIMATIONS
    ============================================================ */
-@keyframes footballRollAcross {
+@keyframes trishulFlyAcross {
     0% {
         left: -24px;
-        transform: rotate(0deg);
         opacity: 0;
     }
     1.5% {
         opacity: 1;
     }
     14.3% {
-        left: calc(100% - 24px);
-        transform: rotate(720deg);
+        left: calc(100% - 10px);
         opacity: 1;
     }
     21.4% {
         left: calc(100vw - 130px);
-        transform: rotate(1080deg);
         opacity: 0;
     }
     50% {
         left: calc(100vw - 130px);
-        transform: rotate(1080deg);
         opacity: 0;
     }
     51.5% {
         opacity: 1;
     }
     57.1% {
-        left: calc(100% - 24px);
-        transform: rotate(720deg);
+        left: calc(100% - 10px);
         opacity: 1;
     }
     71.4% {
         left: -24px;
-        transform: rotate(0deg);
         opacity: 1;
     }
     78.6% {
         left: -100px;
-        transform: rotate(-360deg);
         opacity: 0;
     }
     100% {
         left: -24px;
-        transform: rotate(0deg);
         opacity: 0;
     }
 }
 
-@keyframes footballRollAcrossMobile {
+@keyframes trishulFlyAcrossMobile {
     0% {
         left: -16px;
-        transform: rotate(0deg);
         opacity: 0;
     }
     1.5% {
         opacity: 1;
     }
     14.3% {
-        left: calc(100% - 17px);
-        transform: rotate(720deg);
+        left: calc(100% - 8px);
         opacity: 1;
     }
     21.4% {
         left: calc(100vw - 90px);
-        transform: rotate(1080deg);
         opacity: 0;
     }
     50% {
         left: calc(100vw - 90px);
-        transform: rotate(1080deg);
         opacity: 0;
     }
     51.5% {
         opacity: 1;
     }
     57.1% {
-        left: calc(100% - 17px);
-        transform: rotate(720deg);
+        left: calc(100% - 8px);
         opacity: 1;
     }
     71.4% {
         left: -16px;
-        transform: rotate(0deg);
         opacity: 1;
     }
     78.6% {
         left: -80px;
-        transform: rotate(-360deg);
         opacity: 0;
     }
     100% {
         left: -16px;
-        transform: rotate(0deg);
         opacity: 0;
     }
 }
@@ -1249,12 +1170,13 @@ footer p::after {
     .logo-brand-img { height: 44px; width: auto; }
     .logo-text-wrapper { padding-left: 0px; }
     .logo-text { font-size: 0.95rem; }
-    .animated-football-header {
-        width: 15px;
-        height: 15px;
-        top: auto;
+    .animated-trishul-header {
+        width: 14px;
+        height: 17px;
+        top: 50%;
+        transform: translateY(-50%);
         left: -16px;
-        animation-name: footballRollAcrossMobile;
+        animation-name: trishulFlyAcrossMobile;
     }
 
     section { padding: 22px 5%; }
@@ -2428,6 +2350,218 @@ footer p::after {
 }
 
 @keyframes fifaVibrate {
+    0%, 100% { transform: translate(0, 0) scale(1.08); }
+    25% { transform: translate(-0.8px, 0.8px) scale(1.08); }
+    50% { transform: translate(0.8px, -0.8px) scale(1.08); }
+    75% { transform: translate(-0.8px, -0.8px) scale(1.08); }
+}
+
+/* ============================================================
+   PROMOTIONAL POSTER MODAL
+   ============================================================ */
+.promo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000; /* Above header, quick panel, etc. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.promo-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promo-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(9, 10, 13, 0.85);
+    transition: opacity 0.5s ease;
+}
+
+.promo-modal-content {
+    position: relative;
+    max-width: 480px;
+    width: 88%;
+    z-index: 10001;
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    overflow: visible;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(0, 255, 204, 0.2);
+    border: 1.5px solid rgba(0, 255, 204, 0.2);
+}
+
+.promo-modal.active .promo-modal-content {
+    transform: scale(1);
+}
+
+.promo-modal.closing {
+    pointer-events: none;
+}
+
+.promo-modal.closing .promo-modal-overlay {
+    opacity: 0;
+}
+
+.promo-modal.closing .promo-modal-content {
+    animation: flyToButton 0.65s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+@keyframes flyToButton {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--fly-x, 0), var(--fly-y, 0)) scale(0.02);
+        opacity: 0;
+    }
+}
+
+.promo-poster-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+.promo-modal-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #090a0d;
+    border: 2px solid var(--accent-gold);
+    color: #fff;
+    font-size: 1.1rem; /* font size scaled for icon size */
+    font-weight: 600;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10002;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
+    transition: all 0.3s ease;
+}
+
+.promo-modal-close:hover {
+    transform: scale(1.15) rotate(90deg);
+    background: var(--accent-gold);
+    color: #090a0d;
+    box-shadow: 0 4px 22px rgba(0, 255, 204, 0.85);
+}
+
+@media (max-width: 480px) {
+    .promo-modal-content {
+        width: 90%;
+        max-width: 350px;
+    }
+    .promo-modal-close {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+        background: rgba(9, 10, 13, 0.85);
+        border-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .promo-modal-close:hover {
+        transform: scale(1.1) rotate(90deg);
+        background: #fff;
+        color: #090a0d;
+        box-shadow: 0 4px 15px rgba(255,255,255,0.8);
+    }
+}
+
+/* ============================================================
+   ANIME DURGA PUJA TRISHUL BUTTON STYLES
+   ============================================================ */
+.puja-btn {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    width: 38px;
+    height: 38px;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.puja-container {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Magic Ring: Anime Spell Circle behind Trishul */
+.puja-magic-ring {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px dashed #ff2200;
+    box-shadow: 0 0 8px rgba(255, 34, 0, 0.45), inset 0 0 8px rgba(255, 34, 0, 0.45);
+    animation: spinRing 6s linear infinite;
+    opacity: 0.85;
+}
+
+.puja-btn:hover .puja-magic-ring {
+    border-color: #00ffcc;
+    border-style: dotted;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.85), inset 0 0 12px rgba(0, 255, 204, 0.85);
+    animation-duration: 1.2s; /* spins super fast on hover like power charging! */
+}
+
+/* Durga Face SVG styling */
+.puja-svg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    filter: drop-shadow(0 0 2px rgba(255, 224, 102, 0.6));
+    animation: durgaFloat 3s infinite ease-in-out;
+}
+
+.puja-btn:hover .puja-svg {
+    filter: drop-shadow(0 0 6px #ff2200) drop-shadow(0 0 10px #ffe066);
+    animation: durgaVibrate 0.12s infinite linear; /* vibrates like charging raw energy! */
+}
+
+.puja-btn:hover {
+    transform: scale(1.18);
+}
+
+@keyframes durgaFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.04);
+    }
+}
+
+@keyframes durgaVibrate {
     0%, 100% { transform: translate(0, 0) scale(1.08); }
     25% { transform: translate(-0.8px, 0.8px) scale(1.08); }
     50% { transform: translate(0.8px, -0.8px) scale(1.08); }

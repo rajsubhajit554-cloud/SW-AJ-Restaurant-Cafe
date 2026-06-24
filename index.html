@@ -24,25 +24,15 @@
         <div class="logo-container">
             <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
             <div class="logo-text-wrapper">
-                <span class="animated-football-header">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#000000" stroke-width="4" />
-                        <polygon points="50,32 37,42 42,58 58,58 63,42" fill="#111111" />
-                        <line x1="50" y1="32" x2="50" y2="4" stroke="#000000" stroke-width="4" />
-                        <line x1="37" y1="42" x2="10" y2="30" stroke="#000000" stroke-width="4" />
-                        <line x1="42" y1="58" x2="25" y2="85" stroke="#000000" stroke-width="4" />
-                        <line x1="58" y1="58" x2="75" y2="85" stroke="#000000" stroke-width="4" />
-                        <line x1="63" y1="42" x2="90" y2="30" stroke="#000000" stroke-width="4" />
-                        <line x1="50" y1="4" x2="22" y2="18" stroke="#000000" stroke-width="4" />
-                        <line x1="50" y1="4" x2="78" y2="18" stroke="#000000" stroke-width="4" />
-                        <line x1="10" y1="30" x2="22" y2="18" stroke="#000000" stroke-width="4" />
-                        <line x1="90" y1="30" x2="78" y2="18" stroke="#000000" stroke-width="4" />
-                        <line x1="10" y1="30" x2="15" y2="58" stroke="#000000" stroke-width="4" />
-                        <line x1="90" y1="30" x2="85" y2="58" stroke="#000000" stroke-width="4" />
-                        <line x1="25" y1="85" x2="15" y2="58" stroke="#000000" stroke-width="4" />
-                        <line x1="75" y1="85" x2="85" y2="58" stroke="#000000" stroke-width="4" />
-                        <line x1="25" y1="85" x2="50" y2="96" stroke="#000000" stroke-width="4" />
-                        <line x1="75" y1="85" x2="50" y2="96" stroke="#000000" stroke-width="4" />
+                <span class="animated-trishul-header">
+                    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Divine Trishul in Gold -->
+                        <line x1="50" y1="10" x2="50" y2="115" stroke="#ffe066" stroke-width="6" stroke-linecap="round" />
+                        <path d="M50,65 C18,65 18,22 30,15" stroke="#ffe066" stroke-width="6" stroke-linecap="round" fill="none" />
+                        <path d="M30,15 L24,20 M30,15 L35,22" stroke="#ffe066" stroke-width="5" stroke-linecap="round" />
+                        <path d="M50,65 C82,65 82,22 70,15" stroke="#ffe066" stroke-width="6" stroke-linecap="round" fill="none" />
+                        <path d="M70,15 L76,20 M70,15 L65,22" stroke="#ffe066" stroke-width="5" stroke-linecap="round" />
+                        <path d="M50,10 L42,20 M50,10 L58,20" stroke="#ffe066" stroke-width="6" stroke-linecap="round" />
                     </svg>
                 </span>
                 <span class="logo-text">AJ Restaurant & Cafe</span>
@@ -57,6 +47,46 @@
         <div class="navbar-actions">
             <button class="dripza-btn-nav" id="open-quick-panel-btn" title="Quick Actions">
                 <img src="assets/dripza_icon.webp" alt="Dripza Icon" class="dripza-nav-icon">
+            </button>
+            
+            <!-- Anime Durga Puja Face Button for Poster -->
+            <button class="puja-btn" id="open-promo-modal-direct-btn" title="Show Durga Puja Poster">
+                <div class="puja-container">
+                    <div class="puja-magic-ring"></div>
+                    <svg class="puja-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="anime-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Third Eye (Trinayan) on forehead -->
+                        <path d="M50,15 Q44,26 50,37 Q56,26 50,15 Z" fill="#ff2200" stroke="#ffe066" stroke-width="1.5" />
+                        <circle cx="50" cy="26" r="2.5" fill="#ffffff" filter="url(#anime-glow)" />
+                        
+                        <!-- Left Eye & Eyebrow -->
+                        <path d="M18,33 Q32,23 45,34" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16,43 Q31,30 46,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M16,43 Q31,50 46,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="31" cy="41.5" r="4" fill="#ffffff" />
+                        <circle cx="31" cy="41.5" r="2" fill="#000000" />
+                        
+                        <!-- Right Eye & Eyebrow -->
+                        <path d="M82,33 Q68,23 55,34" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <path d="M84,43 Q69,30 54,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M84,43 Q69,50 54,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="69" cy="41.5" r="4" fill="#ffffff" />
+                        <circle cx="69" cy="41.5" r="2" fill="#000000" />
+                        
+                        <!-- Red Bindi (center forehead) -->
+                        <circle cx="50" cy="44" r="4.5" fill="#ff2200" filter="url(#anime-glow)" />
+                        
+                        <!-- Nose line & Nath (Nose Ring) -->
+                        <path d="M50,49 L50,64 L52,64" fill="none" stroke="#ffe066" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="36" cy="69" r="11" fill="none" stroke="#ffe066" stroke-width="2" />
+                        <circle cx="25" cy="69" r="2" fill="#ff2200" />
+                    </svg>
+                </div>
             </button>
             
             <div class="hamburger">
@@ -74,74 +104,88 @@
 
     </section>
 
-    <!-- Interactive/Fun Section (FIFA 2026 Soccer Vibe) -->
+    <!-- Interactive/Fun Section (Durga Puja Divine Vibe) -->
     <section id="vibe" class="vibe-section">
-        <h2 class="section-title">Experience The Magic</h2>
+        <h2 class="section-title">Maa Durga Special</h2>
         <div class="vibe-container">
-            <!-- Soccer Goal Interactive Container -->
-            <div class="soccer-pitch-container">
-                <div class="goalpost">
-                    <div class="soccer-net"></div>
-                </div>
-                <div class="football" id="interactive-football">
-                    <!-- Stylized SVG Football -->
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="48" fill="#ffffff" stroke="#000000" stroke-width="2" />
-                        <!-- Pentagons and Hexagons patterns -->
-                        <polygon points="50,30 35,41 40,58 60,58 65,41" fill="#111111" />
-                        <line x1="50" y1="30" x2="50" y2="2" stroke="#000000" stroke-width="2" />
-                        <line x1="35" y1="41" x2="10" y2="30" stroke="#000000" stroke-width="2" />
-                        <line x1="40" y1="58" x2="25" y2="85" stroke="#000000" stroke-width="2" />
-                        <line x1="60" y1="58" x2="75" y2="85" stroke="#000000" stroke-width="2" />
-                        <line x1="65" y1="41" x2="90" y2="30" stroke="#000000" stroke-width="2" />
-                        <!-- Inner lines -->
-                        <line x1="50" y1="2" x2="22" y2="18" stroke="#000000" stroke-width="2" />
-                        <line x1="50" y1="2" x2="78" y2="18" stroke="#000000" stroke-width="2" />
-                        <line x1="10" y1="30" x2="22" y2="18" stroke="#000000" stroke-width="2" />
-                        <line x1="90" y1="30" x2="78" y2="18" stroke="#000000" stroke-width="2" />
-                        <line x1="10" y1="30" x2="15" y2="58" stroke="#000000" stroke-width="2" />
-                        <line x1="90" y1="30" x2="85" y2="58" stroke="#000000" stroke-width="2" />
-                        <line x1="25" y1="85" x2="15" y2="58" stroke="#000000" stroke-width="2" />
-                        <line x1="75" y1="85" x2="85" y2="58" stroke="#000000" stroke-width="2" />
-                        <line x1="25" y1="85" x2="50" y2="98" stroke="#000000" stroke-width="2" />
-                        <line x1="75" y1="85" x2="50" y2="98" stroke="#000000" stroke-width="2" />
-                    </svg>
-                </div>
-                <!-- Magical Goal Celebration text -->
-                <div class="goal-celebration" id="goal-celebration">GOAL! ⚽</div>
+            <!-- Sacred Durga Altar Interactive Container -->
+            <div class="durga-altar-container" id="durga-altar">
+                <div class="altar-arch"></div>
                 
-                <!-- Hidden FIFA World Cup Trophy that reveals on GOAL -->
-                <div class="fifa-pitch-trophy" id="fifa-pitch-trophy">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Sacred Trishul (Trident) SVG -->
+                <div class="sacred-trishul" id="sacred-trishul">
+                    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="pitch-trophy-glow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="3" result="blur" />
+                            <filter id="divine-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="4" result="blur" />
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        <!-- Trophy Base (Gold) -->
-                        <path d="M35,76 L65,76 L60,88 L40,88 Z" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
-                        <!-- Green Malachite Bands -->
-                        <rect x="39" y="78" width="22" height="3" fill="#00ff66" />
-                        <rect x="38" y="83" width="24" height="3" fill="#00ff66" />
-                        <!-- Shaft -->
-                        <path d="M50,76 C38,65 36,48 44,38 C47,33 53,33 56,38 C64,48 62,65 50,76" fill="#d4af37" stroke="#ffe066" stroke-width="1" />
-                        <!-- Arms -->
-                        <path d="M40,43 C33,36 36,22 50,22 C64,22 67,36 60,43" fill="none" stroke="#ffe066" stroke-width="3" stroke-linecap="round" />
-                        <!-- Globe -->
-                        <circle cx="50" cy="22" r="10" fill="#ffe066" filter="url(#pitch-trophy-glow)" opacity="0.95" />
-                        <path d="M40,22 Q50,17 60,22 M40,22 Q50,27 60,22 M50,12 Q50,22 50,32" fill="none" stroke="#d4af37" stroke-width="1" />
-                        <!-- Text 26 -->
-                        <text x="50" y="58" font-family="'Outfit', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#pitch-trophy-glow)">26</text>
+                        <!-- Trishul Shaft -->
+                        <line x1="50" y1="30" x2="50" y2="115" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" />
+                        <!-- Trishul Base Ring -->
+                        <circle cx="50" cy="110" r="3" fill="#ffe066" />
+                        <!-- Trishul Prongs (Left, Right, Center) -->
+                        <path d="M50,110 L50,15" stroke="#ffe066" stroke-width="5" stroke-linecap="round" fill="none" /> <!-- Center Prong -->
+                        <!-- Left Prong -->
+                        <path d="M50,75 C25,75 22,35 32,30" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" fill="none" />
+                        <path d="M32,30 L27,33 L32,30 L35,36" stroke="#ffe066" stroke-width="3" stroke-linecap="round" fill="none" /> <!-- Left Arrow tip -->
+                        <!-- Right Prong -->
+                        <path d="M50,75 C75,75 78,35 68,30" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" fill="none" />
+                        <path d="M68,30 L73,33 L68,30 L65,36" stroke="#ffe066" stroke-width="3" stroke-linecap="round" fill="none" /> <!-- Right Arrow tip -->
+                        <!-- Center Prong arrow tip -->
+                        <path d="M50,15 L44,22 M50,15 L56,22" stroke="#ffe066" stroke-width="4" stroke-linecap="round" />
                     </svg>
                 </div>
 
-                <!-- Magical Sparks/Confetti particles -->
-                <div class="spark-particle p1"></div>
-                <div class="spark-particle p2"></div>
-                <div class="spark-particle p3"></div>
-                <div class="spark-particle p4"></div>
-                <div class="spark-particle p5"></div>
+                <!-- Clickable traditional Dhunuchi -->
+                <div class="dhunuchi-burner" id="dhunuchi-burner">
+                    <!-- Dhunuchi traditional shape -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Pedestal Base -->
+                        <path d="M35,90 L65,90 L58,65 L42,65 Z" fill="#b35c37" stroke="#8d4323" stroke-width="1.5" />
+                        <!-- Upper Clay Bowl -->
+                        <path d="M20,35 C20,65 80,65 80,35 Z" fill="#cc6a3f" stroke="#8d4323" stroke-width="1.5" />
+                        <ellipse cx="50" cy="35" rx="30" ry="10" fill="#e67e4f" stroke="#8d4323" stroke-width="1.5" />
+                        <!-- Traditional detailing / patterns -->
+                        <path d="M28,45 Q50,55 72,45" fill="none" stroke="#ffe066" stroke-width="1.5" opacity="0.6" />
+                    </svg>
+                    <!-- Glowing Fire Husk Flame -->
+                    <div class="dhunuchi-fire"></div>
+                </div>
+
+                <!-- Divine Message -->
+                <div class="divine-celebration" id="divine-celebration">জয় মা দুর্গা! 🔱</div>
+                
+                <!-- Hidden Divine Face that reveals on Activation -->
+                <div class="divine-reveal-face" id="divine-reveal-face">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Third eye, trinayan -->
+                        <path d="M50,22 Q45,30 50,38 Q55,30 50,22 Z" fill="#ff2200" stroke="#ffe066" stroke-width="1.5" />
+                        <!-- Forehead Bindi -->
+                        <circle cx="50" cy="48" r="4.5" fill="#ff2200" />
+                        <!-- Eyes -->
+                        <path d="M22,40 Q35,32 46,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M22,40 Q35,46 46,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="34" cy="41" r="3.5" fill="#ffffff" />
+                        <circle cx="34" cy="41" r="1.5" fill="#000000" />
+                        
+                        <path d="M78,40 Q65,32 54,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M78,40 Q65,46 54,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="66" cy="41" r="3.5" fill="#ffffff" />
+                        <circle cx="66" cy="41" r="1.5" fill="#000000" />
+                        <!-- Nath nose ring -->
+                        <circle cx="38" cy="62" r="9" fill="none" stroke="#ffe066" stroke-width="1.5" />
+                        <circle cx="29" cy="62" r="2" fill="#ff2200" />
+                    </svg>
+                </div>
+
+                <!-- Floating Flowers (Petals) -->
+                <div class="divine-petal p1">🌸</div>
+                <div class="divine-petal p2">🌼</div>
+                <div class="divine-petal p3">🌸</div>
+                <div class="divine-petal p4">🌼</div>
+                <div class="divine-petal p5">🌸</div>
             </div>
         </div>
     </section>
@@ -242,9 +286,6 @@
             <button class="quick-panel-btn" id="open-msg-panel-from-quick-btn">
                 <i class="fas fa-paper-plane"></i> Send a Message
             </button>
-            <button class="quick-panel-btn" id="open-redeem-panel-from-quick-btn">
-                <i class="fas fa-ticket-alt"></i> Redeem Code
-            </button>
         </div>
     </div>
 
@@ -278,121 +319,14 @@
         <div class="msg-status-container" id="msg-status-container"></div>
     </div>
 
-    <!-- Redeem Panel Overlay -->
-    <div class="redeem-panel-overlay" id="redeem-panel-overlay"></div>
 
-    <!-- Slide-out Redeem Panel -->
-    <div class="redeem-panel" id="redeem-panel">
-        <button class="close-redeem-panel-btn" id="close-redeem-panel-btn">&times;</button>
-        
-        <div class="redeem-panel-wrapper">
-            <!-- Left Column: Red Sidebar -->
-            <div class="redeem-left-col">
-                <div class="redeem-brand-header">
-                    <h2>Quick Registration</h2>
-                </div>
-                
-                <div class="redeem-features">
-                    <div class="redeem-feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Secure Access</h4>
-                            <p>Your data is encrypted and protected.</p>
-                        </div>
-                    </div>
-                    <div class="redeem-feature-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>Instant Notifications</h4>
-                            <p>Get updates directly via WhatsApp.</p>
-                        </div>
-                    </div>
-                    <div class="redeem-feature-item">
-                        <i class="fas fa-wand-magic-sparkles"></i>
-                        <div>
-                            <h4>Priority Support</h4>
-                            <p>24/7 dedicated assistance for members.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="redeem-left-footer">
-                    <p>&copy; 2026 AJ CAFE PANEL</p>
-                </div>
-            </div>
-            
-            <!-- Right Column: Registration Form & Ticket/History -->
-            <div class="redeem-right-col">
-                <form id="redeem-panel-form">
-                    <div class="form-group icon-input-group">
-                        <label for="redeem-name">NAME</label>
-                        <div class="input-with-icon">
-                            <i class="far fa-user"></i>
-                            <input type="text" id="redeem-name" required placeholder="John Doe">
-                        </div>
-                    </div>
-                    <div class="form-group icon-input-group">
-                        <label for="redeem-whatsapp">WHATSAPP NUMBER</label>
-                        <div class="input-with-icon">
-                            <i class="fab fa-whatsapp"></i>
-                            <input type="text" id="redeem-whatsapp" required placeholder="+91 (555) 000-0000">
-                        </div>
-                    </div>
-                    <div class="form-group icon-input-group">
-                        <label for="redeem-code">INVITATION CODE</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-key"></i>
-                            <input type="text" id="redeem-code" required placeholder="HZN-XXXX">
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-redeem-btn" id="submit-redeem-btn">
-                        SUBMIT REQUEST
-                    </button>
-                    
-                    <div class="redeem-subtext-link">
-                        Already have an account? <a href="#" id="toggle-history-view-btn">Log in here / View tokens</a>
-                    </div>
-                </form>
-                
-                <!-- Status Container -->
-                <div class="redeem-status-container" id="redeem-status-container"></div>
-                
-                <!-- Ticket Container (Success State) -->
-                <div class="ticket-container" id="ticket-container" style="display: none;">
-                    <div class="ticket">
-                        <div class="ticket-header">
-                            <h3>AJ Restaurant & Cafe</h3>
-                            <p>VERIFIED TOKEN</p>
-                        </div>
-                        <div class="ticket-divider">
-                            <span class="left-notch"></span>
-                            <span class="right-notch"></span>
-                        </div>
-                        <div class="ticket-body">
-                            <p class="ticket-label">Your Unique Token</p>
-                            <h2 class="ticket-token" id="ticket-token-display">AJT-F8K2P9</h2>
-                            <p class="ticket-subtext">Show this token at the counter to claim your discount/offer.</p>
-                            <button type="button" class="copy-token-btn" id="copy-token-btn">
-                                <i class="far fa-copy"></i> Copy Token
-                            </button>
-                        </div>
-                    </div>
-                    <button type="button" class="redeem-again-btn" id="redeem-again-btn">
-                        Redeem Another Code
-                    </button>
-                </div>
-                
-                <!-- History Container -->
-                <div class="redeem-history-container" id="redeem-history-container" style="display: none;">
-                    <h3>Your Claimed Tokens <span class="history-badge" id="history-badge">0</span></h3>
-                    <div class="history-list" id="history-list">
-                        <!-- Populated dynamically via JS -->
-                    </div>
-                    <button type="button" class="back-to-form-btn" id="back-to-form-btn">
-                        Back to Form
-                    </button>
-                </div>
-            </div>
+
+    <!-- Promo Poster Modal -->
+    <div class="promo-modal" id="promo-modal">
+        <div class="promo-modal-overlay"></div>
+        <div class="promo-modal-content">
+            <button class="promo-modal-close" id="close-promo-modal-btn" aria-label="Close Promo Modal"><i class="fas fa-times"></i></button>
+            <img src="assets/aj durgapuja.jpeg" alt="Durga Puja Celebration AJ Restaurant" class="promo-poster-img">
         </div>
     </div>
 
