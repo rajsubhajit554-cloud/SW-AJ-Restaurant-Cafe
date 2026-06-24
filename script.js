@@ -425,6 +425,14 @@ function resetRedeemViews() {
     }
 }
 
+const openRedeemPanelDirectBtn = document.getElementById('open-redeem-panel-direct-btn');
+
+if (openRedeemPanelDirectBtn) {
+    openRedeemPanelDirectBtn.addEventListener('click', () => {
+        openRedeemPanel();
+    });
+}
+
 if (openRedeemPanelBtn) {
     openRedeemPanelBtn.addEventListener('click', () => {
         closeQuickPanel();
