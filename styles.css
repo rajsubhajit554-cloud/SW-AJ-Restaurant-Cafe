@@ -121,22 +121,49 @@ h1, h2, h3, h4 {
 
 .nav-links {
     display: flex;
-    list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 5%; /* Align with padding of navbar actions */
+    width: 210px;
+    height: auto;
+    background: rgba(15, 16, 20, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 1.5rem 0;
     gap: 0.25rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     align-items: center;
+    list-style: none;
+    z-index: 1000;
+}
+
+.nav-links.nav-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 500;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 0.45rem 1rem;
+    padding: 0.65rem 1.4rem;
     border-radius: var(--radius-sm);
     transition: var(--transition);
     position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .nav-links a::after {
@@ -166,53 +193,53 @@ h1, h2, h3, h4 {
     gap: 1rem;
 }
 .dripza-btn-nav {
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
     width: 38px;
     height: 38px;
-    border-radius: var(--radius-sm);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
-    padding: 3px;
-    overflow: visible; /* Allow glow shadow to expand outside */
+    padding: 0;
+    overflow: visible;
     position: relative;
-    animation: dripzaPulse 2.5s infinite ease-in-out;
+    box-shadow: none !important;
+    transition: transform 0.3s ease;
 }
 
 .dripza-btn-nav:hover {
-    background: rgba(0, 255, 204, 0.15);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
-    transform: translateY(-2px) scale(1.08);
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translateY(-2px);
 }
 
 .dripza-nav-icon {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: calc(var(--radius-sm) - 3px);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: dripzaBreathing 3.5s infinite ease-in-out;
+    transition: filter 0.4s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .dripza-btn-nav:hover .dripza-nav-icon {
-    transform: rotate(360deg);
+    transform: scale(1.15) rotate(360deg);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.9));
 }
 
-@keyframes dripzaPulse {
+@keyframes dripzaBreathing {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(0, 255, 204, 0.2);
         transform: scale(1);
+        filter: drop-shadow(0 0 2px rgba(0, 255, 204, 0.25));
     }
     50% {
-        box-shadow: 0 0 15px rgba(0, 255, 204, 0.55);
         transform: scale(1.06);
+        filter: drop-shadow(0 0 7px rgba(0, 255, 204, 0.65));
     }
 }
 
 .hamburger {
-    display: none;
+    display: block; /* Show hamburger globally on PC and Mobile */
     cursor: pointer;
     font-size: 1.4rem;
     color: var(--text-primary);
@@ -960,40 +987,7 @@ footer p::after {
         height: 54px;
     }
 
-    .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 210px;
-        height: auto;
-        background: rgba(15, 16, 20, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(0, 255, 204, 0.2);
-        border-radius: 0 0 var(--radius-md) var(--radius-md);
-        padding: 1.5rem 0;
-        gap: 0.25rem;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-        opacity: 0;
-        transform: translateY(-8px);
-        pointer-events: none;
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        align-items: center;
-    }
-
-    .nav-links.nav-active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    .nav-links a {
-        font-size: 0.95rem;
-        padding: 0.65rem 1.4rem;
-    }
-
-    .hamburger { display: block; }
+        /* Nav links and hamburger are inherited from global desktop view styles */
 
     .logo-brand-img { height: 44px; width: auto; }
     .logo-text { font-size: 0.95rem; }

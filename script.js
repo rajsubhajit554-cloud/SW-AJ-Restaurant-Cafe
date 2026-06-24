@@ -216,7 +216,7 @@ function closeQuickPanel() {
     if (quickPanel && quickPanelOverlay) {
         quickPanel.classList.remove('active');
         quickPanelOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore page scrolling
+        document.body.style.overflowY = 'auto'; // Restore page scrolling
     }
 }
 
@@ -255,7 +255,7 @@ function closeMessagePanel() {
     if (msgPanel && msgPanelOverlay) {
         msgPanel.classList.remove('active');
         msgPanelOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore page scrolling
+        document.body.style.overflowY = 'auto'; // Restore page scrolling
         // Reset status message
         if (msgStatusContainer) {
             msgStatusContainer.style.display = 'none';
@@ -385,7 +385,7 @@ function closeRedeemPanel() {
     if (redeemPanel && redeemPanelOverlay) {
         redeemPanel.classList.remove('active');
         redeemPanelOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore page scrolling
+        document.body.style.overflowY = 'auto'; // Restore page scrolling
         
         // Reset states to form view
         resetRedeemViews();
