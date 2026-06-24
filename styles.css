@@ -44,8 +44,11 @@ body {
     background-color: var(--bg-deep);
     color: var(--text-primary);
     overflow-x: hidden;
-    overflow-y: hidden; /* Lock scroll initially for preloader */
     line-height: 1.6;
+}
+
+body.no-scroll {
+    overflow-y: hidden !important;
 }
 
 h1, h2, h3, h4 {

@@ -171,15 +171,21 @@ if (reviewItems.length > 0) {
 }
 
 // Preloader Screen Logic (Fades out after 1 second and restores scrolling)
-window.addEventListener('DOMContentLoaded', () => {
+function initPreloader() {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add('preloader-fade-out');
-            document.body.style.overflowY = 'auto'; // Re-enable vertical scrolling
+            document.body.classList.remove('no-scroll'); // Re-enable vertical scrolling
         }, 1000); // 1 second duration
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', initPreloader);
+} else {
+    initPreloader();
+}
 
 // Food Bowl Click-to-Pour Soup Animation
 const bowlContainer = document.querySelector('.hot-bowl-container');
@@ -208,7 +214,7 @@ function openQuickPanel() {
     if (quickPanel && quickPanelOverlay) {
         quickPanel.classList.add('active');
         quickPanelOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Disable page scrolling
+        document.body.classList.add('no-scroll'); // Disable page scrolling
     }
 }
 
@@ -216,7 +222,7 @@ function closeQuickPanel() {
     if (quickPanel && quickPanelOverlay) {
         quickPanel.classList.remove('active');
         quickPanelOverlay.classList.remove('active');
-        document.body.style.overflowY = 'auto'; // Restore page scrolling
+        document.body.classList.remove('no-scroll'); // Restore page scrolling
     }
 }
 
@@ -247,7 +253,7 @@ function openMessagePanel() {
     if (msgPanel && msgPanelOverlay) {
         msgPanel.classList.add('active');
         msgPanelOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Disable page scrolling
+        document.body.classList.add('no-scroll'); // Disable page scrolling
     }
 }
 
@@ -255,7 +261,7 @@ function closeMessagePanel() {
     if (msgPanel && msgPanelOverlay) {
         msgPanel.classList.remove('active');
         msgPanelOverlay.classList.remove('active');
-        document.body.style.overflowY = 'auto'; // Restore page scrolling
+        document.body.classList.remove('no-scroll'); // Restore page scrolling
         // Reset status message
         if (msgStatusContainer) {
             msgStatusContainer.style.display = 'none';
@@ -376,7 +382,7 @@ function openRedeemPanel() {
     if (redeemPanel && redeemPanelOverlay) {
         redeemPanel.classList.add('active');
         redeemPanelOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Disable page scrolling
+        document.body.classList.add('no-scroll'); // Disable page scrolling
         renderRedeemHistory(); // Render up-to-date history
     }
 }
@@ -385,7 +391,7 @@ function closeRedeemPanel() {
     if (redeemPanel && redeemPanelOverlay) {
         redeemPanel.classList.remove('active');
         redeemPanelOverlay.classList.remove('active');
-        document.body.style.overflowY = 'auto'; // Restore page scrolling
+        document.body.classList.remove('no-scroll'); // Restore page scrolling
         
         // Reset states to form view
         resetRedeemViews();
