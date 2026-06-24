@@ -263,7 +263,8 @@ h1, h2, h3, h4 {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    max-height: 75vh;
+    height: 56.25vw; /* Explicit 16:9 height to prevent collapse */
+    min-height: 400px; /* Safe minimum height for PC banner */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,7 +365,7 @@ h1, h2, h3, h4 {
    SECTION SHARED
    ============================================================ */
 section {
-    padding: 50px 6%;
+    padding: 35px 6%;
 }
 
 .section-title {
@@ -1118,9 +1119,12 @@ footer p::after {
     .logo-brand-img { height: 44px; width: auto; }
     .logo-text { font-size: 0.95rem; }
 
-    section { padding: 60px 5%; }
+    section { padding: 22px 5%; }
 
-    .section-title { font-size: 2rem; }
+    .section-title {
+        font-size: 1.55rem;
+        margin-bottom: 0.8rem;
+    }
     .cta-button {
         padding: 10px 22px;
         font-size: 0.82rem;
