@@ -95,7 +95,7 @@ h1, h2, h3, h4 {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 0.4rem; /* Reduced gap to move closer to logo image */
+    gap: 2px; /* Set gap to almost zero to align right next to logo image */
 }
 
 .logo-brand-img {
@@ -113,13 +113,13 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 18px; /* Reduced padding to bring text closer to the left */
+    padding-left: 0px; /* Removed padding entirely to start text immediately */
     /* no overflow: hidden so football can roll across the whole screen */
 }
 
 .animated-football-header {
     position: absolute;
-    left: -15px; /* Starts further left closer to logo image */
+    left: -24px; /* Starts overlapping the logo boundary */
     width: 22px;
     height: 22px;
     display: inline-block;
@@ -1080,7 +1080,7 @@ footer p::after {
    ============================================================ */
 @keyframes footballRollAcross {
     0% {
-        left: -15px;
+        left: -24px;
         transform: rotate(0deg);
         opacity: 0;
     }
@@ -1093,17 +1093,17 @@ footer p::after {
         opacity: 1;
     }
     40% {
-        left: calc(100vw - 120px);
+        left: calc(100vw - 150px);
         transform: rotate(1800deg);
         opacity: 1;
     }
     44% {
-        left: calc(100vw - 100px);
+        left: calc(100vw - 130px);
         transform: rotate(1850deg);
         opacity: 0;
     }
     45%, 100% {
-        left: -15px;
+        left: -24px;
         transform: rotate(0deg);
         opacity: 0;
     }
@@ -1111,7 +1111,7 @@ footer p::after {
 
 @keyframes footballRollAcrossMobile {
     0% {
-        left: -10px;
+        left: -16px;
         transform: rotate(0deg);
         opacity: 0;
     }
@@ -1124,17 +1124,17 @@ footer p::after {
         opacity: 1;
     }
     40% {
-        left: calc(100vw - 80px);
+        left: calc(100vw - 110px);
         transform: rotate(1800deg);
         opacity: 1;
     }
     44% {
-        left: calc(100vw - 60px);
+        left: calc(100vw - 90px);
         transform: rotate(1850deg);
         opacity: 0;
     }
     45%, 100% {
-        left: -10px;
+        left: -16px;
         transform: rotate(0deg);
         opacity: 0;
     }
@@ -1203,13 +1203,13 @@ footer p::after {
         /* Nav links and hamburger are inherited from global desktop view styles */
 
     .logo-brand-img { height: 44px; width: auto; }
-    .logo-text-wrapper { padding-left: 12px; }
+    .logo-text-wrapper { padding-left: 0px; }
     .logo-text { font-size: 0.95rem; }
     .animated-football-header {
         width: 15px;
         height: 15px;
         top: auto;
-        left: -10px;
+        left: -16px;
         animation-name: footballRollAcrossMobile;
     }
 
