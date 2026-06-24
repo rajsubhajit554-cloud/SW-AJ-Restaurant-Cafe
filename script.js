@@ -34,6 +34,13 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Close menu when user scrolls the page
+window.addEventListener('scroll', () => {
+    if (navLinks.classList.contains('nav-active')) {
+        navLinks.classList.remove('nav-active');
+    }
+});
+
 // Reveal Elements on Scroll
 const revealElements = document.querySelectorAll('.reviews-slider-container, .vibe-text, .contact-container');
 
