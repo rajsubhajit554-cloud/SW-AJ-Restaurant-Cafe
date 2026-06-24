@@ -211,17 +211,17 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// Durga Puja Altar Click-to-Activate Animation
-const dhunuchiBurner = document.getElementById('dhunuchi-burner');
-const altarContainer = document.getElementById('durga-altar');
-if (dhunuchiBurner && altarContainer) {
-    dhunuchiBurner.addEventListener('click', () => {
-        if (!altarContainer.classList.contains('activated')) {
-            altarContainer.classList.add('activated');
+// FIFA World Cup Restaurant Feast Click-to-Activate Animation
+const soccerCloche = document.getElementById('soccer-cloche');
+const feastAltar = document.getElementById('fifa-feast-altar');
+if (soccerCloche && feastAltar) {
+    soccerCloche.addEventListener('click', () => {
+        if (!feastAltar.classList.contains('activated')) {
+            feastAltar.classList.add('activated');
             
             // Reset animations after 2.5 seconds
             setTimeout(() => {
-                altarContainer.classList.remove('activated');
+                feastAltar.classList.remove('activated');
             }, 2500);
         }
     });
@@ -230,41 +230,6 @@ if (dhunuchiBurner && altarContainer) {
 // ============================================================
 // SLIDE-OUT MESSAGE PANEL LOGIC
 // ============================================================
-// Quick Actions Panel Logic
-const openQuickPanelBtn = document.getElementById('open-quick-panel-btn');
-const closeQuickPanelBtn = document.getElementById('close-quick-panel-btn');
-const quickPanel = document.getElementById('quick-panel');
-const quickPanelOverlay = document.getElementById('quick-panel-overlay');
-const openMsgPanelFromQuickBtn = document.getElementById('open-msg-panel-from-quick-btn');
-
-function openQuickPanel() {
-    if (quickPanel && quickPanelOverlay) {
-        quickPanel.classList.add('active');
-        quickPanelOverlay.classList.add('active');
-        document.body.classList.add('no-scroll'); // Disable page scrolling
-    }
-}
-
-function closeQuickPanel() {
-    if (quickPanel && quickPanelOverlay) {
-        quickPanel.classList.remove('active');
-        quickPanelOverlay.classList.remove('active');
-        document.body.classList.remove('no-scroll'); // Restore page scrolling
-    }
-}
-
-if (openQuickPanelBtn) {
-    openQuickPanelBtn.addEventListener('click', openQuickPanel);
-}
-
-if (closeQuickPanelBtn) {
-    closeQuickPanelBtn.addEventListener('click', closeQuickPanel);
-}
-
-if (quickPanelOverlay) {
-    quickPanelOverlay.addEventListener('click', closeQuickPanel);
-}
-
 // Message Panel Logic
 const closeMsgPanelBtn = document.getElementById('close-msg-panel-btn');
 const msgPanel = document.getElementById('msg-panel');
@@ -272,6 +237,7 @@ const msgPanelOverlay = document.getElementById('msg-panel-overlay');
 const msgPanelForm = document.getElementById('msg-panel-form');
 const submitMsgBtn = document.getElementById('submit-msg-btn');
 const msgStatusContainer = document.getElementById('msg-status-container');
+const openMsgPanelDirectBtn = document.getElementById('open-msg-panel-direct-btn');
 
 // Google Sheet Web App URL provided by user
 const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwFRBfgECv4kyCOJCrjDmpbWn4oIkiCJOpGndOI_d3SCzTtWGuG14uJZ2xGtUIDEsL8/exec";
@@ -297,11 +263,8 @@ function closeMessagePanel() {
     }
 }
 
-if (openMsgPanelFromQuickBtn) {
-    openMsgPanelFromQuickBtn.addEventListener('click', () => {
-        closeQuickPanel();
-        setTimeout(openMessagePanel, 350); // smooth panel change transition
-    });
+if (openMsgPanelDirectBtn) {
+    openMsgPanelDirectBtn.addEventListener('click', openMessagePanel);
 }
 
 if (closeMsgPanelBtn) {

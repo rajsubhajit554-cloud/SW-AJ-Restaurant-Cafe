@@ -482,18 +482,18 @@ section {
    INTERACTIVE SOCCER PITCH & FIFA 2026 WORLD CUP ANIMATION
    ============================================================ */
 /* ============================================================
-   INTERACTIVE DURGA PUJA ALTAR VIBE ANIMATION
+   INTERACTIVE FIFA CHAMPIONSHIP FEAST STADIUM ALTAR
    ============================================================ */
-.durga-altar-container {
+.fifa-feast-container {
     position: relative;
-    width: 170px;
-    height: 170px;
-    background: radial-gradient(circle at center, #3d0c04 0%, #0f0302 100%);
+    width: 190px;
+    height: 190px;
+    background: radial-gradient(circle at center, #15451c 0%, #061709 100%);
     border-radius: var(--radius-md);
-    border: 2px solid rgba(255, 224, 102, 0.35);
+    border: 2px solid rgba(0, 255, 102, 0.35);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 
-                inset 0 0 25px rgba(255, 34, 0, 0.2),
-                0 0 10px rgba(255, 224, 102, 0.1);
+                inset 0 0 25px rgba(0, 255, 102, 0.2),
+                0 0 10px rgba(0, 255, 102, 0.1);
     overflow: hidden;
     cursor: pointer;
     perspective: 500px;
@@ -502,198 +502,170 @@ section {
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.durga-altar-container:hover {
+.fifa-feast-container:hover {
     border-color: rgba(255, 224, 102, 0.65);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 
-                inset 0 0 20px rgba(255, 34, 0, 0.3),
-                0 0 18px rgba(255, 224, 102, 0.25);
+                inset 0 0 20px rgba(0, 255, 102, 0.3),
+                0 0 18px rgba(0, 255, 102, 0.25);
 }
 
-/* Temple Arch border details */
-.altar-arch {
+/* Stadium pitch layout / line circles */
+.stadium-arch {
     position: absolute;
     top: 5px;
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border: 1px dashed rgba(255, 224, 102, 0.2);
+    border: 1px dashed rgba(0, 255, 102, 0.2);
     border-radius: var(--radius-md);
     pointer-events: none;
     z-index: 1;
 }
 
-/* Sacred Trishul */
-.sacred-trishul {
+/* Floating Chef FIFA Altar Trophy */
+.fifa-altar-trophy {
     position: absolute;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 72px;
+    width: 65px;
+    height: 78px;
     z-index: 3;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
-    animation: trishulFloat 3s infinite ease-in-out;
+    animation: trophyFloat 3.5s infinite ease-in-out;
 }
 
-.sacred-trishul svg {
+.fifa-altar-trophy svg {
     width: 100%;
     height: 100%;
 }
 
-/* Glowing animation for Trishul on activation */
-.durga-altar-container.activated .sacred-trishul {
-    filter: drop-shadow(0 0 8px #ff2200) drop-shadow(0 0 15px #ffe066);
-    animation: trishulVibrate 0.12s infinite linear;
+.fifa-feast-container.activated .fifa-altar-trophy {
+    filter: drop-shadow(0 0 8px #00ff66) drop-shadow(0 0 15px #ffe066);
+    animation: trophyVibrate 0.12s infinite linear;
 }
 
-@keyframes trishulFloat {
+@keyframes trophyFloat {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-3px); }
 }
 
-@keyframes trishulVibrate {
+@keyframes trophyVibrate {
     0%, 100% { transform: translateX(-50%) translate(0, 0) scale(1.04); }
     25% { transform: translateX(-50%) translate(-0.6px, 0.6px) scale(1.04); }
     50% { transform: translateX(-50%) translate(0.6px, -0.6px) scale(1.04); }
     75% { transform: translateX(-50%) translate(-0.6px, -0.6px) scale(1.04); }
 }
 
-/* Traditional Dhunuchi Burner */
-.dhunuchi-burner {
+/* Clickable Soccer Ball Cloche (serving dish dome) */
+.soccer-cloche {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     left: 50%;
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     transform: translateX(-50%);
     z-index: 5;
     cursor: pointer;
-    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.6));
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 3px 4px rgba(0,0,0,0.6));
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s ease;
 }
 
-.dhunuchi-burner:hover {
-    transform: translateX(-50%) scale(1.1);
+.soccer-cloche:hover {
+    transform: translateX(-50%) scale(1.08);
 }
 
-.dhunuchi-burner svg {
+.soccer-cloche svg {
     width: 100%;
     height: 100%;
 }
 
-/* Dhunuchi fire/smoke effect */
-.dhunuchi-fire {
+/* Fired up / Lifted cloche state */
+.fifa-feast-container.activated .soccer-cloche {
+    transform: translateX(-50%) translateY(-55px) rotate(-22deg) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hidden Special Burger revealed */
+.championship-burger {
     position: absolute;
-    top: 2px;
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 14px;
-    background: radial-gradient(circle at center, #ffdd67 20%, #ff5500 70%, transparent 100%);
-    border-radius: 50%;
-    opacity: 0.6;
-    mix-blend-mode: screen;
-    animation: fireFlicker 1.5s infinite alternate ease-in-out;
-}
-
-@keyframes fireFlicker {
-    0% { transform: translateX(-50%) scale(0.95); opacity: 0.55; }
-    100% { transform: translateX(-50%) scale(1.15) translateY(-2px); opacity: 0.85; filter: blur(0.5px); }
-}
-
-/* Dhunuchi fired up state */
-.durga-altar-container.activated .dhunuchi-fire {
-    background: radial-gradient(circle at center, #ffffff 10%, #ffdd67 40%, #ff2200 80%, transparent 100%);
-    width: 22px;
-    height: 22px;
-    top: -4px;
-    opacity: 1;
-    filter: drop-shadow(0 0 10px rgba(255, 34, 0, 0.9));
-    animation: fireFlashing 0.15s infinite alternate steps(2);
-}
-
-@keyframes fireFlashing {
-    0% { transform: translateX(-50%) scale(0.9); }
-    100% { transform: translateX(-50%) scale(1.1) rotate(5deg); }
-}
-
-/* Divine Reveal Face */
-.divine-reveal-face {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    width: 78px;
-    height: 78px;
-    transform: translate(-50%, 0) scale(0.7);
+    width: 66px;
+    height: 66px;
+    transform: translate(-50%, 15px) scale(0.6);
     opacity: 0;
     z-index: 2;
     pointer-events: none;
-    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.3));
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
 }
 
-.divine-reveal-face svg {
+.championship-burger svg {
     width: 100%;
     height: 100%;
 }
 
-.durga-altar-container.activated .divine-reveal-face {
-    opacity: 0.35;
-    transform: translate(-50%, 0) scale(1.05);
+.fifa-feast-container.activated .championship-burger {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.2);
+    filter: drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 16px rgba(255, 224, 102, 0.8));
 }
 
-/* Divine Celebration message text */
-.divine-celebration {
+/* GOAL Neon Message */
+.goal-celebration {
     position: absolute;
     top: 36%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 900;
     color: #ffffff;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 6px rgba(255, 34, 0, 0.95), 
-                 0 0 15px rgba(255, 224, 102, 0.85);
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #00ff66, 
+                 0 0 20px #ffe066;
     opacity: 0;
     pointer-events: none;
     z-index: 6;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.durga-altar-container.activated .divine-celebration {
+.fifa-feast-container.activated .goal-celebration {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-    animation: pulseDivine 0.4s ease-in-out infinite alternate;
+    animation: pulseGoal 0.4s ease-in-out infinite alternate;
 }
 
-@keyframes pulseDivine {
+@keyframes pulseGoal {
     0% { transform: translate(-50%, -50%) scale(1); }
-    100% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1.15); }
 }
 
-/* Petals raining */
-.divine-petal {
+/* Feast Rain particles */
+.feast-item {
     position: absolute;
-    font-size: 10px;
+    font-size: 11px;
     opacity: 0;
     z-index: 4;
     pointer-events: none;
 }
 
-/* Coordinates */
-.divine-petal.p1 { left: 45%; top: 30px; }
-.divine-petal.p2 { left: 35%; top: 35px; }
-.divine-petal.p3 { left: 55%; top: 35px; }
-.divine-petal.p4 { left: 40%; top: 25px; }
-.divine-petal.p5 { left: 50%; top: 25px; }
+/* Emojis coordinates start position */
+.feast-item.p1 { left: 45%; top: 35px; }
+.feast-item.p2 { left: 35%; top: 40px; }
+.feast-item.p3 { left: 55%; top: 40px; }
+.feast-item.p4 { left: 40%; top: 30px; }
+.feast-item.p5 { left: 50%; top: 30px; }
+.feast-item.p6 { left: 48%; top: 25px; }
 
-.durga-altar-container.activated .divine-petal {
-    animation: rainPetals 1.4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+.fifa-feast-container.activated .feast-item {
+    animation: rainConfetti 1.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
-@keyframes rainPetals {
+@keyframes rainConfetti {
     0% {
         transform: translate(0, 0) rotate(0deg) scale(0.5);
         opacity: 1;
@@ -703,11 +675,12 @@ section {
     }
 }
 
-.durga-altar-container.activated .divine-petal.p1 { transform: translate(-45px, 80px) rotate(360deg) scale(1.3); }
-.durga-altar-container.activated .divine-petal.p2 { transform: translate(-65px, 60px) rotate(180deg) scale(1.1); }
-.durga-altar-container.activated .divine-petal.p3 { transform: translate(55px, 75px) rotate(-360deg) scale(1.4); }
-.durga-altar-container.activated .divine-petal.p4 { transform: translate(-25px, 90px) rotate(-180deg) scale(1.2); }
-.durga-altar-container.activated .divine-petal.p5 { transform: translate(35px, 85px) rotate(540deg) scale(1.5); }
+.fifa-feast-container.activated .feast-item.p1 { transform: translate(-50px, 85px) rotate(360deg) scale(1.3); }
+.fifa-feast-container.activated .feast-item.p2 { transform: translate(-70px, 65px) rotate(180deg) scale(1.1); }
+.fifa-feast-container.activated .feast-item.p3 { transform: translate(60px, 80px) rotate(-360deg) scale(1.4); }
+.fifa-feast-container.activated .feast-item.p4 { transform: translate(-30px, 95px) rotate(-180deg) scale(1.2); }
+.fifa-feast-container.activated .feast-item.p5 { transform: translate(40px, 90px) rotate(540deg) scale(1.5); }
+.fifa-feast-container.activated .feast-item.p6 { transform: translate(5px, 100px) rotate(-540deg) scale(1.3); }
 
 /* ============================================================
    REVIEWS GALLERY SLIDER

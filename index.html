@@ -55,46 +55,31 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="navbar-actions">
-            <button class="dripza-btn-nav" id="open-quick-panel-btn" title="Quick Actions">
-                <img src="assets/dripza_icon.webp" alt="Dripza Icon" class="dripza-nav-icon">
-            </button>
-            
-            <!-- Anime Durga Puja Face Button for Poster -->
-            <button class="puja-btn" id="open-promo-modal-direct-btn" title="Show Durga Puja Poster">
-                <div class="puja-container">
-                    <div class="puja-magic-ring"></div>
-                    <svg class="puja-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- FIFA World Cup 2026 Button for Poster -->
+            <button class="fifa-btn" id="open-promo-modal-direct-btn" title="Show Promotional Poster">
+                <div class="fifa-container">
+                    <div class="fifa-magic-ring"></div>
+                    <svg class="fifa-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="anime-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="pitch-trophy-glow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="3" result="blur" />
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        <!-- Third Eye (Trinayan) on forehead -->
-                        <path d="M50,15 Q44,26 50,37 Q56,26 50,15 Z" fill="#ff2200" stroke="#ffe066" stroke-width="1.5" />
-                        <circle cx="50" cy="26" r="2.5" fill="#ffffff" filter="url(#anime-glow)" />
-                        
-                        <!-- Left Eye & Eyebrow -->
-                        <path d="M18,33 Q32,23 45,34" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-                        <path d="M16,43 Q31,30 46,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
-                        <path d="M16,43 Q31,50 46,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="31" cy="41.5" r="4" fill="#ffffff" />
-                        <circle cx="31" cy="41.5" r="2" fill="#000000" />
-                        
-                        <!-- Right Eye & Eyebrow -->
-                        <path d="M82,33 Q68,23 55,34" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-                        <path d="M84,43 Q69,30 54,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
-                        <path d="M84,43 Q69,50 54,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="69" cy="41.5" r="4" fill="#ffffff" />
-                        <circle cx="69" cy="41.5" r="2" fill="#000000" />
-                        
-                        <!-- Red Bindi (center forehead) -->
-                        <circle cx="50" cy="44" r="4.5" fill="#ff2200" filter="url(#anime-glow)" />
-                        
-                        <!-- Nose line & Nath (Nose Ring) -->
-                        <path d="M50,49 L50,64 L52,64" fill="none" stroke="#ffe066" stroke-width="2" stroke-linecap="round" />
-                        <circle cx="36" cy="69" r="11" fill="none" stroke="#ffe066" stroke-width="2" />
-                        <circle cx="25" cy="69" r="2" fill="#ff2200" />
+                        <!-- Trophy Base (Gold) -->
+                        <path d="M35,76 L65,76 L60,88 L40,88 Z" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
+                        <!-- Green Malachite Bands -->
+                        <rect x="39" y="78" width="22" height="3" fill="#00ff66" />
+                        <rect x="38" y="83" width="24" height="3" fill="#00ff66" />
+                        <!-- Shaft -->
+                        <path d="M50,76 C38,65 36,48 44,38 C47,33 53,33 56,38 C64,48 62,65 50,76" fill="#d4af37" stroke="#ffe066" stroke-width="1" />
+                        <!-- Arms -->
+                        <path d="M40,43 C33,36 36,22 50,22 C64,22 67,36 60,43" fill="none" stroke="#ffe066" stroke-width="3" stroke-linecap="round" />
+                        <!-- Globe -->
+                        <circle cx="50" cy="22" r="10" fill="#ffe066" filter="url(#pitch-trophy-glow)" opacity="0.95" />
+                        <path d="M40,22 Q50,17 60,22 M40,22 Q50,27 60,22 M50,12 Q50,22 50,32" fill="none" stroke="#d4af37" stroke-width="1" />
+                        <!-- Text 26 -->
+                        <text x="50" y="58" font-family="'Outfit', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#pitch-trophy-glow)">26</text>
                     </svg>
                 </div>
             </button>
@@ -116,88 +101,112 @@
 
     </section>
 
-    <!-- Interactive/Fun Section (Durga Puja Divine Vibe) -->
+    <!-- Interactive/Fun Section (FIFA World Cup Restaurant Feast) -->
     <section id="vibe" class="vibe-section">
-        <h2 class="section-title">Maa Durga Special</h2>
+        <h2 class="section-title">FIFA World Cup Special</h2>
         <div class="vibe-container">
-            <!-- Sacred Durga Altar Interactive Container -->
-            <div class="durga-altar-container" id="durga-altar">
-                <div class="altar-arch"></div>
+            <!-- Stadium Feast Altar Interactive Container -->
+            <div class="fifa-feast-container" id="fifa-feast-altar">
+                <div class="stadium-arch"></div>
                 
-                <!-- Sacred Trishul (Trident) SVG -->
-                <div class="sacred-trishul" id="sacred-trishul">
+                <!-- Floating Golden FIFA Trophy with Chef's Hat -->
+                <div class="fifa-altar-trophy" id="fifa-altar-trophy">
                     <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="divine-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="altar-trophy-glow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="4" result="blur" />
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        <!-- Trishul Shaft -->
-                        <line x1="50" y1="30" x2="50" y2="115" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" />
-                        <!-- Trishul Base Ring -->
-                        <circle cx="50" cy="110" r="3" fill="#ffe066" />
-                        <!-- Trishul Prongs (Left, Right, Center) -->
-                        <path d="M50,110 L50,15" stroke="#ffe066" stroke-width="5" stroke-linecap="round" fill="none" /> <!-- Center Prong -->
-                        <!-- Left Prong -->
-                        <path d="M50,75 C25,75 22,35 32,30" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" fill="none" />
-                        <path d="M32,30 L27,33 L32,30 L35,36" stroke="#ffe066" stroke-width="3" stroke-linecap="round" fill="none" /> <!-- Left Arrow tip -->
-                        <!-- Right Prong -->
-                        <path d="M50,75 C75,75 78,35 68,30" stroke="#ffe066" stroke-width="4.5" stroke-linecap="round" fill="none" />
-                        <path d="M68,30 L73,33 L68,30 L65,36" stroke="#ffe066" stroke-width="3" stroke-linecap="round" fill="none" /> <!-- Right Arrow tip -->
-                        <!-- Center Prong arrow tip -->
-                        <path d="M50,15 L44,22 M50,15 L56,22" stroke="#ffe066" stroke-width="4" stroke-linecap="round" />
-                    </svg>
-                </div>
-
-                <!-- Clickable traditional Dhunuchi -->
-                <div class="dhunuchi-burner" id="dhunuchi-burner">
-                    <!-- Dhunuchi traditional shape -->
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Pedestal Base -->
-                        <path d="M35,90 L65,90 L58,65 L42,65 Z" fill="#b35c37" stroke="#8d4323" stroke-width="1.5" />
-                        <!-- Upper Clay Bowl -->
-                        <path d="M20,35 C20,65 80,65 80,35 Z" fill="#cc6a3f" stroke="#8d4323" stroke-width="1.5" />
-                        <ellipse cx="50" cy="35" rx="30" ry="10" fill="#e67e4f" stroke="#8d4323" stroke-width="1.5" />
-                        <!-- Traditional detailing / patterns -->
-                        <path d="M28,45 Q50,55 72,45" fill="none" stroke="#ffe066" stroke-width="1.5" opacity="0.6" />
-                    </svg>
-                    <!-- Glowing Fire Husk Flame -->
-                    <div class="dhunuchi-fire"></div>
-                </div>
-
-                <!-- Divine Message -->
-                <div class="divine-celebration" id="divine-celebration">জয় মা দুর্গা! 🔱</div>
-                
-                <!-- Hidden Divine Face that reveals on Activation -->
-                <div class="divine-reveal-face" id="divine-reveal-face">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Third eye, trinayan -->
-                        <path d="M50,22 Q45,30 50,38 Q55,30 50,22 Z" fill="#ff2200" stroke="#ffe066" stroke-width="1.5" />
-                        <!-- Forehead Bindi -->
-                        <circle cx="50" cy="48" r="4.5" fill="#ff2200" />
-                        <!-- Eyes -->
-                        <path d="M22,40 Q35,32 46,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
-                        <path d="M22,40 Q35,46 46,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="34" cy="41" r="3.5" fill="#ffffff" />
-                        <circle cx="34" cy="41" r="1.5" fill="#000000" />
+                        <!-- Chef's Hat (White, floating above/on the trophy) -->
+                        <path d="M42,22 C34,22 34,12 44,12 C44,6 56,6 56,12 C66,12 66,22 58,22 Z" fill="#ffffff" stroke="#dddddd" stroke-width="1" />
+                        <rect x="42" y="21" width="16" height="5" rx="1.5" fill="#ffffff" stroke="#dddddd" stroke-width="1" />
+                        <!-- Red details on Chef's Hat band -->
+                        <line x1="45" y1="23.5" x2="55" y2="23.5" stroke="#ff2200" stroke-width="1.5" />
                         
-                        <path d="M78,40 Q65,32 54,41" fill="none" stroke="#ffe066" stroke-width="2.5" stroke-linecap="round" />
-                        <path d="M78,40 Q65,46 54,41" fill="none" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round" />
-                        <circle cx="66" cy="41" r="3.5" fill="#ffffff" />
-                        <circle cx="66" cy="41" r="1.5" fill="#000000" />
-                        <!-- Nath nose ring -->
-                        <circle cx="38" cy="62" r="9" fill="none" stroke="#ffe066" stroke-width="1.5" />
-                        <circle cx="29" cy="62" r="2" fill="#ff2200" />
+                        <!-- FIFA Trophy Base (Gold) -->
+                        <path d="M35,90 L65,90 L60,102 L40,102 Z" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
+                        <!-- Green Malachite Bands -->
+                        <rect x="39" y="92" width="22" height="3" fill="#00ff66" />
+                        <rect x="38" y="97" width="24" height="3" fill="#00ff66" />
+                        <!-- Shaft -->
+                        <path d="M50,90 C38,79 36,62 44,52 C47,47 53,47 56,52 C64,62 62,79 50,90" fill="#d4af37" stroke="#ffe066" stroke-width="1" />
+                        <!-- Arms -->
+                        <path d="M40,57 C33,50 36,36 50,36 C64,36 67,50 60,57" fill="none" stroke="#ffe066" stroke-width="3" stroke-linecap="round" />
+                        <!-- Globe -->
+                        <circle cx="50" cy="36" r="10" fill="#ffe066" filter="url(#altar-trophy-glow)" opacity="0.95" />
+                        <path d="M40,36 Q50,31 60,36 M40,36 Q50,41 60,36 M50,26 Q50,36 50,46" fill="none" stroke="#d4af37" stroke-width="1" />
+                        <!-- Text 26 -->
+                        <text x="50" y="72" font-family="'Outfit', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#altar-trophy-glow)">26</text>
                     </svg>
                 </div>
 
-                <!-- Floating Flowers (Petals) -->
-                <div class="divine-petal p1">🌸</div>
-                <div class="divine-petal p2">🌼</div>
-                <div class="divine-petal p3">🌸</div>
-                <div class="divine-petal p4">🌼</div>
-                <div class="divine-petal p5">🌸</div>
+                <!-- Hidden AJ Special Championship Burger (Reveals on click) -->
+                <div class="championship-burger">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="burger-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Burger Buns & Ingredients -->
+                        <!-- Bottom Bun -->
+                        <path d="M25,85 C25,95 95,95 95,85 Z" fill="#c68a4c" stroke="#8c5827" stroke-width="2" />
+                        <!-- Lettuce (Green) -->
+                        <path d="M20,80 Q30,75 40,80 Q50,75 60,80 Q70,75 80,80 Q90,75 100,80" fill="none" stroke="#2ecc71" stroke-width="6" stroke-linecap="round" />
+                        <!-- Patty (Steaming Beef) -->
+                        <rect x="23" y="68" width="74" height="10" rx="4" fill="#5c3a21" stroke="#3d2412" stroke-width="1.5" />
+                        <!-- Melting Cheese (Yellow/Orange) -->
+                        <path d="M22,72 L98,72 L90,82 L75,72 L60,85 L45,72 L30,80 Z" fill="#f1c40f" />
+                        <!-- Tomato Slice -->
+                        <rect x="28" y="62" width="64" height="7" rx="3.5" fill="#e74c3c" />
+                        <!-- Top Bun -->
+                        <path d="M25,60 C25,32 95,32 95,60 Z" fill="#d99b59" stroke="#8c5827" stroke-width="2" filter="url(#burger-glow)" />
+                        <!-- Sesame Seeds -->
+                        <circle cx="45" cy="46" r="1" fill="#ffffff" />
+                        <circle cx="55" cy="42" r="1" fill="#ffffff" />
+                        <circle cx="65" cy="44" r="1" fill="#ffffff" />
+                        <circle cx="75" cy="48" r="1" fill="#ffffff" />
+                        <!-- Mini FIFA Flag on Burger -->
+                        <line x1="80" y1="50" x2="80" y2="25" stroke="#ffffff" stroke-width="1.5" />
+                        <polygon points="80,25 98,32 80,39" fill="#00ff66" stroke="#ffffff" stroke-width="1" />
+                        <circle cx="87" cy="32" r="2.5" fill="#ffffff" />
+                    </svg>
+                </div>
+
+                <!-- Clickable Soccer Ball Cloche -->
+                <div class="soccer-cloche" id="soccer-cloche">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Golden Handle/Knob -->
+                        <circle cx="50" cy="12" r="6" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
+                        <rect x="47" y="16" width="6" height="6" fill="#d4af37" />
+                        <!-- Dome Body (Soccer Ball Dome) -->
+                        <path d="M15,55 C15,20 85,20 85,55 Z" fill="#ffffff" stroke="#222222" stroke-width="2.5" />
+                        <ellipse cx="50" cy="55" rx="35" ry="9" fill="#e6e6e6" stroke="#222222" stroke-width="2.5" />
+                        <!-- Soccer Ball Pentagons Patterns on Dome -->
+                        <polygon points="50,22 41,28 44,38 56,38 59,28" fill="#111111" />
+                        <polygon points="28,38 20,44 23,54 33,54 36,44" fill="#111111" />
+                        <polygon points="72,38 64,44 67,54 77,54 80,44" fill="#111111" />
+                        <!-- Pattern lines -->
+                        <line x1="50" y1="22" x2="50" y2="18" stroke="#111111" stroke-width="1.5" />
+                        <line x1="41" y1="28" x2="36" y2="44" stroke="#111111" stroke-width="1.5" />
+                        <line x1="59" y1="28" x2="64" y2="44" stroke="#111111" stroke-width="1.5" />
+                        <line x1="44" y1="38" x2="33" y2="54" stroke="#111111" stroke-width="1.5" />
+                        <line x1="56" y1="38" x2="67" y2="54" stroke="#111111" stroke-width="1.5" />
+                    </svg>
+                </div>
+
+                <!-- GOAL Neon Message -->
+                <div class="goal-celebration" id="goal-celebration">GOAL! 🍔⚽</div>
+                
+                <!-- Confetti Stadium Rain (emoji rain) -->
+                <div class="feast-item p1">⚽</div>
+                <div class="feast-item p2">🍔</div>
+                <div class="feast-item p3">🍕</div>
+                <div class="feast-item p4">🏆</div>
+                <div class="feast-item p5">🍺</div>
+                <div class="feast-item p6">✨</div>
             </div>
         </div>
     </section>
@@ -258,6 +267,10 @@
                     <i class="fas fa-envelope"></i>
                     <p>hello@ajrestaurant.com</p>
                 </div>
+                <div class="info-item" id="open-msg-panel-direct-btn" style="cursor: pointer;">
+                    <i class="fas fa-paper-plane"></i>
+                    <p>Send a Message to Us</p>
+                </div>
             </div>
             <div class="social-links">
                 <h2>Follow Us</h2>
@@ -276,30 +289,7 @@
         <p>&copy; 2026 AJ Restaurant & Cafe. Made with ❤️ | Make By Dripza</p>
     </footer>
 
-    <!-- Quick Panel Overlay -->
-    <div class="quick-panel-overlay" id="quick-panel-overlay"></div>
 
-    <!-- Slide-out Quick Panel -->
-    <div class="quick-panel" id="quick-panel">
-        <button class="close-quick-panel-btn" id="close-quick-panel-btn">&times;</button>
-        
-        <!-- Panel Banner -->
-        <div class="quick-panel-banner">
-            <div class="quick-panel-banner-overlay"></div>
-            <img src="assets/ChatGPT Image Jun 24, 2026, 01_23_48 PM.png" alt="AJ Cafe Banner" class="quick-panel-banner-img">
-            <div class="quick-panel-banner-content">
-                <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Cafe Logo" class="quick-panel-banner-logo">
-                <h3>AJ Restaurant & Cafe</h3>
-                <p>Premium Culinary Experience</p>
-            </div>
-        </div>
-
-        <div class="quick-panel-content">
-            <button class="quick-panel-btn" id="open-msg-panel-from-quick-btn">
-                <i class="fas fa-paper-plane"></i> Send a Message
-            </button>
-        </div>
-    </div>
 
     <!-- Message Panel Overlay -->
     <div class="msg-panel-overlay" id="msg-panel-overlay"></div>
