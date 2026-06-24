@@ -8,11 +8,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle
+// Mobile & Desktop Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent document click handler from firing immediately
     navLinks.classList.toggle('nav-active');
 });
 
@@ -22,6 +23,15 @@ navItems.forEach(item => {
     item.addEventListener('click', () => {
         navLinks.classList.remove('nav-active');
     });
+});
+
+// Close menu when clicking anywhere outside the menu and hamburger button
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('nav-active')) {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('nav-active');
+        }
+    }
 });
 
 // Reveal Elements on Scroll
