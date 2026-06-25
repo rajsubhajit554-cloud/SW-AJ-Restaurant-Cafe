@@ -406,6 +406,65 @@ if (promoModalOverlay) {
 }
 
 // ============================================================
+// AI PROMPTS GALLERY LOGIC
+// ============================================================
+const aiPromptsModal = document.getElementById('ai-prompts-modal');
+const openAiPromptsBtn = document.getElementById('open-ai-prompts-btn');
+const closeAiPromptsBtn = document.getElementById('close-ai-prompts-btn');
+const aiPromptsOverlay = document.querySelector('.ai-prompts-overlay');
+
+function openAiPromptsModal() {
+    if (aiPromptsModal) {
+        aiPromptsModal.classList.add('active');
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function closeAiPromptsModal() {
+    if (aiPromptsModal) {
+        aiPromptsModal.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+}
+
+if (openAiPromptsBtn) {
+    openAiPromptsBtn.addEventListener('click', openAiPromptsModal);
+}
+
+if (closeAiPromptsBtn) {
+    closeAiPromptsBtn.addEventListener('click', closeAiPromptsModal);
+}
+
+if (aiPromptsOverlay) {
+    aiPromptsOverlay.addEventListener('click', closeAiPromptsModal);
+}
+
+// Copy Prompt to Clipboard
+const copyPromptBtns = document.querySelectorAll('.copy-prompt-btn');
+copyPromptBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const promptText = btn.getAttribute('data-prompt');
+        if (promptText) {
+            navigator.clipboard.writeText(promptText)
+            .then(() => {
+                // Success feedback animation
+                btn.classList.add('copied');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Prompt Copied!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalHTML;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Could not copy prompt text: ', err);
+            });
+        }
+    });
+});
+
+// ============================================================
 // END OF FILE
 // ============================================================
 
