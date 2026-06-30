@@ -211,17 +211,17 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// FIFA World Cup Restaurant Feast Click-to-Activate Animation
-const soccerCloche = document.getElementById('soccer-cloche');
-const feastAltar = document.getElementById('fifa-feast-altar');
-if (soccerCloche && feastAltar) {
-    soccerCloche.addEventListener('click', () => {
-        if (!feastAltar.classList.contains('activated')) {
-            feastAltar.classList.add('activated');
+// Rath Yatra Restaurant Feast Click-to-Activate Animation
+const templeBell = document.getElementById('temple-bell');
+const rathAltar = document.getElementById('rath-feast-altar');
+if (templeBell && rathAltar) {
+    templeBell.addEventListener('click', () => {
+        if (!rathAltar.classList.contains('activated')) {
+            rathAltar.classList.add('activated');
             
             // Reset animations after 2.5 seconds
             setTimeout(() => {
-                feastAltar.classList.remove('activated');
+                rathAltar.classList.remove('activated');
             }, 2500);
         }
     });

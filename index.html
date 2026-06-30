@@ -25,11 +25,12 @@
             <img src="assets/AJ Restaurant & Cafe logo.png" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
             <div class="logo-text-wrapper">
                 <span class="animated-football-header">
-                    <img src="assets/football-icon-png.webp" alt="Football Icon">
+                    <img src="assets/rath_chariot_icon.webp" alt="Rath Chariot Icon">
                 </span>
                 <span class="logo-text">AJ Restaurant & Cafe</span>
             </div>
         </div>
+        <span class="rath-yatra-header-text">শুভ রথযাত্রা!</span>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#vibe">Our Vibe</a></li>
@@ -41,7 +42,7 @@
             <button class="fifa-btn" id="open-promo-modal-direct-btn" title="Show Promotional Poster">
                 <div class="fifa-container">
                     <div class="fifa-magic-ring"></div>
-                    <img src="assets/soccer-ball-illustration.webp" alt="Soccer Ball" class="fifa-svg">
+                    <img src="assets/rath_yatra_icon.webp" alt="Rath Yatra Icon" class="fifa-svg">
                 </div>
             </button>
             
@@ -63,110 +64,113 @@
     </section>
 
     <!-- Interactive/Fun Section (FIFA World Cup Restaurant Feast) -->
+    <!-- Rath Yatra Special Section -->
     <section id="vibe" class="vibe-section">
-        <h2 class="section-title">FIFA World Cup Special</h2>
+        <h2 class="section-title">Rath Yatra Special</h2>
         <div class="vibe-container">
-            <!-- Stadium Feast Altar Interactive Container -->
-            <div class="fifa-feast-container" id="fifa-feast-altar">
-                <div class="stadium-arch"></div>
+            <!-- Temple Feast Altar Interactive Container -->
+            <div class="rath-feast-container" id="rath-feast-altar">
+                <div class="temple-arch"></div>
                 
-                <!-- Floating Golden FIFA Trophy with Chef's Hat -->
-                <div class="fifa-altar-trophy" id="fifa-altar-trophy">
+                <!-- Floating Rath Chariot -->
+                <div class="rath-altar-chariot" id="rath-altar-chariot">
                     <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="altar-trophy-glow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="4" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-                        <!-- Chef's Hat (White, floating above/on the trophy) -->
-                        <path d="M42,22 C34,22 34,12 44,12 C44,6 56,6 56,12 C66,12 66,22 58,22 Z" fill="#ffffff" stroke="#dddddd" stroke-width="1" />
-                        <rect x="42" y="21" width="16" height="5" rx="1.5" fill="#ffffff" stroke="#dddddd" stroke-width="1" />
-                        <!-- Red details on Chef's Hat band -->
-                        <line x1="45" y1="23.5" x2="55" y2="23.5" stroke="#ff2200" stroke-width="1.5" />
-                        
-                        <!-- FIFA Trophy Base (Gold) -->
-                        <path d="M35,90 L65,90 L60,102 L40,102 Z" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
-                        <!-- Green Malachite Bands -->
-                        <rect x="39" y="92" width="22" height="3" fill="#00ff66" />
-                        <rect x="38" y="97" width="24" height="3" fill="#00ff66" />
-                        <!-- Shaft -->
-                        <path d="M50,90 C38,79 36,62 44,52 C47,47 53,47 56,52 C64,62 62,79 50,90" fill="#d4af37" stroke="#ffe066" stroke-width="1" />
-                        <!-- Arms -->
-                        <path d="M40,57 C33,50 36,36 50,36 C64,36 67,50 60,57" fill="none" stroke="#ffe066" stroke-width="3" stroke-linecap="round" />
-                        <!-- Globe -->
-                        <circle cx="50" cy="36" r="10" fill="#ffe066" filter="url(#altar-trophy-glow)" opacity="0.95" />
-                        <path d="M40,36 Q50,31 60,36 M40,36 Q50,41 60,36 M50,26 Q50,36 50,46" fill="none" stroke="#d4af37" stroke-width="1" />
-                        <!-- Text 26 -->
-                        <text x="50" y="72" font-family="'Outfit', sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" filter="url(#altar-trophy-glow)">26</text>
-                    </svg>
-                </div>
-
-                <!-- Hidden AJ Special Championship Burger (Reveals on click) -->
-                <div class="championship-burger">
-                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="burger-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="chariot-glow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="3" result="blur" />
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        <!-- Burger Buns & Ingredients -->
+                        <!-- Flag on top -->
+                        <path d="M50,15 L50,5 L68,10 Z" fill="#ff4500" stroke="#d4af37" stroke-width="1" />
+                        <line x1="50" y1="5" x2="50" y2="20" stroke="#d4af37" stroke-width="1.5" />
+                        <!-- Canopy Dome -->
+                        <path d="M30,50 C30,20 70,20 70,50 Z" fill="#ff2200" stroke="#d4af37" stroke-width="1.5" />
+                        <path d="M36,50 C36,30 64,30 64,50 Z" fill="#ffe066" />
+                        <!-- Pillars -->
+                        <rect x="33" y="50" width="6" height="35" fill="#d4af37" />
+                        <rect x="61" y="50" width="6" height="35" fill="#d4af37" />
+                        <rect x="47" y="50" width="6" height="35" fill="#ffe066" />
+                        <!-- Chariot Base Platform -->
+                        <rect x="25" y="85" width="50" height="12" rx="3" fill="#ff4500" stroke="#d4af37" stroke-width="1.5" />
+                        <!-- Wheel Left -->
+                        <circle cx="32" cy="98" r="10" fill="#d4af37" stroke="#ff2200" stroke-width="2" />
+                        <circle cx="32" cy="98" r="3" fill="#ffe066" />
+                        <line x1="32" y1="88" x2="32" y2="108" stroke="#ff2200" stroke-width="1.5" />
+                        <line x1="22" y1="98" x2="42" y2="98" stroke="#ff2200" stroke-width="1.5" />
+                        <!-- Wheel Right -->
+                        <circle cx="68" cy="98" r="10" fill="#d4af37" stroke="#ff2200" stroke-width="2" />
+                        <circle cx="68" cy="98" r="3" fill="#ffe066" />
+                        <line x1="68" y1="88" x2="68" y2="108" stroke="#ff2200" stroke-width="1.5" />
+                        <line x1="58" y1="98" x2="78" y2="98" stroke="#ff2200" stroke-width="1.5" />
+                        <!-- Floral Garlands -->
+                        <circle cx="35" cy="55" r="2" fill="#ffffff" />
+                        <circle cx="42" cy="62" r="2" fill="#ffffff" />
+                        <circle cx="50" cy="65" r="2" fill="#ffffff" />
+                        <circle cx="58" cy="62" r="2" fill="#ffffff" />
+                        <circle cx="65" cy="55" r="2" fill="#ffffff" />
+                    </svg>
+                </div>
+
+                <!-- Hidden Special Fusion Burger (Reveals on click) -->
+                <div class="rath-fusion-burger">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Plate / Base -->
+                        <ellipse cx="60" cy="95" rx="42" ry="12" fill="#e6e6e6" stroke="#cccccc" stroke-width="2" />
                         <!-- Bottom Bun -->
-                        <path d="M25,85 C25,95 95,95 95,85 Z" fill="#c68a4c" stroke="#8c5827" stroke-width="2" />
+                        <path d="M30,80 C30,90 90,90 90,80 Z" fill="#c68a4c" stroke="#8c5827" stroke-width="1.5" />
                         <!-- Lettuce (Green) -->
-                        <path d="M20,80 Q30,75 40,80 Q50,75 60,80 Q70,75 80,80 Q90,75 100,80" fill="none" stroke="#2ecc71" stroke-width="6" stroke-linecap="round" />
-                        <!-- Patty (Steaming Beef) -->
-                        <rect x="23" y="68" width="74" height="10" rx="4" fill="#5c3a21" stroke="#3d2412" stroke-width="1.5" />
-                        <!-- Melting Cheese (Yellow/Orange) -->
-                        <path d="M22,72 L98,72 L90,82 L75,72 L60,85 L45,72 L30,80 Z" fill="#f1c40f" />
+                        <path d="M25,75 Q35,70 45,75 Q55,70 65,75 Q75,70 85,75 Q95,70 95,75" fill="none" stroke="#2ecc71" stroke-width="4.5" stroke-linecap="round" />
+                        <!-- Steaming Patty -->
+                        <rect x="28" y="65" width="64" height="8" rx="3.5" fill="#5c3a21" stroke="#3d2412" stroke-width="1" />
+                        <!-- Melting Cheese -->
+                        <path d="M27,69 L93,69 L85,77 L70,69 L55,80 L40,69 L30,75 Z" fill="#f1c40f" />
                         <!-- Tomato Slice -->
-                        <rect x="28" y="62" width="64" height="7" rx="3.5" fill="#e74c3c" />
+                        <rect x="32" y="59" width="56" height="6" rx="3" fill="#e74c3c" />
                         <!-- Top Bun -->
-                        <path d="M25,60 C25,32 95,32 95,60 Z" fill="#d99b59" stroke="#8c5827" stroke-width="2" filter="url(#burger-glow)" />
+                        <path d="M30,57 C30,30 90,30 90,57 Z" fill="#d99b59" stroke="#8c5827" stroke-width="1.5" />
                         <!-- Sesame Seeds -->
-                        <circle cx="45" cy="46" r="1" fill="#ffffff" />
-                        <circle cx="55" cy="42" r="1" fill="#ffffff" />
-                        <circle cx="65" cy="44" r="1" fill="#ffffff" />
-                        <circle cx="75" cy="48" r="1" fill="#ffffff" />
-                        <!-- Mini FIFA Flag on Burger -->
-                        <line x1="80" y1="50" x2="80" y2="25" stroke="#ffffff" stroke-width="1.5" />
-                        <polygon points="80,25 98,32 80,39" fill="#00ff66" stroke="#ffffff" stroke-width="1" />
-                        <circle cx="87" cy="32" r="2.5" fill="#ffffff" />
+                        <circle cx="48" cy="45" r="0.75" fill="#ffffff" />
+                        <circle cx="58" cy="40" r="0.75" fill="#ffffff" />
+                        <circle cx="68" cy="43" r="0.75" fill="#ffffff" />
+                        <circle cx="78" cy="47" r="0.75" fill="#ffffff" />
+                        <!-- Mini Saffron Flag on Burger -->
+                        <line x1="75" y1="46" x2="75" y2="18" stroke="#ffe066" stroke-width="1.5" />
+                        <polygon points="75,18 93,24 75,30" fill="#ff4500" />
+                        <!-- Marigold flowers decorations -->
+                        <circle cx="25" cy="94" r="3" fill="#ffaa00" />
+                        <circle cx="95" cy="94" r="3" fill="#ffaa00" />
                     </svg>
                 </div>
 
-                <!-- Clickable Soccer Ball Cloche -->
-                <div class="soccer-cloche" id="soccer-cloche">
+                <!-- Clickable Temple Bell -->
+                <div class="temple-bell" id="temple-bell">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Golden Handle/Knob -->
-                        <circle cx="50" cy="12" r="6" fill="#ffe066" stroke="#d4af37" stroke-width="1.5" />
-                        <rect x="47" y="16" width="6" height="6" fill="#d4af37" />
-                        <!-- Dome Body (Soccer Ball Dome) -->
-                        <path d="M15,55 C15,20 85,20 85,55 Z" fill="#ffffff" stroke="#222222" stroke-width="2.5" />
-                        <ellipse cx="50" cy="55" rx="35" ry="9" fill="#e6e6e6" stroke="#222222" stroke-width="2.5" />
-                        <!-- Soccer Ball Pentagons Patterns on Dome -->
-                        <polygon points="50,22 41,28 44,38 56,38 59,28" fill="#111111" />
-                        <polygon points="28,38 20,44 23,54 33,54 36,44" fill="#111111" />
-                        <polygon points="72,38 64,44 67,54 77,54 80,44" fill="#111111" />
-                        <!-- Pattern lines -->
-                        <line x1="50" y1="22" x2="50" y2="18" stroke="#111111" stroke-width="1.5" />
-                        <line x1="41" y1="28" x2="36" y2="44" stroke="#111111" stroke-width="1.5" />
-                        <line x1="59" y1="28" x2="64" y2="44" stroke="#111111" stroke-width="1.5" />
-                        <line x1="44" y1="38" x2="33" y2="54" stroke="#111111" stroke-width="1.5" />
-                        <line x1="56" y1="38" x2="67" y2="54" stroke="#111111" stroke-width="1.5" />
+                        <!-- Top Hanging Loop -->
+                        <circle cx="50" cy="18" r="8" fill="none" stroke="#d4af37" stroke-width="3" />
+                        <!-- Bell Body -->
+                        <path d="M35,70 C35,40 65,40 65,70 Z" fill="#ffe066" stroke="#d4af37" stroke-width="2" />
+                        <!-- Bell Flared Rim -->
+                        <path d="M30,70 L70,70 L75,80 L25,80 Z" fill="#d4af37" stroke="#ffe066" stroke-width="1.5" />
+                        <!-- Clapper (Ringer) -->
+                        <circle cx="50" cy="85" r="5" fill="#ffaa00" />
+                        <line x1="50" y1="80" x2="50" y2="85" stroke="#d4af37" stroke-width="3" />
+                        <!-- Floral Garland -->
+                        <circle cx="42" cy="30" r="3.5" fill="#ffaa00" />
+                        <circle cx="50" cy="32" r="3.5" fill="#ff4500" />
+                        <circle cx="58" cy="30" r="3.5" fill="#ffaa00" />
                     </svg>
                 </div>
 
-                <!-- GOAL Neon Message -->
-                <div class="goal-celebration" id="goal-celebration">GOAL! 🍔⚽</div>
+                <!-- Jai Jagannath Neon Message -->
+                <div class="rath-celebration" id="rath-celebration">JAI JAGANNATH! 🚩🍔</div>
                 
-                <!-- Confetti Stadium Rain (emoji rain) -->
-                <div class="feast-item p1">⚽</div>
+                <!-- Confetti Prasad Rain -->
+                <div class="feast-item p1">🌸</div>
                 <div class="feast-item p2">🍔</div>
                 <div class="feast-item p3">🍕</div>
-                <div class="feast-item p4">🏆</div>
-                <div class="feast-item p5">🍺</div>
+                <div class="feast-item p4">🍟</div>
+                <div class="feast-item p5">🚩</div>
                 <div class="feast-item p6">✨</div>
             </div>
         </div>
@@ -289,7 +293,7 @@
         <div class="promo-modal-overlay"></div>
         <div class="promo-modal-content">
             <button class="promo-modal-close" id="close-promo-modal-btn" aria-label="Close Promo Modal"><i class="fas fa-times"></i></button>
-            <img src="assets/ay_theme_ta_diye_ornno_202606242003.jpeg" alt="Durga Puja Celebration AJ Restaurant" class="promo-poster-img">
+            <img src="assets/promo_poster.webp" alt="Durga Puja Celebration AJ Restaurant" class="promo-poster-img">
         </div>
     </div>
 

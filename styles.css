@@ -119,9 +119,11 @@ h1, h2, h3, h4 {
 
 .animated-football-header {
     position: absolute;
-    left: -24px; /* Starts overlapping the logo boundary */
-    width: 22px;
-    height: 22px;
+    left: -52px;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    margin-top: -24px;
     display: inline-block;
     z-index: 10;
     animation: footballRollAcross 14s linear infinite;
@@ -133,7 +135,6 @@ h1, h2, h3, h4 {
 .animated-football-header img {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 2px rgba(0, 255, 204, 0.45));
 }
 
 .logo-text {
@@ -151,10 +152,6 @@ h1, h2, h3, h4 {
     opacity: 0;
     animation: revealTextWipe 14s linear infinite;
     will-change: clip-path, opacity;
-}
-
-.logo-container:hover .animated-football-header {
-    filter: drop-shadow(0 0 4px rgba(0, 255, 204, 0.65));
 }
 
 .nav-links {
@@ -487,16 +484,16 @@ section {
 /* ============================================================
    INTERACTIVE FIFA CHAMPIONSHIP FEAST STADIUM ALTAR
    ============================================================ */
-.fifa-feast-container {
+.rath-feast-container {
     position: relative;
     width: 190px;
     height: 190px;
-    background: radial-gradient(circle at center, #15451c 0%, #061709 100%);
+    background: radial-gradient(circle at center, #660000 0%, #210000 100%);
     border-radius: var(--radius-md);
-    border: 2px solid rgba(0, 255, 102, 0.35);
+    border: 2px solid rgba(255, 170, 0, 0.35);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 
-                inset 0 0 25px rgba(0, 255, 102, 0.2),
-                0 0 10px rgba(0, 255, 102, 0.1);
+                inset 0 0 25px rgba(255, 170, 0, 0.15),
+                0 0 10px rgba(255, 170, 0, 0.1);
     overflow: hidden;
     cursor: pointer;
     perspective: 500px;
@@ -505,28 +502,26 @@ section {
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.fifa-feast-container:hover {
+.rath-feast-container:hover {
     border-color: rgba(255, 224, 102, 0.65);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 
-                inset 0 0 20px rgba(0, 255, 102, 0.3),
-                0 0 18px rgba(0, 255, 102, 0.25);
+                inset 0 0 20px rgba(255, 170, 0, 0.25),
+                0 0 18px rgba(255, 170, 0, 0.2);
 }
 
-/* Stadium pitch layout / line circles */
-.stadium-arch {
+.temple-arch {
     position: absolute;
     top: 5px;
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border: 1px dashed rgba(0, 255, 102, 0.2);
+    border: 1px dashed rgba(255, 170, 0, 0.2);
     border-radius: var(--radius-md);
     pointer-events: none;
     z-index: 1;
 }
 
-/* Floating Chef FIFA Altar Trophy */
-.fifa-altar-trophy {
+.rath-altar-chariot {
     position: absolute;
     top: 15px;
     left: 50%;
@@ -539,13 +534,13 @@ section {
     animation: trophyFloat 3.5s infinite ease-in-out;
 }
 
-.fifa-altar-trophy svg {
+.rath-altar-chariot svg {
     width: 100%;
     height: 100%;
 }
 
-.fifa-feast-container.activated .fifa-altar-trophy {
-    filter: drop-shadow(0 0 8px #00ff66) drop-shadow(0 0 15px #ffe066);
+.rath-feast-container.activated .rath-altar-chariot {
+    filter: drop-shadow(0 0 8px #ff4500) drop-shadow(0 0 15px #ffe066);
     animation: trophyVibrate 0.12s infinite linear;
 }
 
@@ -561,8 +556,7 @@ section {
     75% { transform: translateX(-50%) translate(-0.6px, -0.6px) scale(1.04); }
 }
 
-/* Clickable Soccer Ball Cloche (serving dish dome) */
-.soccer-cloche {
+.temple-bell {
     position: absolute;
     bottom: 12px;
     left: 50%;
@@ -575,24 +569,22 @@ section {
     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s ease;
 }
 
-.soccer-cloche:hover {
+.temple-bell:hover {
     transform: translateX(-50%) scale(1.08);
 }
 
-.soccer-cloche svg {
+.temple-bell svg {
     width: 100%;
     height: 100%;
 }
 
-/* Fired up / Lifted cloche state */
-.fifa-feast-container.activated .soccer-cloche {
+.rath-feast-container.activated .temple-bell {
     transform: translateX(-50%) translateY(-55px) rotate(-22deg) scale(0.9);
     opacity: 0;
     pointer-events: none;
 }
 
-/* Hidden Special Burger revealed */
-.championship-burger {
+.rath-fusion-burger {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -606,37 +598,37 @@ section {
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
 }
 
-.championship-burger svg {
+.rath-fusion-burger svg {
     width: 100%;
     height: 100%;
 }
 
-.fifa-feast-container.activated .championship-burger {
+.rath-feast-container.activated .rath-fusion-burger {
     opacity: 1;
     transform: translate(-50%, 0) scale(1.2);
     filter: drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 16px rgba(255, 224, 102, 0.8));
 }
 
-/* GOAL Neon Message */
-.goal-celebration {
+.rath-celebration {
     position: absolute;
     top: 36%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: 1px;
-    text-shadow: 0 0 8px #00ff66, 
+    text-shadow: 0 0 8px #ff4500, 
                  0 0 20px #ffe066;
     opacity: 0;
     pointer-events: none;
     z-index: 6;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
 }
 
-.fifa-feast-container.activated .goal-celebration {
+.rath-feast-container.activated .rath-celebration {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     animation: pulseGoal 0.4s ease-in-out infinite alternate;
@@ -647,7 +639,6 @@ section {
     100% { transform: translate(-50%, -50%) scale(1.15); }
 }
 
-/* Feast Rain particles */
 .feast-item {
     position: absolute;
     font-size: 11px;
@@ -656,7 +647,6 @@ section {
     pointer-events: none;
 }
 
-/* Emojis coordinates start position */
 .feast-item.p1 { left: 45%; top: 35px; }
 .feast-item.p2 { left: 35%; top: 40px; }
 .feast-item.p3 { left: 55%; top: 40px; }
@@ -664,7 +654,7 @@ section {
 .feast-item.p5 { left: 50%; top: 30px; }
 .feast-item.p6 { left: 48%; top: 25px; }
 
-.fifa-feast-container.activated .feast-item {
+.rath-feast-container.activated .feast-item {
     animation: rainConfetti 1.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
@@ -678,12 +668,12 @@ section {
     }
 }
 
-.fifa-feast-container.activated .feast-item.p1 { transform: translate(-50px, 85px) rotate(360deg) scale(1.3); }
-.fifa-feast-container.activated .feast-item.p2 { transform: translate(-70px, 65px) rotate(180deg) scale(1.1); }
-.fifa-feast-container.activated .feast-item.p3 { transform: translate(60px, 80px) rotate(-360deg) scale(1.4); }
-.fifa-feast-container.activated .feast-item.p4 { transform: translate(-30px, 95px) rotate(-180deg) scale(1.2); }
-.fifa-feast-container.activated .feast-item.p5 { transform: translate(40px, 90px) rotate(540deg) scale(1.5); }
-.fifa-feast-container.activated .feast-item.p6 { transform: translate(5px, 100px) rotate(-540deg) scale(1.3); }
+.rath-feast-container.activated .feast-item.p1 { transform: translate(-50px, 85px) rotate(360deg) scale(1.3); }
+.rath-feast-container.activated .feast-item.p2 { transform: translate(-70px, 65px) rotate(180deg) scale(1.1); }
+.rath-feast-container.activated .feast-item.p3 { transform: translate(60px, 80px) rotate(-360deg) scale(1.4); }
+.rath-feast-container.activated .feast-item.p4 { transform: translate(-30px, 95px) rotate(-180deg) scale(1.2); }
+.rath-feast-container.activated .feast-item.p5 { transform: translate(40px, 90px) rotate(540deg) scale(1.5); }
+.rath-feast-container.activated .feast-item.p6 { transform: translate(5px, 100px) rotate(-540deg) scale(1.3); }
 
 /* ============================================================
    REVIEWS GALLERY SLIDER
@@ -989,124 +979,161 @@ footer p::after {
    ============================================================ */
 @keyframes footballRollAcross {
     0% {
-        left: -24px;
-        transform: rotate(0deg);
+        left: -52px;
+        transform: scaleX(1);
         opacity: 0;
     }
     1.5% {
         opacity: 1;
     }
     14.3% {
-        left: calc(100% - 24px);
-        transform: rotate(720deg);
+        left: calc(100% - 52px);
+        transform: scaleX(1);
         opacity: 1;
     }
     21.4% {
-        left: calc(100vw - 130px);
-        transform: rotate(1080deg);
+        left: calc(100vw - 10% - 220px);
+        transform: scaleX(1);
         opacity: 0;
     }
     50% {
-        left: calc(100vw - 130px);
-        transform: rotate(1080deg);
+        left: calc(100vw - 10% - 220px);
+        transform: scaleX(1);
         opacity: 0;
     }
     51.5% {
+        left: calc(100vw - 10% - 220px);
+        transform: scaleX(-1);
         opacity: 1;
     }
     57.1% {
-        left: calc(100% - 24px);
-        transform: rotate(720deg);
+        left: calc(100% - 52px);
+        transform: scaleX(-1);
         opacity: 1;
     }
     71.4% {
-        left: -24px;
-        transform: rotate(0deg);
+        left: -52px;
+        transform: scaleX(-1);
         opacity: 1;
     }
     78.6% {
-        left: -100px;
-        transform: rotate(-360deg);
+        left: -140px;
+        transform: scaleX(-1);
         opacity: 0;
     }
     100% {
-        left: -24px;
-        transform: rotate(0deg);
+        left: -52px;
+        transform: scaleX(1);
         opacity: 0;
     }
 }
 
 @keyframes footballRollAcrossMobile {
     0% {
-        left: -16px;
-        transform: rotate(0deg);
+        left: -38px;
+        transform: scaleX(1);
         opacity: 0;
     }
     1.5% {
         opacity: 1;
     }
     14.3% {
-        left: calc(100% - 17px);
-        transform: rotate(720deg);
+        left: calc(100% - 38px);
+        transform: scaleX(1);
         opacity: 1;
     }
     21.4% {
-        left: calc(100vw - 90px);
-        transform: rotate(1080deg);
+        left: calc(100vw - 10% - 160px);
+        transform: scaleX(1);
         opacity: 0;
     }
     50% {
-        left: calc(100vw - 90px);
-        transform: rotate(1080deg);
+        left: calc(100vw - 10% - 160px);
+        transform: scaleX(1);
         opacity: 0;
     }
     51.5% {
+        left: calc(100vw - 10% - 160px);
+        transform: scaleX(-1);
         opacity: 1;
     }
     57.1% {
-        left: calc(100% - 17px);
-        transform: rotate(720deg);
+        left: calc(100% - 38px);
+        transform: scaleX(-1);
         opacity: 1;
     }
     71.4% {
-        left: -16px;
-        transform: rotate(0deg);
+        left: -38px;
+        transform: scaleX(-1);
         opacity: 1;
     }
     78.6% {
-        left: -80px;
-        transform: rotate(-360deg);
+        left: -100px;
+        transform: scaleX(-1);
         opacity: 0;
     }
     100% {
-        left: -16px;
-        transform: rotate(0deg);
+        left: -38px;
+        transform: scaleX(1);
         opacity: 0;
     }
 }
 
 @keyframes revealTextWipe {
-    0%, 1.5% {
+    0%, 3.3% {
         clip-path: inset(0 100% 0 0);
         opacity: 0;
     }
-    2% {
+    3.4% {
         opacity: 1;
     }
-    14.3%, 57.1% {
+    18%, 55% {
         clip-path: inset(0 0% 0 0);
         opacity: 1;
     }
-    71.4% {
-        clip-path: inset(0 100% 0 0);
+    57.1% {
+        clip-path: inset(0 22% 0 0);
         opacity: 1;
     }
-    78.6% {
-        opacity: 0;
-    }
-    78.6%, 100% {
+    64.3%, 100% {
         clip-path: inset(0 100% 0 0);
         opacity: 0;
+    }
+}
+
+.rath-yatra-header-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffaa00;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.3);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    animation: revealRathText 14s linear infinite;
+    z-index: 5;
+}
+
+@keyframes revealRathText {
+    0%, 3.3% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    18% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    55% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(10px);
+    }
+    64.3%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
     }
 }
 
@@ -1158,11 +1185,15 @@ footer p::after {
     .logo-text-wrapper { padding-left: 0px; }
     .logo-text { font-size: 0.95rem; }
     .animated-football-header {
-        width: 15px;
-        height: 15px;
-        top: auto;
-        left: -16px;
+        width: 35px;
+        height: 35px;
+        top: 50%;
+        margin-top: -17.5px;
+        left: -38px;
         animation-name: footballRollAcrossMobile;
+    }
+    .rath-yatra-header-text {
+        font-size: 1.05rem;
     }
 
     section { padding: 22px 5%; }
@@ -2290,7 +2321,6 @@ footer p::after {
     height: 32px;
     border-radius: 50%;
     border: 1.5px dashed #00ff66;
-    box-shadow: 0 0 8px rgba(0, 255, 102, 0.45), inset 0 0 8px rgba(0, 255, 102, 0.45);
     animation: spinRing 6s linear infinite;
     opacity: 0.85;
 }
@@ -2298,7 +2328,6 @@ footer p::after {
 .fifa-btn:hover .fifa-magic-ring {
     border-color: #ffe066;
     border-style: dotted;
-    box-shadow: 0 0 12px rgba(255, 224, 102, 0.85), inset 0 0 12px rgba(255, 224, 102, 0.85);
     animation-duration: 1.2s; /* spins super fast on hover like power charging! */
 }
 
@@ -2307,12 +2336,10 @@ footer p::after {
     width: 100%;
     height: 100%;
     z-index: 2;
-    filter: drop-shadow(0 0 2px rgba(255, 224, 102, 0.6));
     animation: fifaFloat 3s infinite ease-in-out;
 }
 
 .fifa-btn:hover .fifa-svg {
-    filter: drop-shadow(0 0 6px #00ff66) drop-shadow(0 0 10px #ffe066);
     animation: fifaVibrate 0.12s infinite linear; /* vibrates like charging raw energy! */
 }
 
