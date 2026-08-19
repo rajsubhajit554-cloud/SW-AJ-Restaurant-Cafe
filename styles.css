@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    AJ RESTAURANT & CAFE — Premium Modern Theme
    ============================================================ */
 
@@ -661,11 +661,6 @@ section {
     animation: pulseGoal 0.4s ease-in-out infinite alternate;
 }
 
-@keyframes pulseGoal {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    100% { transform: translate(-50%, -50%) scale(1.15); }
-}
-
 .feast-item {
     position: absolute;
     font-size: 11px;
@@ -1134,13 +1129,12 @@ footer p::after {
     top: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 800;
     background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 10px rgba(255, 153, 51, 0.4));
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -1222,9 +1216,10 @@ footer p::after {
         left: -38px;
         animation-name: footballRollAcrossMobile;
     }
-    .rath-yatra-header-text {
-        font-size: 1.05rem;
+        .rath-yatra-header-text {
+        font-size: 0.95rem;
     }
+
 
     section { padding: 22px 5%; }
 
