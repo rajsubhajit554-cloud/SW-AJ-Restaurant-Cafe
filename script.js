@@ -1,4 +1,4 @@
-﻿// Navbar Scroll Effect
+// Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -250,7 +250,7 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// Independence Day Special Feast Click-to-Activate Animation
+// Rakhi Purnima Special Feast Click-to-Activate Animation
 const templeBell = document.getElementById('temple-bell');
 const rathAltar = document.getElementById('rath-feast-altar');
 if (templeBell && rathAltar) {
