@@ -250,19 +250,72 @@ if (document.readyState === 'loading') {
     initPreloader();
 }
 
-// Rakhi Purnima Special Feast Click-to-Activate Animation
-const templeBell = document.getElementById('temple-bell');
-const rathAltar = document.getElementById('rath-feast-altar');
-if (templeBell && rathAltar) {
-    templeBell.addEventListener('click', () => {
-        if (!rathAltar.classList.contains('activated')) {
-            rathAltar.classList.add('activated');
-            
-            // Reset animations after 2.5 seconds
-            setTimeout(() => {
-                rathAltar.classList.remove('activated');
-            }, 2500);
+// ============================================================
+// MAIN RESTAURANT MENU HORIZONTAL SCROLL & CATEGORY FILTER
+// ============================================================
+const mainRestaurantMenuScroll = document.getElementById('main-restaurant-menu-scroll');
+const menuTabs = document.querySelectorAll('.menu-tab-btn');
+const foodCards = document.querySelectorAll('.food-menu-card');
+
+if (mainRestaurantMenuScroll) {
+    // Normal mouse wheel horizontal scroll
+    mainRestaurantMenuScroll.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            mainRestaurantMenuScroll.scrollLeft += e.deltaY;
         }
+    }, { passive: false });
+
+    // Mouse Drag to Scroll
+    let isMouseDownMain = false;
+    let startXMain = 0;
+    let scrollLeftMain = 0;
+
+    mainRestaurantMenuScroll.addEventListener('mousedown', (e) => {
+        isMouseDownMain = true;
+        startXMain = e.pageX - mainRestaurantMenuScroll.offsetLeft;
+        scrollLeftMain = mainRestaurantMenuScroll.scrollLeft;
+    });
+
+    mainRestaurantMenuScroll.addEventListener('mouseleave', () => {
+        isMouseDownMain = false;
+    });
+
+    mainRestaurantMenuScroll.addEventListener('mouseup', () => {
+        isMouseDownMain = false;
+    });
+
+    mainRestaurantMenuScroll.addEventListener('mousemove', (e) => {
+        if (!isMouseDownMain) return;
+        e.preventDefault();
+        const x = e.pageX - mainRestaurantMenuScroll.offsetLeft;
+        const walk = (x - startXMain) * 1.5;
+        mainRestaurantMenuScroll.scrollLeft = scrollLeftMain - walk;
+    });
+}
+
+if (menuTabs.length > 0 && foodCards.length > 0) {
+    menuTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            menuTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const selectedCategory = tab.getAttribute('data-category');
+
+            foodCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Smoothly reset track to beginning when category is clicked
+            if (mainRestaurantMenuScroll) {
+                mainRestaurantMenuScroll.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        });
     });
 }
 
