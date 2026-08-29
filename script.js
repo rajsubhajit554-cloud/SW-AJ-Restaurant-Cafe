@@ -1,4 +1,4 @@
-﻿// Navbar Scroll Effect
+// Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -311,6 +311,9 @@ if (menuTabs.length > 0 && foodCards.length > 0) {
                 }
             });
 
+            // Auto-scroll clicked tab into visible center
+            tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
             // Smoothly reset track to beginning when category is clicked
             if (mainRestaurantMenuScroll) {
                 mainRestaurantMenuScroll.scrollTo({ left: 0, behavior: 'smooth' });
@@ -614,6 +617,7 @@ if (modalCategoryTabs.length > 0) {
             modalCategoryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             modalActiveCategory = tab.getAttribute('data-category');
+            tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             filterModalMenu();
         });
     });
