@@ -1,4 +1,4 @@
-// Navbar Scroll Effect
+﻿// Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -441,8 +441,14 @@ const closePromoModalBtn = document.getElementById('close-promo-modal-btn');
 const promoModalOverlay = document.querySelector('.promo-modal-overlay');
 const promoModalContent = document.querySelector('.promo-modal-content');
 const openPromoModalDirectBtn = document.getElementById('open-promo-modal-direct-btn');
+let promoAutoCloseTimer = null;
 
 function closePromoModal() {
+    if (promoAutoCloseTimer) {
+        clearTimeout(promoAutoCloseTimer);
+        promoAutoCloseTimer = null;
+    }
+
     if (promoModal && promoModalContent) {
         const button = document.getElementById('open-promo-modal-direct-btn');
         if (button) {
@@ -475,6 +481,9 @@ function closePromoModal() {
 
 function openPromoModal() {
     if (promoModal) {
+        if (promoAutoCloseTimer) {
+            clearTimeout(promoAutoCloseTimer);
+        }
         promoModal.classList.remove('closing');
         if (promoModalContent) {
             promoModalContent.style.removeProperty('--fly-x');
@@ -482,6 +491,11 @@ function openPromoModal() {
         }
         promoModal.classList.add('active');
         document.body.classList.add('no-scroll'); // Lock scrolling
+
+        // Automatically close the promo poster modal after 6 seconds (6000ms)
+        promoAutoCloseTimer = setTimeout(() => {
+            closePromoModal();
+        }, 6000);
     }
 }
 
@@ -498,6 +512,165 @@ if (promoModalOverlay) {
 }
 
 // ============================================================
+// IN-PAGE FULL MENU POPUP MODAL LOGIC
+// ============================================================
+const fullMenuModal = document.getElementById('full-menu-modal');
+const openFullMenuModalBtn = document.getElementById('open-full-menu-modal-btn');
+const closeFullMenuModalBtn = document.getElementById('close-full-menu-modal-btn');
+const closeFullMenuIconBtn = document.getElementById('close-full-menu-icon-btn');
+const fullMenuModalOverlay = document.getElementById('full-menu-modal-overlay');
+const modalMenuSearchInput = document.getElementById('modal-menu-search-input');
+const modalCategoryTabs = document.querySelectorAll('#modal-menu-category-tabs .menu-tab-btn');
+const modalFoodCards = document.querySelectorAll('#modal-full-menu-grid .food-menu-card');
+const modalNoResultsMsg = document.getElementById('modal-no-results-msg');
+const modalTimingBtn = document.getElementById('modal-timing-btn');
+const modalOrderTimingsSection = document.getElementById('modal-order-timings');
+
+let modalActiveCategory = 'all';
+
+function filterModalMenu() {
+    if (!modalFoodCards || modalFoodCards.length === 0) return;
+    const query = modalMenuSearchInput ? modalMenuSearchInput.value.toLowerCase().trim() : '';
+    let visibleCount = 0;
+
+    modalFoodCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const keywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
+
+        const matchesCategory = (modalActiveCategory === 'all' || cardCategory === modalActiveCategory);
+        const matchesSearch = query === '' || keywords.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    if (modalNoResultsMsg) {
+        modalNoResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+}
+
+function openFullMenuModal() {
+    if (fullMenuModal) {
+        fullMenuModal.classList.add('active');
+        fullMenuModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+
+        // Reset filter
+        modalActiveCategory = 'all';
+        if (modalCategoryTabs) {
+            modalCategoryTabs.forEach(t => {
+                if (t.getAttribute('data-category') === 'all') {
+                    t.classList.add('active');
+                } else {
+                    t.classList.remove('active');
+                }
+            });
+        }
+        if (modalMenuSearchInput) {
+            modalMenuSearchInput.value = '';
+        }
+        filterModalMenu();
+    }
+}
+
+function closeFullMenuModal() {
+    if (fullMenuModal) {
+        fullMenuModal.classList.remove('active');
+        fullMenuModal.setAttribute('aria-hidden', 'true');
+        
+        // Only remove no-scroll if promo modal and message panel are not active
+        const promoActive = promoModal && promoModal.classList.contains('active');
+        const msgActive = document.getElementById('msg-panel') && document.getElementById('msg-panel').classList.contains('active');
+        if (!promoActive && !msgActive) {
+            document.body.classList.remove('no-scroll');
+        }
+    }
+}
+
+if (openFullMenuModalBtn) {
+    openFullMenuModalBtn.addEventListener('click', openFullMenuModal);
+}
+
+if (closeFullMenuModalBtn) {
+    closeFullMenuModalBtn.addEventListener('click', closeFullMenuModal);
+}
+
+if (closeFullMenuIconBtn) {
+    closeFullMenuIconBtn.addEventListener('click', closeFullMenuModal);
+}
+
+if (fullMenuModalOverlay) {
+    fullMenuModalOverlay.addEventListener('click', closeFullMenuModal);
+}
+
+// Category filter tabs inside modal
+if (modalCategoryTabs.length > 0) {
+    modalCategoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            modalCategoryTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            modalActiveCategory = tab.getAttribute('data-category');
+            filterModalMenu();
+        });
+    });
+}
+
+// Live search inside modal
+if (modalMenuSearchInput) {
+    modalMenuSearchInput.addEventListener('input', filterModalMenu);
+}
+
+// Two-Way Scroll for Modal Timings Button (Down to Timings / Up to Top)
+const modalBody = document.querySelector('.full-menu-modal-body');
+const modalTimingIcon = modalTimingBtn ? modalTimingBtn.querySelector('i') : null;
+const modalTimingText = modalTimingBtn ? modalTimingBtn.querySelector('span') : null;
+
+function isNearModalTimings() {
+    if (!modalOrderTimingsSection || !modalBody) return false;
+    const modalBodyRect = modalBody.getBoundingClientRect();
+    const timingsRect = modalOrderTimingsSection.getBoundingClientRect();
+    const isScrolledToBottom = (modalBody.scrollTop + modalBody.clientHeight >= modalBody.scrollHeight - 150);
+    return (timingsRect.top <= modalBodyRect.bottom - 120) || isScrolledToBottom;
+}
+
+if (modalTimingBtn && modalOrderTimingsSection && modalBody) {
+    modalTimingBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (isNearModalTimings()) {
+            modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            modalOrderTimingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+
+    modalBody.addEventListener('scroll', () => {
+        if (isNearModalTimings()) {
+            modalTimingBtn.classList.add('at-bottom');
+            if (modalTimingIcon) modalTimingIcon.className = 'fas fa-arrow-up';
+            if (modalTimingText) modalTimingText.innerText = 'Top';
+            modalTimingBtn.title = 'Scroll back to Top (উপরে ফিরে যান)';
+        } else {
+            modalTimingBtn.classList.remove('at-bottom');
+            if (modalTimingIcon) modalTimingIcon.className = 'fas fa-clock';
+            if (modalTimingText) modalTimingText.innerText = 'Timings';
+            modalTimingBtn.title = 'Order Timings (অর্ডার সময়সূচী)';
+        }
+    }, { passive: true });
+}
+
+// Close full menu modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && fullMenuModal && fullMenuModal.classList.contains('active')) {
+        closeFullMenuModal();
+    }
+});
+
+// ============================================================
 // END OF FILE
 // ============================================================
+
 
