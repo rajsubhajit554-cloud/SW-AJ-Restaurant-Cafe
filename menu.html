@@ -207,6 +207,8 @@
         }
 
         .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -371,6 +373,8 @@
                 font-size: 0.95rem;
             }
             .menu-category-tabs {
+            touch-action: pan-x pan-y;
+            overscroll-behavior-x: contain;
                 gap: 6px;
                 overflow-x: auto;
                 flex-wrap: nowrap;
@@ -909,6 +913,11 @@
                     categoryTabs.forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
                     activeCategory = tab.getAttribute('data-category');
+                    const tabsContainer = tab.closest('.menu-category-tabs');
+                    if (tabsContainer) {
+                        const targetScroll = tab.offsetLeft - (tabsContainer.clientWidth / 2) + (tab.offsetWidth / 2);
+                        tabsContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    }
                     filterMenu();
                 });
             });
