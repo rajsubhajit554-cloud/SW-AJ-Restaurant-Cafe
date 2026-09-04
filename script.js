@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // GUARANTEED PRELOADER INITIALIZATION & SAFETY FALLBACK
 // ============================================================
 (function() {
@@ -449,7 +449,8 @@ function filterModalMenu() {
         const cardCategory = card.getAttribute('data-category');
         const keywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
 
-        const matchesCategory = (modalActiveCategory === 'all' || cardCategory === modalActiveCategory);
+        // When searching, show matching items regardless of whichever category filter is currently active
+        const matchesCategory = (query !== '' || modalActiveCategory === 'all' || cardCategory === modalActiveCategory);
         const matchesSearch = query === '' || keywords.includes(query);
 
         if (matchesCategory && matchesSearch) {
@@ -523,6 +524,11 @@ if (modalCategoryTabs.length > 0) {
             tab.classList.add('active');
             modalActiveCategory = tab.getAttribute('data-category');
             
+            // Clear search input on tab selection so category items are clearly displayed
+            if (modalMenuSearchInput && modalMenuSearchInput.value.trim() !== '') {
+                modalMenuSearchInput.value = '';
+            }
+            
             const modalTabsContainer = tab.closest('.menu-category-tabs');
             if (modalTabsContainer) {
                 const targetScroll = tab.offsetLeft - (modalTabsContainer.clientWidth / 2) + (tab.offsetWidth / 2);
@@ -534,7 +540,27 @@ if (modalCategoryTabs.length > 0) {
 }
 
 if (modalMenuSearchInput) {
-    modalMenuSearchInput.addEventListener('input', filterModalMenu);
+    modalMenuSearchInput.addEventListener('input', () => {
+        const query = modalMenuSearchInput.value.toLowerCase().trim();
+        // If searching with a query while on a specific filter tab, switch tab to 'all' so UI reflects all matching items
+        if (query !== '' && modalActiveCategory !== 'all') {
+            modalActiveCategory = 'all';
+            if (modalCategoryTabs) {
+                modalCategoryTabs.forEach(t => {
+                    if (t.getAttribute('data-category') === 'all') {
+                        t.classList.add('active');
+                        const modalTabsContainer = t.closest('.menu-category-tabs');
+                        if (modalTabsContainer) {
+                            modalTabsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                        }
+                    } else {
+                        t.classList.remove('active');
+                    }
+                });
+            }
+        }
+        filterModalMenu();
+    });
 }
 
 // Two-Way Scroll for Modal Timings Button (Down to Timings / Up to Top)
