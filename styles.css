@@ -519,6 +519,29 @@ section {
 /* ============================================================
    MAIN PAGE THREE-DOT CATEGORY FILTER DROPDOWN
    ============================================================ */
+/* ============================================================
+   MAIN PAGE THREE-DOT CATEGORY FILTER & ZOOM CONTROLS ROW
+   ============================================================ */
+.menu-filter-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 6px auto 18px auto;
+    width: fit-content;
+    max-width: 100%;
+    z-index: 60;
+    position: relative;
+}
+
+.menu-filter-controls-row .menu-filter-dropdown-wrapper {
+    margin: 0;
+}
+
+.menu-filter-controls-row .menu-zoom-img-btn {
+    flex-shrink: 0;
+}
+
 .menu-filter-dropdown-wrapper {
     position: relative;
     display: flex;
@@ -659,6 +682,30 @@ section {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 162, 75, 0.6) rgba(255, 255, 255, 0.05);
+}
+
+.menu-filter-dropdown-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.menu-filter-dropdown-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.menu-filter-dropdown-list::-webkit-scrollbar-thumb {
+    background: rgba(201, 162, 75, 0.6);
+    border-radius: 4px;
+}
+
+.menu-filter-dropdown-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold, #c9a24b);
 }
 
 /* Individual Category Item in Dropdown List */
@@ -922,6 +969,27 @@ section {
     border: 1.5px solid rgba(201, 162, 75, 0.25);
     background: #0d0d0d;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-card-img-box:empty {
+    background: linear-gradient(135deg, rgba(28, 28, 28, 0.95) 0%, rgba(13, 13, 13, 0.98) 100%);
+}
+
+.food-card-img-box:empty::before {
+    content: '\f2e7';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: rgba(201, 162, 75, 0.25);
+    transition: all 0.3s ease;
+}
+
+.food-menu-card:hover .food-card-img-box:empty::before {
+    transform: scale(1.15);
+    color: rgba(201, 162, 75, 0.6);
 }
 
 .food-card-img-box img {
@@ -931,6 +999,11 @@ section {
     display: block;
     transition: transform 0.5s ease;
     pointer-events: none;
+}
+
+.food-card-img-box img[src=""],
+.food-card-img-box img:not([src]) {
+    display: none;
 }
 
 .food-menu-card:hover .food-card-img-box img {
@@ -1162,6 +1235,10 @@ section {
 }
 
 @media (max-width: 600px) {
+    .menu-filter-controls-row {
+        gap: 10px;
+        margin: 4px auto 14px auto;
+    }
     .main-menu-section {
         padding: 25px 8px 15px;
     }
@@ -2168,7 +2245,7 @@ footer p {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', 'Tiro Bangla', serif;
     font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: 0.5px;
