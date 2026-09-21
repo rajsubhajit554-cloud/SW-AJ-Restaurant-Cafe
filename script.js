@@ -635,6 +635,13 @@ if (modalCategoryTabs.length > 0) {
             
             filterModalMenu();
         });
+    // Hide/dismiss mobile keypad when Enter / Search key is pressed
+    modalMenuSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            e.preventDefault();
+            modalMenuSearchInput.blur();
+        }
+    });
     });
 }
 
@@ -659,6 +666,13 @@ if (modalMenuSearchInput) {
             }
         }
         filterModalMenu();
+    });
+    // Hide/dismiss mobile keypad when Enter / Search key is pressed
+    modalMenuSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            e.preventDefault();
+            modalMenuSearchInput.blur();
+        }
     });
 }
 
