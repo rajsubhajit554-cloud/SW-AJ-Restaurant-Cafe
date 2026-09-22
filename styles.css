@@ -848,7 +848,7 @@ section {
     scroll-behavior: smooth;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: pan-x pan-y;
     overscroll-behavior-x: contain;
     padding: 6px 4px 14px;
     width: 100%;
@@ -899,6 +899,7 @@ section {
     position: relative;
     will-change: transform;
     contain: layout style;
+    touch-action: pan-x pan-y;
 }
 
 .food-menu-card:nth-child(even) {
