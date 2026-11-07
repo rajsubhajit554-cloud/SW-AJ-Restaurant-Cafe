@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ Restaurant & Cafe</title>
+    <title>AJ Restaurant & Cafe - Happy Diwali & Kali Puja</title>
     <link rel="icon" type="image/webp" href="assets/aj_logo.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=1.3">
+    <link rel="stylesheet" href="styles.css?v=1.5">
 </head>
-<body class="no-scroll">
+<body class="no-scroll diwali-theme">
     <!-- Preloader Screen -->
     <div id="preloader">
         <div class="preloader-content">
+            <div class="preloader-diya-glow">🪔</div>
             <h1 class="preloader-title">Welcome to <br><span class="highlight">AJ Restaurant & Cafe</span></h1>
+            <p class="preloader-subtitle">✨ শুভ দীপাবলি ও কালীপূজার শুভেচ্ছা ✨</p>
             <div class="preloader-loader">
                 <div class="loader-bar"></div>
             </div>
+        </div>
+    </div>
+    <!-- Hanging Decorative Diwali Toran & Lanterns -->
+    <div class="diwali-hanging-toran" aria-hidden="true">
+        <div class="toran-string"></div>
+        <div class="toran-items">
+            <span class="toran-lantern tl1">🏮</span>
+            <span class="toran-diya td1">🪔</span>
+            <span class="toran-flower tf1">🏵️</span>
+            <span class="toran-lantern tl2">🏮</span>
+            <span class="toran-diya td2">🪔</span>
+            <span class="toran-flower tf2">🏵️</span>
+            <span class="toran-lantern tl3">🏮</span>
+            <span class="toran-diya td3">🪔</span>
+            <span class="toran-lantern tl4">🏮</span>
         </div>
     </div>
     <!-- Navbar -->
@@ -24,13 +41,13 @@
         <div class="logo-container">
             <img src="assets/aj_logo.webp" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
             <div class="logo-text-wrapper">
-                <span class="animated-football-header" title="Mahalaya Special">
-                    <img src="assets/lakshmi_puja_web_run_icon.webp" alt="Durga Puja Run Icon" style="object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));">
+                <span class="animated-football-header" title="Diwali Celebration">
+                    <img src="assets/diwali_run_icon.webp" alt="Diwali Diya Run Icon" style="object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));">
                 </span>
                 <span class="logo-text">AJ Restaurant & Cafe</span>
             </div>
         </div>
-        <span class="rath-yatra-header-text">শুভ লক্ষ্মীপূজা</span>
+        <span class="rath-yatra-header-text diwali-header-text">✨ শুভ দীপাবলি ও কালীপূজা 🪔</span>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -39,10 +56,10 @@
         </ul>
         <div class="navbar-actions">
             <!-- Mahalaya Special Button for Poster -->
-            <button class="fifa-btn" id="open-promo-modal-direct-btn" title="Show Mahalaya Special Poster">
+            <button class="fifa-btn" id="open-promo-modal-direct-btn" title="Diwali Dhamaka Offer & Poster (দীপাবলি স্পেশাল অফার)">
                 <div class="fifa-container">
                     <div class="fifa-magic-ring"></div>
-                    <img src="assets/lakshmi_puja_web_icon.webp" alt="Durga Puja Special" class="fifa-svg" style="object-fit: contain;">
+                    <img src="assets/diwali_diya_icon.webp" alt="Diwali Special" class="fifa-svg diwali-svg" style="object-fit: contain;">
                 </div>
             </button>
             
@@ -55,12 +72,18 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg banner-box">
-            <img src="assets/lakshmi_puja_greeting_banner.webp" alt="AJ Restaurant & Cafe Festival Special Banner" class="active">
+            <img src="assets/diwali_greeting_banner.webp" alt="AJ Restaurant & Cafe Happy Diwali Celebration Banner" class="active">
+            <img src="assets/lakshmi_puja_greeting_banner.webp" alt="AJ Restaurant & Cafe Festival Special Banner">
             <img src="assets/aj_restaurant_banner_2.webp" alt="AJ Restaurant & Cafe Banner 2">
             <img src="assets/aj_banner_3.webp" alt="AJ Restaurant & Cafe Banner 3">
             <img src="assets/aj_banner_4.webp" alt="AJ Restaurant & Cafe Banner 4">
             <img src="assets/aj_banner_5.webp" alt="AJ Restaurant & Cafe Banner 5">
             <div class="overlay"></div>
+        </div>
+        <!-- Interactive Diwali Fireworks Canvas Overlay -->
+        <canvas id="diwali-fireworks-canvas"></canvas>
+        <div class="hero-diwali-badge">
+            <span class="sparkle-star">✦</span> Happy Diwali Dhamaka 2026 • AJ Restaurant <span class="sparkle-star">✦</span>
         </div>
         <!-- Click/Hover Zones for Banner Control -->
         <div class="hero-nav-zone left-zone" title="Previous Image"></div>
@@ -1366,15 +1389,75 @@
         </div>
     </div>
 
-    <!-- Promo Poster Modal -->
-    <div class="promo-modal" id="promo-modal">
-        <div class="promo-modal-overlay"></div>
-        <div class="promo-modal-content">
-            <button class="promo-modal-close" id="close-promo-modal-btn" aria-label="Close Promo Modal"><i class="fas fa-times"></i></button>
-            <img src="assets/promo_poster.webp" alt="Janmashtami Celebration Poster - AJ Restaurant & Cafe" class="promo-poster-img">
+    <!-- Interactive Diwali Diya Bar along bottom -->
+    <div class="diwali-diya-bar" id="diwali-diya-bar" title="Interactive Diwali Diyas - Click to Light / Extinguish"></div>
+
+    <!-- Floating Diwali Celebration Widget -->
+    <div class="diwali-widget-container" id="diwali-widget">
+        <button class="diwali-widget-toggle" id="diwali-widget-toggle-btn" title="Diwali Celebration Controls">
+            <span class="widget-icon">🪔</span>
+            <span class="widget-text">দীপাবলি উৎসব</span>
+            <span class="widget-badge" id="widget-status-badge">ON</span>
+        </button>
+        <div class="diwali-widget-menu" id="diwali-widget-menu">
+            <div class="widget-menu-header">
+                <span>✨ দীপাবলি সেলিব্রেশন ✨</span>
+                <button class="widget-close-btn" id="close-diwali-widget-btn" aria-label="Close widget">&times;</button>
+            </div>
+            <div class="widget-menu-actions">
+                <button class="widget-action-btn" id="btn-fireworks-burst">
+                    <i class="fas fa-fire"></i>
+                    <span>Burst Fireworks (আতশবাজি)</span>
+                </button>
+                <button class="widget-action-btn active" id="btn-sparkler-toggle">
+                    <i class="fas fa-magic"></i>
+                    <span id="sparkler-btn-text">Sparklers: ON (ফুলঝুড়ি)</span>
+                </button>
+                <button class="widget-action-btn" id="btn-light-diyas">
+                    <i class="fas fa-sun"></i>
+                    <span>Light All Diyas (প্রদীপ প্রজ্জ্বলন)</span>
+                </button>
+                <button class="widget-action-btn" id="btn-diwali-sound">
+                    <i class="fas fa-volume-up"></i>
+                    <span id="sound-btn-text">Festival Sound: OFF</span>
+                </button>
+                <button class="widget-action-btn highlight" id="btn-diwali-coupon">
+                    <i class="fas fa-gift"></i>
+                    <span>Diwali Dhamaka Offer (অফার)</span>
+                </button>
+            </div>
         </div>
     </div>
 
-    <script src="script.js?v=1.4"></script>
+    <!-- Promo Poster Modal -->
+    <div class="promo-modal" id="promo-modal">
+        <div class="promo-modal-overlay"></div>
+        <div class="promo-modal-content diwali-modal-content">
+            <button class="promo-modal-close" id="close-promo-modal-btn" aria-label="Close Promo Modal"><i class="fas fa-times"></i></button>
+            <div class="diwali-modal-poster-wrap">
+                <img src="assets/diwali_promo_poster.webp" alt="Happy Diwali Festival Poster - AJ Restaurant & Cafe" class="promo-poster-img">
+                <div class="diwali-modal-cta-box">
+                    <div class="diwali-coupon-banner">
+                        <span class="coupon-tag">🎉 DIWALI SPECIAL COUPON</span>
+                        <div class="coupon-code-box">
+                            <span class="coupon-code-val" id="diwali-coupon-val">DIWALI10</span>
+                            <button class="copy-coupon-btn" id="copy-coupon-btn" title="Copy Code">Copy</button>
+                        </div>
+                        <span class="coupon-note">10% OFF on all Special Thalis & Combos!</span>
+                    </div>
+                    <div class="diwali-modal-btns">
+                        <a href="tel:6295982636" class="diwali-quick-btn call">
+                            <i class="fas fa-phone-alt"></i> Call: 6295982636
+                        </a>
+                        <a href="https://wa.me/916295982636?text=Hello%20AJ%20Restaurant,%20I%20want%20to%20place%20an%20order%20with%20the%20Diwali%20Special%20Coupon%20(DIWALI10)!" target="_blank" class="diwali-quick-btn wp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=1.5"></script>
 </body>
 </html>

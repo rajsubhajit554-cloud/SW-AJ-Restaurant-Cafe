@@ -1,0 +1,23 @@
+{
+  "name": "sw-aj-restaurant-cafe",
+  "version": "1.5.0",
+  "description": "SW AJ Restaurant & Cafe Website with Diwali Theme & Celebration Mode",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "generate-assets": "python generate_diwali_assets.py"
+  },
+  "keywords": [
+    "restaurant",
+    "cafe",
+    "diwali",
+    "deepavali",
+    "festival-theme",
+    "fireworks",
+    "nodejs"
+  ],
+  "author": "AJ Restaurant & Cafe",
+  "license": "ISC"
+}
+
