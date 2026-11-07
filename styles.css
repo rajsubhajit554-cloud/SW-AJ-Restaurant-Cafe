@@ -101,6 +101,8 @@ h1, h2, h3, h4 {
 }
 
 .logo-brand-img {
+    position: relative;
+    z-index: 1002;
     height: 52px;
     width: auto;
     object-fit: contain;
@@ -4460,7 +4462,7 @@ footer p {
 .toran-diya { animation: toranSway 2.8s infinite ease-in-out reverse; }
 .toran-flower { animation: toranSway 3.6s infinite ease-in-out; font-size: 1rem; }
 
-.tl1 { animation-delay: 0s; }
+.tl1 { animation-delay: 0s; position: relative; left: -42px; top: -3px; }
 .td1 { animation-delay: 0.4s; }
 .tf1 { animation-delay: 0.8s; }
 .tl2 { animation-delay: 1.2s; }
@@ -4874,6 +4876,10 @@ footer p {
     }
     .diwali-hanging-toran {
         height: 36px;
+    }
+    .tl1 {
+        left: -14px;
+        top: -2px;
     }
     .toran-items span {
         font-size: 1rem;
