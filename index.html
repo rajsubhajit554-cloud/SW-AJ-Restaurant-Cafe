@@ -4,40 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ Restaurant & Cafe - Happy Diwali & Kali Puja</title>
+    <title>AJ Restaurant & Cafe</title>
     <link rel="icon" type="image/webp" href="assets/aj_logo.webp">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&family=Hind+Siliguri:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=1.5">
+    <link rel="stylesheet" href="styles.css?v=1.6">
 </head>
 
-<body class="no-scroll diwali-theme">
+<body class="no-scroll">
     <!-- Preloader Screen -->
     <div id="preloader">
         <div class="preloader-content">
-            <div class="preloader-diya-glow">🪔</div>
             <h1 class="preloader-title">Welcome to <br><span class="highlight">AJ Restaurant & Cafe</span></h1>
-            <p class="preloader-subtitle">✨ শুভ দীপাবলি ও কালীপূজার শুভেচ্ছা ✨</p>
             <div class="preloader-loader">
                 <div class="loader-bar"></div>
             </div>
-        </div>
-    </div>
-    <!-- Hanging Decorative Diwali Toran & Lanterns -->
-    <div class="diwali-hanging-toran" aria-hidden="true">
-        <div class="toran-string"></div>
-        <div class="toran-items">
-            <span class="toran-lantern tl1">🏮</span>
-            <span class="toran-diya td1">🪔</span>
-            <span class="toran-flower tf1">🏵️</span>
-            <span class="toran-lantern tl2">🏮</span>
-            <span class="toran-diya td2">🪔</span>
-            <span class="toran-flower tf2">🏵️</span>
-            <span class="toran-lantern tl3">🏮</span>
-            <span class="toran-diya td3">🪔</span>
-            <span class="toran-lantern tl4">🏮</span>
         </div>
     </div>
     <!-- Navbar -->
@@ -45,14 +28,14 @@
         <div class="logo-container">
             <img src="assets/aj_logo.webp" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
             <div class="logo-text-wrapper">
-                <span class="animated-football-header" title="Diwali Celebration">
+                <span class="animated-football-header" title="Run Icon">
                     <img src="assets/diwali_run_icon.webp" alt="Diwali Diya Run Icon"
                         style="object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));">
                 </span>
                 <span class="logo-text">AJ Restaurant & Cafe</span>
             </div>
         </div>
-        <span class="rath-yatra-header-text diwali-header-text">✨ শুভ দীপাবলি ও কালীপূজা 🪔</span>
+        <span class="rath-yatra-header-text diwali-header-text">Welcome</span>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -69,19 +52,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg banner-box">
-            <img src="assets/diwali_greeting_banner.webp" alt="AJ Restaurant & Cafe Happy Diwali Celebration Banner"
+            <img src="assets/aj_restaurant_banner_2.webp" alt="AJ Restaurant & Cafe Banner 2"
                 class="active">
-            <img src="assets/aj_restaurant_banner_2.webp" alt="AJ Restaurant & Cafe Banner 2">
             <img src="assets/aj_banner_3.webp" alt="AJ Restaurant & Cafe Banner 3">
             <img src="assets/aj_banner_4.webp" alt="AJ Restaurant & Cafe Banner 4">
             <img src="assets/aj_banner_5.webp" alt="AJ Restaurant & Cafe Banner 5">
             <div class="overlay"></div>
-        </div>
-        <!-- Interactive Diwali Fireworks Canvas Overlay -->
-        <canvas id="diwali-fireworks-canvas"></canvas>
-        <div class="hero-diwali-badge">
-            <span class="sparkle-star">✦</span> Happy Diwali Dhamaka 2026 • AJ Restaurant <span
-                class="sparkle-star">✦</span>
         </div>
         <!-- Click/Hover Zones for Banner Control -->
         <div class="hero-nav-zone left-zone" title="Previous Image"></div>
@@ -170,8 +146,7 @@
                 <!-- 1. Veg Thali -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge pure-veg">Pure Veg</div>
-                    <div class="food-card-img-box"><img src="assets/menu_veg_thali.webp" alt="Veg Thali" loading="lazy">
-                    </div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_veg_thali.webp" alt="Veg Thali" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Veg Thali</h3>
                         <span class="bengali-title">ভেজ থালি</span>
@@ -186,8 +161,7 @@
                 <!-- 2. Egg Thali -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge special">Favorite</div>
-                    <div class="food-card-img-box"><img src="assets/menu_egg_thali.webp" alt="Egg Thali" loading="lazy">
-                    </div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_egg_thali.webp" alt="Egg Thali" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Egg Thali</h3>
                         <span class="bengali-title">ডিম থালি</span>
@@ -202,8 +176,7 @@
                 <!-- 3. Fish Thali (Rui) -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge popular">Popular</div>
-                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_rui.webp" alt="Fish Thali (Rui)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_fish_thali_rui.webp" alt="Fish Thali (Rui)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Fish Thali (Rui)</h3>
                         <span class="bengali-title">রুই মাছ থালি</span>
@@ -218,8 +191,7 @@
                 <!-- 4. Fish Thali (Katla) -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge popular">Popular</div>
-                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_katla.webp" alt="Fish Thali (Katla)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_fish_thali_katla.webp" alt="Fish Thali (Katla)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Fish Thali (Katla)</h3>
                         <span class="bengali-title">কাতলা মাছ থালি</span>
@@ -234,8 +206,7 @@
                 <!-- 5. Chicken Thali -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge bestseller">Bestseller</div>
-                    <div class="food-card-img-box"><img src="assets/menu_chicken_thali.webp" alt="Chicken Thali"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_chicken_thali.webp" alt="Chicken Thali" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Chicken Thali</h3>
                         <span class="bengali-title">চিকেন থালি</span>
@@ -250,8 +221,7 @@
                 <!-- 6. Khichuri (Serves 4) -->
                 <div class="food-menu-card" data-category="thali">
                     <div class="food-card-badge special">Serves 4</div>
-                    <div class="food-card-img-box"><img src="assets/menu_khichuri.webp" alt="Khichuri (Serves 4)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_khichuri.webp" alt="Khichuri (Serves 4)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Khichuri (Serves 4)</h3>
                         <span class="bengali-title">খিচুড়ি (৪ জনের জন্য)</span>
@@ -266,8 +236,7 @@
                 <!-- 7. Black Tea -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge hot">Hot</div>
-                    <div class="food-card-img-box"><img src="assets/menu_black_tea.webp" alt="Black Tea" loading="lazy">
-                    </div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_black_tea.webp" alt="Black Tea" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Black Tea</h3>
                         <span class="bengali-title">ব্ল্যাক টি</span>
@@ -282,8 +251,7 @@
                 <!-- 8. Milk Tea -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge bestseller">Chai</div>
-                    <div class="food-card-img-box"><img src="assets/menu_milk_tea.webp" alt="Milk Tea" loading="lazy">
-                    </div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_milk_tea.webp" alt="Milk Tea" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Milk Tea</h3>
                         <span class="bengali-title">মিল্ক টি (দুধ চা)</span>
@@ -298,8 +266,7 @@
                 <!-- 9. Green Tea -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge pure-veg">Healthy</div>
-                    <div class="food-card-img-box"><img src="assets/menu_green_tea.webp" alt="Green Tea" loading="lazy">
-                    </div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_green_tea.webp" alt="Green Tea" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Green Tea</h3>
                         <span class="bengali-title">গ্রিন টি</span>
@@ -314,8 +281,7 @@
                 <!-- 10. Milk / Black Coffee -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge popular">Hot</div>
-                    <div class="food-card-img-box"><img src="assets/menu_milk_black_coffee.webp"
-                            alt="Milk / Black Coffee" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_milk_black_coffee.webp" alt="Milk / Black Coffee" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Milk / Black Coffee</h3>
                         <span class="bengali-title">মিল্ক / ব্ল্যাক কফি</span>
@@ -330,8 +296,7 @@
                 <!-- 11. Premium Milk Coffee -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge chef">Premium</div>
-                    <div class="food-card-img-box"><img src="assets/menu_premium_milk_coffee.webp"
-                            alt="Premium Milk Coffee" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_premium_milk_coffee.webp" alt="Premium Milk Coffee" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Premium Milk Coffee</h3>
                         <span class="bengali-title">প্রিমিয়াম মিল্ক কফি</span>
@@ -346,8 +311,7 @@
                 <!-- 12. Veg Maggie -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge pure-veg">Veg</div>
-                    <div class="food-card-img-box"><img src="assets/menu_veg_maggie.webp" alt="Veg Maggie"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_veg_maggie.webp" alt="Veg Maggie" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Veg Maggie</h3>
                         <span class="bengali-title">ভেজ ম্যাগি</span>
@@ -362,8 +326,7 @@
                 <!-- 13. Egg Maggie -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge popular">Hot</div>
-                    <div class="food-card-img-box"><img src="assets/menu_egg_maggie.webp" alt="Egg Maggie"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_egg_maggie.webp" alt="Egg Maggie" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Egg Maggie</h3>
                         <span class="bengali-title">এগ ম্যাগি</span>
@@ -378,8 +341,7 @@
                 <!-- 14. Cheese Maggie -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge special">Special</div>
-                    <div class="food-card-img-box"><img src="assets/menu_cheese_maggie.webp" alt="Cheese Maggie"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_cheese_maggie.webp" alt="Cheese Maggie" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Cheese Maggie</h3>
                         <span class="bengali-title">চিজ ম্যাগি</span>
@@ -394,8 +356,7 @@
                 <!-- 15. Bread Omelette -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge special">Breakfast</div>
-                    <div class="food-card-img-box"><img src="assets/menu_bread_omelette.webp" alt="Bread Omelette"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_bread_omelette.webp" alt="Bread Omelette" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Bread Omelette</h3>
                         <span class="bengali-title">ব্রেড ওমলেট</span>
@@ -410,8 +371,7 @@
                 <!-- 16. Bread Jam / Butter -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge popular">Breakfast</div>
-                    <div class="food-card-img-box"><img src="assets/menu_bread_jam_butter.webp" alt="Bread Jam / Butter"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_bread_jam_butter.webp" alt="Bread Jam / Butter" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Bread Jam / Butter</h3>
                         <span class="bengali-title">ব্রেড জ্যাম / বাটার</span>
@@ -423,13 +383,12 @@
                     </div>
                 </div>
 
-                <!-- 17. Chicken Pocoda (8P) -->
+                <!-- 17. Chicken Small Pocoda (8P) -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge popular">8 Pcs</div>
-                    <div class="food-card-img-box"><img src="assets/menu_chicken_pocoda.webp" alt="Chicken Pocoda (8P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_chicken_pocoda.webp" alt="Chicken Small Pocoda (8P)" loading="lazy"></div>
                     <div class="food-card-body">
-                        <h3 class="food-title">Chicken Pocoda (8P)</h3>
+                        <h3 class="food-title">Chicken Small Pocoda (8P)</h3>
                         <span class="bengali-title">চিকেন পকোড়া (8P)</span>
                         <span class="food-price">₹200</span>
                         <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Pocoda%208P%20(₹200)"
@@ -439,13 +398,12 @@
                     </div>
                 </div>
 
-                <!-- 18. Paneer Pocoda (8P) -->
+                <!-- 18. Paneer Small Pocoda (8P) -->
                 <div class="food-menu-card" data-category="snacks">
                     <div class="food-card-badge pure-veg">8 Pcs</div>
-                    <div class="food-card-img-box"><img src="assets/menu_paneer_pocoda.webp" alt="Paneer Pocoda (8P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_paneer_pocoda.webp" alt="Paneer Small Pocoda (8P)" loading="lazy"></div>
                     <div class="food-card-body">
-                        <h3 class="food-title">Paneer Pocoda (8P)</h3>
+                        <h3 class="food-title">Paneer Small Pocoda (8P)</h3>
                         <span class="bengali-title">পনির পকোড়া (8P)</span>
                         <span class="food-price">₹200</span>
                         <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Paneer%20Pocoda%208P%20(₹200)"
@@ -458,8 +416,7 @@
                 <!-- 19. Extra Dahi -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">Fresh</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_dahi.webp" alt="Extra Dahi"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_dahi.webp" alt="Extra Dahi" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Dahi</h3>
                         <span class="bengali-title">এক্সট্রা দই</span>
@@ -474,8 +431,7 @@
                 <!-- 20. Special Dahi Lassi (Sweet) -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge special">Sweet Lassi</div>
-                    <div class="food-card-img-box"><img src="assets/menu_special_dahi_lassi.webp"
-                            alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_special_dahi_lassi.webp" alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Special Dahi Lassi (Sweet)</h3>
                         <span class="bengali-title">স্পেশাল দই লস্যি (Sweet)</span>
@@ -490,8 +446,7 @@
                 <!-- 21. One Glass Milk -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge pure-veg">Fresh Milk</div>
-                    <div class="food-card-img-box"><img src="assets/menu_one_glass_milk.webp" alt="One Glass Milk"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_one_glass_milk.webp" alt="One Glass Milk" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">One Glass Milk</h3>
                         <span class="bengali-title">এক গ্লাস দুধ</span>
@@ -506,8 +461,7 @@
                 <!-- 22. Lemon Water -->
                 <div class="food-menu-card" data-category="beverages">
                     <div class="food-card-badge pure-veg">Refreshing</div>
-                    <div class="food-card-img-box"><img src="assets/menu_lemon_water.webp" alt="Lemon Water"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_lemon_water.webp" alt="Lemon Water" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Lemon Water</h3>
                         <span class="bengali-title">লেমন ওয়াটার</span>
@@ -522,8 +476,7 @@
                 <!-- 23. Extra Chicken (4P) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge popular">4 Pcs</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_chicken.webp" alt="Extra Chicken (4P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_chicken.webp" alt="Extra Chicken (4P)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Chicken (4P)</h3>
                         <span class="bengali-title">চিকেন কারি (4P)</span>
@@ -538,8 +491,7 @@
                 <!-- 24. Green Salad -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">Fresh</div>
-                    <div class="food-card-img-box"><img src="assets/menu_green_salad.webp" alt="Green Salad"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_green_salad.webp" alt="Green Salad" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Green Salad</h3>
                         <span class="bengali-title">গ্রিন স্যালাড</span>
@@ -554,8 +506,7 @@
                 <!-- 25. Extra Fish (1P) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge popular">1 Pc</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_fish.webp" alt="Extra Fish (1P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_fish.webp" alt="Extra Fish (1P)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Fish (1P)</h3>
                         <span class="bengali-title">মাছ ১ পিস</span>
@@ -570,8 +521,7 @@
                 <!-- 26. Extra Egg (2P) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge special">2 Pcs</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_egg.webp" alt="Extra Egg (2P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_egg.webp" alt="Extra Egg (2P)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Egg (2P)</h3>
                         <span class="bengali-title">ডিম (২ পিস)</span>
@@ -586,8 +536,7 @@
                 <!-- 27. Extra Rice -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge popular">1 Portion</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_rice.webp" alt="Extra Rice"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_rice.webp" alt="Extra Rice" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Rice</h3>
                         <span class="bengali-title">এক্সট্রা ভাত</span>
@@ -602,8 +551,7 @@
                 <!-- 28. Roti / Papad / Biscuit -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">Per Pc</div>
-                    <div class="food-card-img-box"><img src="assets/menu_roti_papad_biscuit.webp"
-                            alt="Roti / Papad / Biscuit" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_roti_papad_biscuit.webp" alt="Roti / Papad / Biscuit" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Roti / Papad / Biscuit</h3>
                         <span class="bengali-title">রুটি / পাঁপড় / বিস্কুট</span>
@@ -618,8 +566,7 @@
                 <!-- 29. Extra Sabji / Dal / Vaji -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">Side Bowl</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_sabji_dal_vaji.webp"
-                            alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_sabji_dal_vaji.webp" alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Sabji / Dal / Vaji</h3>
                         <span class="bengali-title">সবজি / ডাল / ভাজি</span>
@@ -634,8 +581,7 @@
                 <!-- 30. Butter Dal Fry -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge chef">Chef Special</div>
-                    <div class="food-card-img-box"><img src="assets/menu_butter_dal_fry.webp" alt="Butter Dal Fry"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_butter_dal_fry.webp" alt="Butter Dal Fry" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Butter Dal Fry</h3>
                         <span class="bengali-title">বাটার ডাল ফ্রাই</span>
@@ -650,8 +596,7 @@
                 <!-- 31. Tarka (Egg / Veg) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge popular">Popular</div>
-                    <div class="food-card-img-box"><img src="assets/menu_tarka_egg_veg.webp" alt="Tarka (Egg / Veg)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_tarka_egg_veg.webp" alt="Tarka (Egg / Veg)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Tarka (Egg / Veg)</h3>
                         <span class="bengali-title">তরকা (এগ / ভেজ)</span>
@@ -666,8 +611,7 @@
                 <!-- 32. Extra Misti -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">Sweet</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_misti.webp" alt="Extra Misti"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_misti.webp" alt="Extra Misti" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Misti</h3>
                         <span class="bengali-title">এক্সট্রা মিষ্টি</span>
@@ -682,8 +626,7 @@
                 <!-- 33. Plain Rice (Without Thali) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge pure-veg">1 Plate</div>
-                    <div class="food-card-img-box"><img src="assets/menu_plain_rice_without_thali.webp"
-                            alt="Plain Rice (Without Thali)" loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_plain_rice_without_thali.webp" alt="Plain Rice (Without Thali)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Plain Rice (Without Thali)</h3>
                         <span class="bengali-title">প্লেন রাইস (থালি ছাড়া)</span>
@@ -698,8 +641,7 @@
                 <!-- 34. Extra Mutton (4P) -->
                 <div class="food-menu-card" data-category="extras">
                     <div class="food-card-badge special">4 Pcs</div>
-                    <div class="food-card-img-box"><img src="assets/menu_extra_mutton.webp" alt="Extra Mutton (4P)"
-                            loading="lazy"></div>
+                    <div class="food-card-img-box"><img src="assets/menu/menu_extra_mutton.webp" alt="Extra Mutton (4P)" loading="lazy"></div>
                     <div class="food-card-body">
                         <h3 class="food-title">Extra Mutton (4P)</h3>
                         <span class="bengali-title">মটন (স্পেশাল অর্ডার)</span>
@@ -950,8 +892,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="veg thali niramish thali veg thali rice dal sabji veg khana 150">
                             <div class="food-card-badge pure-veg">Pure Veg</div>
-                            <div class="food-card-img-box"><img src="assets/menu_veg_thali.webp" alt="Veg Thali"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_veg_thali.webp" alt="Veg Thali" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Veg Thali</h3>
                                 <span class="bengali-title">ভেজ থালি</span>
@@ -967,8 +908,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="egg thali dimer thali dim kosha rice dal thali 180">
                             <div class="food-card-badge special">Favorite</div>
-                            <div class="food-card-img-box"><img src="assets/menu_egg_thali.webp" alt="Egg Thali"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_egg_thali.webp" alt="Egg Thali" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Egg Thali</h3>
                                 <span class="bengali-title">ডিম থালি</span>
@@ -984,8 +924,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="fish thali macher thali rui mach rice dal thali 200">
                             <div class="food-card-badge popular">Popular</div>
-                            <div class="food-card-img-box"><img src="assets/menu_fish_thali_rui.webp"
-                                    alt="Fish Thali (Rui)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_fish_thali_rui.webp" alt="Fish Thali (Rui)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Fish Thali (Rui)</h3>
                                 <span class="bengali-title">রুই মাছ থালি</span>
@@ -1001,8 +940,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="fish thali macher thali katla mach rice dal thali 220">
                             <div class="food-card-badge popular">Popular</div>
-                            <div class="food-card-img-box"><img src="assets/menu_fish_thali_katla.webp"
-                                    alt="Fish Thali (Katla)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_fish_thali_katla.webp" alt="Fish Thali (Katla)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Fish Thali (Katla)</h3>
                                 <span class="bengali-title">কাতলা মাছ থালি</span>
@@ -1018,8 +956,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="chicken thali murgir mangsho chicken kosha rice dal thali 220">
                             <div class="food-card-badge bestseller">Bestseller</div>
-                            <div class="food-card-img-box"><img src="assets/menu_chicken_thali.webp" alt="Chicken Thali"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_chicken_thali.webp" alt="Chicken Thali" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Chicken Thali</h3>
                                 <span class="bengali-title">চিকেন থালি</span>
@@ -1035,8 +972,7 @@
                         <div class="food-menu-card" data-category="thali"
                             data-keywords="khichuri khichdi bhog serves 4 persons family combo 600">
                             <div class="food-card-badge special">Serves 4</div>
-                            <div class="food-card-img-box"><img src="assets/menu_khichuri.webp"
-                                    alt="Khichuri (Serves 4)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_khichuri.webp" alt="Khichuri (Serves 4)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Khichuri (Serves 4)</h3>
                                 <span class="bengali-title">খিচুড়ি (৪ জনের জন্য)</span>
@@ -1052,8 +988,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="black tea lal cha red tea beverage 25">
                             <div class="food-card-badge hot">Hot</div>
-                            <div class="food-card-img-box"><img src="assets/menu_black_tea.webp" alt="Black Tea"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_black_tea.webp" alt="Black Tea" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Black Tea</h3>
                                 <span class="bengali-title">ব্ল্যাক টি</span>
@@ -1069,8 +1004,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="milk tea doodh cha chai milk tea beverage 30">
                             <div class="food-card-badge bestseller">Chai</div>
-                            <div class="food-card-img-box"><img src="assets/menu_milk_tea.webp" alt="Milk Tea"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_milk_tea.webp" alt="Milk Tea" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Milk Tea</h3>
                                 <span class="bengali-title">মিল্ক টি (দুধ চা)</span>
@@ -1086,8 +1020,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="green tea detox herbal tea healthy beverage 40">
                             <div class="food-card-badge pure-veg">Healthy</div>
-                            <div class="food-card-img-box"><img src="assets/menu_green_tea.webp" alt="Green Tea"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_green_tea.webp" alt="Green Tea" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Green Tea</h3>
                                 <span class="bengali-title">গ্রিন টি</span>
@@ -1103,8 +1036,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="milk black coffee hot coffee espresso cafe 60">
                             <div class="food-card-badge popular">Hot</div>
-                            <div class="food-card-img-box"><img src="assets/menu_milk_black_coffee.webp"
-                                    alt="Milk / Black Coffee" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_milk_black_coffee.webp" alt="Milk / Black Coffee" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Milk / Black Coffee</h3>
                                 <span class="bengali-title">মিল্ক / ব্ল্যাক কফি</span>
@@ -1120,8 +1052,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="premium milk coffee cappuccino latte creamy coffee 100">
                             <div class="food-card-badge chef">Premium</div>
-                            <div class="food-card-img-box"><img src="assets/menu_premium_milk_coffee.webp"
-                                    alt="Premium Milk Coffee" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_premium_milk_coffee.webp" alt="Premium Milk Coffee" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Premium Milk Coffee</h3>
                                 <span class="bengali-title">প্রিমিয়াম মিল্ক কফি</span>
@@ -1137,8 +1068,7 @@
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="veg maggie noodles snacks masala maggie 60">
                             <div class="food-card-badge pure-veg">Veg</div>
-                            <div class="food-card-img-box"><img src="assets/menu_veg_maggie.webp" alt="Veg Maggie"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_veg_maggie.webp" alt="Veg Maggie" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Veg Maggie</h3>
                                 <span class="bengali-title">ভেজ ম্যাগি</span>
@@ -1154,8 +1084,7 @@
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="egg maggie dim noodles egg masala maggie 80">
                             <div class="food-card-badge popular">Hot</div>
-                            <div class="food-card-img-box"><img src="assets/menu_egg_maggie.webp" alt="Egg Maggie"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_egg_maggie.webp" alt="Egg Maggie" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Egg Maggie</h3>
                                 <span class="bengali-title">এগ ম্যাগি</span>
@@ -1171,8 +1100,7 @@
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="cheese maggie cheesy noodles snacks 100">
                             <div class="food-card-badge special">Special</div>
-                            <div class="food-card-img-box"><img src="assets/menu_cheese_maggie.webp" alt="Cheese Maggie"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_cheese_maggie.webp" alt="Cheese Maggie" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Cheese Maggie</h3>
                                 <span class="bengali-title">চিজ ম্যাগি</span>
@@ -1188,8 +1116,7 @@
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="bread omelette dim toast breakfast snacks 80">
                             <div class="food-card-badge special">Breakfast</div>
-                            <div class="food-card-img-box"><img src="assets/menu_bread_omelette.webp"
-                                    alt="Bread Omelette" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_bread_omelette.webp" alt="Bread Omelette" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Bread Omelette</h3>
                                 <span class="bengali-title">ব্রেড ওমলেট</span>
@@ -1205,8 +1132,7 @@
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="bread jam butter toast breakfast snacks 70">
                             <div class="food-card-badge popular">Breakfast</div>
-                            <div class="food-card-img-box"><img src="assets/menu_bread_jam_butter.webp"
-                                    alt="Bread Jam / Butter" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_bread_jam_butter.webp" alt="Bread Jam / Butter" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Bread Jam / Butter</h3>
                                 <span class="bengali-title">ব্রেড জ্যাম / বাটার</span>
@@ -1218,14 +1144,13 @@
                             </div>
                         </div>
 
-                        <!-- 17. Chicken Pocoda (8P) -->
+                        <!-- 17. Chicken Small Pocoda (8P) -->
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="chicken pocoda pakora pakoda 8p snacks non veg 200">
                             <div class="food-card-badge popular">8 Pcs</div>
-                            <div class="food-card-img-box"><img src="assets/menu_chicken_pocoda.webp"
-                                    alt="Chicken Pocoda (8P)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_chicken_pocoda.webp" alt="Chicken Small Pocoda (8P)" loading="lazy"></div>
                             <div class="food-card-body">
-                                <h3 class="food-title">Chicken Pocoda (8P)</h3>
+                                <h3 class="food-title">Chicken Small Pocoda (8P)</h3>
                                 <span class="bengali-title">চিকেন পকোড়া (8P)</span>
                                 <span class="food-price">₹200</span>
                                 <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Pocoda%208P%20(₹200)"
@@ -1235,14 +1160,13 @@
                             </div>
                         </div>
 
-                        <!-- 18. Paneer Pocoda (8P) -->
+                        <!-- 18. Paneer Small Pocoda (8P) -->
                         <div class="food-menu-card" data-category="snacks"
                             data-keywords="paneer pocoda pakora pakoda 8p snacks veg 200">
                             <div class="food-card-badge pure-veg">8 Pcs</div>
-                            <div class="food-card-img-box"><img src="assets/menu_paneer_pocoda.webp"
-                                    alt="Paneer Pocoda (8P)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_paneer_pocoda.webp" alt="Paneer Small Pocoda (8P)" loading="lazy"></div>
                             <div class="food-card-body">
-                                <h3 class="food-title">Paneer Pocoda (8P)</h3>
+                                <h3 class="food-title">Paneer Small Pocoda (8P)</h3>
                                 <span class="bengali-title">পনির পকোড়া (8P)</span>
                                 <span class="food-price">₹200</span>
                                 <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Paneer%20Pocoda%208P%20(₹200)"
@@ -1256,8 +1180,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra dahi curd sweet fresh yogurt side 80">
                             <div class="food-card-badge pure-veg">Fresh</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_dahi.webp" alt="Extra Dahi"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_dahi.webp" alt="Extra Dahi" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Dahi</h3>
                                 <span class="bengali-title">এক্সট্রা দই</span>
@@ -1273,8 +1196,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="special dahi lassi sweet lassi cold beverage curd drink 100">
                             <div class="food-card-badge special">Sweet Lassi</div>
-                            <div class="food-card-img-box"><img src="assets/menu_special_dahi_lassi.webp"
-                                    alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_special_dahi_lassi.webp" alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Special Dahi Lassi (Sweet)</h3>
                                 <span class="bengali-title">স্পেশাল দই লস্যি (Sweet)</span>
@@ -1290,8 +1212,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="one glass milk doodh hot warm milk beverage 60">
                             <div class="food-card-badge pure-veg">Fresh Milk</div>
-                            <div class="food-card-img-box"><img src="assets/menu_one_glass_milk.webp"
-                                    alt="One Glass Milk" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_one_glass_milk.webp" alt="One Glass Milk" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">One Glass Milk</h3>
                                 <span class="bengali-title">এক গ্লাস দুধ</span>
@@ -1307,8 +1228,7 @@
                         <div class="food-menu-card" data-category="beverages"
                             data-keywords="lemon water lebu jol salt lemon water refreshing drink 50">
                             <div class="food-card-badge pure-veg">Refreshing</div>
-                            <div class="food-card-img-box"><img src="assets/menu_lemon_water.webp" alt="Lemon Water"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_lemon_water.webp" alt="Lemon Water" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Lemon Water</h3>
                                 <span class="bengali-title">লেমন ওয়াটার</span>
@@ -1324,8 +1244,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra chicken 4p murgir mangsho chicken curry side non veg 200">
                             <div class="food-card-badge popular">4 Pcs</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_chicken.webp"
-                                    alt="Extra Chicken (4P)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_chicken.webp" alt="Extra Chicken (4P)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Chicken (4P)</h3>
                                 <span class="bengali-title">চিকেন কারি (4P)</span>
@@ -1341,8 +1260,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="green salad cucumber tomato onion lemon salad veg 100">
                             <div class="food-card-badge pure-veg">Fresh</div>
-                            <div class="food-card-img-box"><img src="assets/menu_green_salad.webp" alt="Green Salad"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_green_salad.webp" alt="Green Salad" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Green Salad</h3>
                                 <span class="bengali-title">গ্রিন স্যালাড</span>
@@ -1358,8 +1276,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra fish 1p macher jhol mach 1 piece non veg side 100">
                             <div class="food-card-badge popular">1 Pc</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_fish.webp" alt="Extra Fish (1P)"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_fish.webp" alt="Extra Fish (1P)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Fish (1P)</h3>
                                 <span class="bengali-title">মাছ ১ পিস</span>
@@ -1375,8 +1292,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra egg 2p dimer jhol dim curry 2 piece side 50">
                             <div class="food-card-badge special">2 Pcs</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_egg.webp" alt="Extra Egg (2P)"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_egg.webp" alt="Extra Egg (2P)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Egg (2P)</h3>
                                 <span class="bengali-title">ডিম (২ পিস)</span>
@@ -1392,8 +1308,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra rice bhat rice portion veg side 50">
                             <div class="food-card-badge popular">1 Portion</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_rice.webp" alt="Extra Rice"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_rice.webp" alt="Extra Rice" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Rice</h3>
                                 <span class="bengali-title">এক্সট্রা ভাত</span>
@@ -1409,8 +1324,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="roti papad biscuit ruti flatbread side 10">
                             <div class="food-card-badge pure-veg">Per Pc</div>
-                            <div class="food-card-img-box"><img src="assets/menu_roti_papad_biscuit.webp"
-                                    alt="Roti / Papad / Biscuit" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_roti_papad_biscuit.webp" alt="Roti / Papad / Biscuit" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Roti / Papad / Biscuit</h3>
                                 <span class="bengali-title">রুটি / পাঁপড় / বিস্কুট</span>
@@ -1426,8 +1340,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra sabji dal vaji torkari yellow dal veg side 30">
                             <div class="food-card-badge pure-veg">Side Bowl</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_sabji_dal_vaji.webp"
-                                    alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_sabji_dal_vaji.webp" alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Sabji / Dal / Vaji</h3>
                                 <span class="bengali-title">সবজি / ডাল / ভাজি</span>
@@ -1443,8 +1356,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="butter dal fry yellow dal tadka butter veg 150">
                             <div class="food-card-badge chef">Chef Special</div>
-                            <div class="food-card-img-box"><img src="assets/menu_butter_dal_fry.webp"
-                                    alt="Butter Dal Fry" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_butter_dal_fry.webp" alt="Butter Dal Fry" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Butter Dal Fry</h3>
                                 <span class="bengali-title">বাটার ডাল ফ্রাই</span>
@@ -1460,8 +1372,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="tarka tadka egg tarka veg tarka dal 150">
                             <div class="food-card-badge popular">Popular</div>
-                            <div class="food-card-img-box"><img src="assets/menu_tarka_egg_veg.webp"
-                                    alt="Tarka (Egg / Veg)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_tarka_egg_veg.webp" alt="Tarka (Egg / Veg)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Tarka (Egg / Veg)</h3>
                                 <span class="bengali-title">তরকা (এগ / ভেজ)</span>
@@ -1477,8 +1388,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra misti mishti sweet dessert rosogolla 20">
                             <div class="food-card-badge pure-veg">Sweet</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_misti.webp" alt="Extra Misti"
-                                    loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_misti.webp" alt="Extra Misti" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Misti</h3>
                                 <span class="bengali-title">এক্সট্রা মিষ্টি</span>
@@ -1494,8 +1404,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="plain rice without thali bhat rice bowl 80">
                             <div class="food-card-badge pure-veg">1 Plate</div>
-                            <div class="food-card-img-box"><img src="assets/menu_plain_rice_without_thali.webp"
-                                    alt="Plain Rice (Without Thali)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_plain_rice_without_thali.webp" alt="Plain Rice (Without Thali)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Plain Rice (Without Thali)</h3>
                                 <span class="bengali-title">প্লেন রাইস (থালি ছাড়া)</span>
@@ -1511,8 +1420,7 @@
                         <div class="food-menu-card" data-category="extras"
                             data-keywords="extra mutton 4p khasi mangsho mutton curry kosha special order 380">
                             <div class="food-card-badge special">4 Pcs</div>
-                            <div class="food-card-img-box"><img src="assets/menu_extra_mutton.webp"
-                                    alt="Extra Mutton (4P)" loading="lazy"></div>
+                            <div class="food-card-img-box"><img src="assets/menu/menu_extra_mutton.webp" alt="Extra Mutton (4P)" loading="lazy"></div>
                             <div class="food-card-body">
                                 <h3 class="food-title">Extra Mutton (4P)</h3>
                                 <span class="bengali-title">মটন (স্পেশাল অর্ডার)</span>
@@ -1575,56 +1483,7 @@
         </div>
     </div>
 
-    </div>
-
-    </div>
-    </div>
-    </div>
-
-    <!-- Interactive Diwali Diya Bar along bottom -->
-    <div class="diwali-diya-bar" id="diwali-diya-bar" title="Interactive Diwali Diyas - Click to Light / Extinguish">
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-        <div class="interactive-diya-item">
-            <div class="diya-flame"></div>
-            <div class="diya-pot"></div>
-        </div>
-    </div>
-    <script src="script.js?v=1.5"></script>
+    <script src="script.js?v=1.6"></script>
 </body>
 
 </html>
